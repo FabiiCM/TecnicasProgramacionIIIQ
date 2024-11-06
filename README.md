@@ -44,7 +44,8 @@ Epic 6: Facturación
 Feature 6.1: Gestión de Facturas
 Gestiona la generación automática de facturas mensuales para clientes, almacenándolas y permitiendo su consulta.
 
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+
 Cómo Usar
 1-Registro de Usuarios
 Los administradores pueden crear y gestionar los perfiles de los entrenadores y clientes.
