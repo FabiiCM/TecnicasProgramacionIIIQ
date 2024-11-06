@@ -1,8 +1,6 @@
 # TecnicasProgramacionIIIQ
 Equipo:
-Fabiola María Castro Mora
-
-Akane Santamaría Allen
+Fabiola María Castro Mora y Akane Santamaría Allen
 
 Profesor: 
 Luis Felipe Mora Umaña
