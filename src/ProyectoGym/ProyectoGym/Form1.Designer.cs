@@ -30,20 +30,12 @@ namespace ProyectoGym
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
             NameText = new Label();
             BirthText = new Label();
+            BTInicioSesion = new Button();
+            BTPrueba = new Button();
+            BTRegistrar = new Button();
             SuspendLayout();
-            // 
-            // button1
-            // 
-            button1.Location = new Point(512, 175);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 34);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += but1;
             // 
             // NameText
             // 
@@ -62,14 +54,54 @@ namespace ProyectoGym
             BirthText.Size = new Size(0, 25);
             BirthText.TabIndex = 2;
             // 
+            // BTInicioSesion
+            // 
+            BTInicioSesion.BackColor = SystemColors.ActiveCaption;
+            BTInicioSesion.BackgroundImageLayout = ImageLayout.Center;
+            BTInicioSesion.Font = new Font("Segoe UI", 10F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            BTInicioSesion.Location = new Point(446, 234);
+            BTInicioSesion.Name = "BTInicioSesion";
+            BTInicioSesion.Size = new Size(178, 51);
+            BTInicioSesion.TabIndex = 3;
+            BTInicioSesion.Text = "Inicio de Sesión";
+            BTInicioSesion.UseVisualStyleBackColor = false;
+            BTInicioSesion.Click += button1_Click;
+            // 
+            // BTPrueba
+            // 
+            BTPrueba.BackColor = SystemColors.ActiveCaption;
+            BTPrueba.BackgroundImageLayout = ImageLayout.Center;
+            BTPrueba.Font = new Font("Segoe UI", 10F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            BTPrueba.Location = new Point(12, 411);
+            BTPrueba.Name = "BTPrueba";
+            BTPrueba.Size = new Size(178, 45);
+            BTPrueba.TabIndex = 0;
+            BTPrueba.Text = "Prueba";
+            BTPrueba.UseVisualStyleBackColor = false;
+            BTPrueba.Click += but1;
+            // 
+            // BTRegistrar
+            // 
+            BTRegistrar.BackColor = SystemColors.ActiveCaption;
+            BTRegistrar.Font = new Font("Segoe UI", 10F, FontStyle.Italic);
+            BTRegistrar.Location = new Point(446, 146);
+            BTRegistrar.Name = "BTRegistrar";
+            BTRegistrar.Size = new Size(178, 46);
+            BTRegistrar.TabIndex = 4;
+            BTRegistrar.Text = "Registrar";
+            BTRegistrar.UseVisualStyleBackColor = false;
+            BTRegistrar.Click += BTRegistrar_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(695, 468);
+            Controls.Add(BTRegistrar);
+            Controls.Add(BTInicioSesion);
             Controls.Add(BirthText);
             Controls.Add(NameText);
-            Controls.Add(button1);
+            Controls.Add(BTPrueba);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
@@ -86,12 +118,11 @@ namespace ProyectoGym
             throw new NotImplementedException();
         }
 
-
-
-        #endregion
-
-        private Button button1;
+#endregion
         private Label NameText;
         private Label BirthText;
+        private Button BTInicioSesion;
+        private Button BTPrueba;
+        private Button BTRegistrar;
     }
 }

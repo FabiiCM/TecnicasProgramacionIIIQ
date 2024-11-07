@@ -1,4 +1,5 @@
 using Controller;
+using System.Security.Cryptography;
 
 namespace ProyectoGym
 {
@@ -10,8 +11,22 @@ namespace ProyectoGym
 
             var people = PersonController.GetPeople();
 
-            NameText.Text = people[0].Name;
-            BirthText.Text = people[0].Birthday.ToString();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        { 
+          this.Hide();
+          InicioDeSesion VentanaInicioSesion = new InicioDeSesion();
+            VentanaInicioSesion.Show();
+        }
+
+        private void BTRegistrar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RegistroDeUsuario VentanaUsuario = new RegistroDeUsuario();
+            VentanaUsuario.Show();
+
         }
     }
 }
