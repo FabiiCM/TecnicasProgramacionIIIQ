@@ -1,5 +1,8 @@
-﻿
+﻿//Importación de bibliotecas
+using System;
+using System.Drawing;
 
+using System.Windows.Forms;
 namespace ProyectoGym
 {
     partial class Form1

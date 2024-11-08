@@ -1,6 +1,11 @@
+//Importación de bibliotecas
 using Controller;
 using System.Security.Cryptography;
 
+using System;
+using System.Drawing;
+
+using System.Windows.Forms;
 namespace ProyectoGym
 {
     public partial class FRMInicio : Form
