@@ -1,6 +1,6 @@
 ﻿namespace ProyectoGym
 {
-    partial class InicioDeSesion
+    partial class FRMInicioDeSesion
     {
         /// <summary>
         /// Required designer variable.
@@ -125,7 +125,7 @@
             textBox1.Size = new Size(559, 50);
             textBox1.TabIndex = 17;
             // 
-            // InicioDeSesion
+            // FRMInicioDeSesion
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -138,7 +138,7 @@
             Controls.Add(LBContraseña);
             Controls.Add(LBNombreDeUsuario);
             Controls.Add(textBox1);
-            Name = "InicioDeSesion";
+            Name = "FRMInicioDeSesion";
             Text = "Inicio De Sesion";
             ResumeLayout(false);
             PerformLayout();

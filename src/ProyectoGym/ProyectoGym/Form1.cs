@@ -81,8 +81,9 @@ namespace ProyectoGym
         private void BTInicioSesion_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            FRMInicio VentanaInicioSesion = new FRMInicio();
-            VentanaInicioSesion.Show();
+            FRMInicioDeSesion VentanaUsuario = new FRMInicioDeSesion();
+            VentanaUsuario.Show();
+          
         } 
     }
 }

@@ -12,9 +12,9 @@ using System.IO;
 
 namespace ProyectoGym
 {
-    public partial class InicioDeSesion : Form
+    public partial class FRMInicioDeSesion : Form
     {
-        public InicioDeSesion()
+        public FRMInicioDeSesion()
         {
             InitializeComponent();
         }
