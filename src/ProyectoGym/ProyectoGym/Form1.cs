@@ -3,7 +3,7 @@ using System.Security.Cryptography;
 
 namespace ProyectoGym
 {
-    public partial class Form1 : Form
+    public partial class FRMInicio : Form
     {
         public Form1()
         {
@@ -14,8 +14,9 @@ namespace ProyectoGym
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BTInicioSesion_Click(object sender, EventArgs e)
         { 
+
           this.Hide();
           InicioDeSesion VentanaInicioSesion = new InicioDeSesion();
             VentanaInicioSesion.Show();
