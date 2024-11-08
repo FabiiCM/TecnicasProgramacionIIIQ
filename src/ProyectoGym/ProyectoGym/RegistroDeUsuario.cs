@@ -1,3 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Diagnostics;
+
+using System.IO;
+
 namespace ProyectoGym
 {
     public partial class RegistroDeUsuario : Form
@@ -26,7 +39,7 @@ namespace ProyectoGym
             ///Concatenar para evitar cualquier Error y muestra un mensaje de que hubo un error y si se registra bien o mal           
             try
             {
-                TextWriter RegistrarUsuario = new StreamWriter(@"C:\sources\RepoQ3\src\ProyectoGym\bin\Debug\Clientes\" + TBNombreCompleto.Text+ ".txt", true);
+                TextWriter RegistrarUsuario = new StreamWriter(@"C:\sources\RepoQ3\src\ProyectoGym\ProyectoGym\bin\Debug\" + TBNombreCompleto.Text+ ".txt", true);
                 RegistrarUsuario.WriteLine(TBContraseña.Text);
                 RegistrarUsuario.Close();
 
