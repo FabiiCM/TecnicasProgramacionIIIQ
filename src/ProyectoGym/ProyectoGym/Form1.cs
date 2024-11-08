@@ -1,4 +1,3 @@
-//Importación de bibliotecas
 using Controller;
 using System.Security.Cryptography;
 
@@ -10,13 +9,19 @@ namespace ProyectoGym
 {
     public partial class FRMInicio : Form
     {
-        public Form1()
+        
+        public FRMInicio()
         {
             InitializeComponent();
 
             var people = PersonController.GetPeople();
 
 
+        }
+
+        private void InitializeComponent()
+        {
+            throw new NotImplementedException();
         }
 
         private void BTInicioSesion_Click(object sender, EventArgs e)

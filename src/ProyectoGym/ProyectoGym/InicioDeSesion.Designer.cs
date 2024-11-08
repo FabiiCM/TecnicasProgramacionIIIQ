@@ -41,9 +41,10 @@
             // BTLimpiar
             // 
             BTLimpiar.BackColor = SystemColors.Window;
-            BTLimpiar.Location = new Point(315, 372);
+            BTLimpiar.Location = new Point(220, 223);
+            BTLimpiar.Margin = new Padding(2, 2, 2, 2);
             BTLimpiar.Name = "BTLimpiar";
-            BTLimpiar.Size = new Size(133, 53);
+            BTLimpiar.Size = new Size(93, 32);
             BTLimpiar.TabIndex = 23;
             BTLimpiar.Text = "Limpiar";
             BTLimpiar.UseVisualStyleBackColor = false;
@@ -52,9 +53,10 @@
             // BTIniciarSesion
             // 
             BTIniciarSesion.BackColor = SystemColors.Window;
-            BTIniciarSesion.Location = new Point(314, 313);
+            BTIniciarSesion.Location = new Point(220, 188);
+            BTIniciarSesion.Margin = new Padding(2, 2, 2, 2);
             BTIniciarSesion.Name = "BTIniciarSesion";
-            BTIniciarSesion.Size = new Size(133, 53);
+            BTIniciarSesion.Size = new Size(93, 32);
             BTIniciarSesion.TabIndex = 22;
             BTIniciarSesion.Text = "Iniciar Sesión";
             BTIniciarSesion.UseVisualStyleBackColor = false;
@@ -62,60 +64,67 @@
             // 
             // TBContraseña
             // 
-            TBContraseña.Location = new Point(115, 240);
+            TBContraseña.Location = new Point(80, 144);
+            TBContraseña.Margin = new Padding(2, 2, 2, 2);
             TBContraseña.Name = "TBContraseña";
-            TBContraseña.Size = new Size(559, 31);
+            TBContraseña.Size = new Size(392, 23);
             TBContraseña.TabIndex = 21;
             // 
             // TBNombreDeUsuario
             // 
-            TBNombreDeUsuario.Location = new Point(115, 171);
+            TBNombreDeUsuario.Location = new Point(80, 103);
+            TBNombreDeUsuario.Margin = new Padding(2, 2, 2, 2);
             TBNombreDeUsuario.Name = "TBNombreDeUsuario";
-            TBNombreDeUsuario.Size = new Size(559, 31);
+            TBNombreDeUsuario.Size = new Size(392, 23);
             TBNombreDeUsuario.TabIndex = 20;
+            TBNombreDeUsuario.TextChanged += TBNombreDeUsuario_TextChanged_1;
             // 
             // LBRegistrar
             // 
             LBRegistrar.AutoSize = true;
             LBRegistrar.BackColor = SystemColors.Window;
             LBRegistrar.Font = new Font("Mongolian Baiti", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LBRegistrar.Location = new Point(314, 44);
+            LBRegistrar.Location = new Point(220, 26);
+            LBRegistrar.Margin = new Padding(2, 0, 2, 0);
             LBRegistrar.Name = "LBRegistrar";
-            LBRegistrar.Size = new Size(228, 34);
+            LBRegistrar.Size = new Size(157, 24);
             LBRegistrar.TabIndex = 16;
             LBRegistrar.Text = "Inicio De Sesión";
             // 
             // LBContraseña
             // 
             LBContraseña.AutoSize = true;
-            LBContraseña.Location = new Point(113, 212);
+            LBContraseña.Location = new Point(79, 127);
+            LBContraseña.Margin = new Padding(2, 0, 2, 0);
             LBContraseña.Name = "LBContraseña";
-            LBContraseña.Size = new Size(101, 25);
+            LBContraseña.Size = new Size(67, 15);
             LBContraseña.TabIndex = 15;
             LBContraseña.Text = "Contraseña";
             // 
             // LBNombreDeUsuario
             // 
             LBNombreDeUsuario.AutoSize = true;
-            LBNombreDeUsuario.Location = new Point(113, 143);
+            LBNombreDeUsuario.Location = new Point(79, 86);
+            LBNombreDeUsuario.Margin = new Padding(2, 0, 2, 0);
             LBNombreDeUsuario.Name = "LBNombreDeUsuario";
-            LBNombreDeUsuario.Size = new Size(170, 25);
+            LBNombreDeUsuario.Size = new Size(111, 15);
             LBNombreDeUsuario.TabIndex = 14;
             LBNombreDeUsuario.Text = "Nombre De Usuario";
             // 
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(115, 32);
+            textBox1.Location = new Point(80, 19);
+            textBox1.Margin = new Padding(2, 2, 2, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(559, 50);
+            textBox1.Size = new Size(392, 36);
             textBox1.TabIndex = 17;
             // 
             // InicioDeSesion
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 542);
+            ClientSize = new Size(560, 325);
             Controls.Add(BTLimpiar);
             Controls.Add(BTIniciarSesion);
             Controls.Add(TBContraseña);
@@ -124,6 +133,7 @@
             Controls.Add(LBContraseña);
             Controls.Add(LBNombreDeUsuario);
             Controls.Add(textBox1);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "InicioDeSesion";
             Text = "InicioDeSesion";
             ResumeLayout(false);

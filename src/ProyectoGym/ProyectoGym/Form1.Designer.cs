@@ -3,6 +3,7 @@ using System;
 using System.Drawing;
 
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 namespace ProyectoGym
 {
     partial class Form1
@@ -74,7 +75,7 @@ namespace ProyectoGym
             // 
             BTPrueba.BackColor = SystemColors.ActiveCaption;
             BTPrueba.BackgroundImageLayout = ImageLayout.Center;
-            BTPrueba.Font = new Font("Segoe UI", 10F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            BTPrueba.Font = new System.Drawing.Font("Segoe UI", 10F, FontStyle.Italic, GraphicsUnit.Point, 0);
             BTPrueba.Location = new Point(12, 411);
             BTPrueba.Name = "BTPrueba";
             BTPrueba.Size = new Size(178, 45);
@@ -111,6 +112,26 @@ namespace ProyectoGym
             PerformLayout();
         }
 
+        private void SuspendLayout()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void BTRegistrar_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void PerformLayout()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ResumeLayout(bool v)
+        {
+            throw new NotImplementedException();
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
@@ -127,5 +148,11 @@ namespace ProyectoGym
         private Button BTInicioSesion;
         private Button BTPrueba;
         private Button BTRegistrar;
+
+        public SizeF AutoScaleDimensions { get; private set; }
+        public AutoScaleMode AutoScaleMode { get; private set; }
+        public Size ClientSize { get; private set; }
+        public string Name { get; private set; }
+        public string Text { get; private set; }
     }
 }
