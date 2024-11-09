@@ -3,7 +3,7 @@
     partial class FRMInicioDeSesion
     {
         /// <summary>
-        /// Required designer variable.
+        ///Se requiere asignar una variable 
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
@@ -57,7 +57,7 @@
             BTIniciarSesion.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
             BTIniciarSesion.FlatStyle = FlatStyle.Flat;
             BTIniciarSesion.ForeColor = Color.FromArgb(255, 128, 0);
-            BTIniciarSesion.Location = new Point(426, 327);
+            BTIniciarSesion.Location = new Point(369, 335);
             BTIniciarSesion.Name = "BTIniciarSesion";
             BTIniciarSesion.Size = new Size(133, 53);
             BTIniciarSesion.TabIndex = 22;
@@ -87,7 +87,7 @@
             LBRegistrar.BackColor = SystemColors.Window;
             LBRegistrar.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             LBRegistrar.ForeColor = Color.FromArgb(255, 128, 0);
-            LBRegistrar.Location = new Point(381, 55);
+            LBRegistrar.Location = new Point(314, 55);
             LBRegistrar.Margin = new Padding(4, 0, 4, 0);
             LBRegistrar.Name = "LBRegistrar";
             LBRegistrar.Size = new Size(215, 38);

@@ -21,30 +21,32 @@ namespace ProyectoGym
 
         private void BTIniciarSesion_Click(object sender, EventArgs e)
         {
-            ////Concatenamos para que nos diga si hay error o no 
-            ///....
-            try
-            {
+        ///Aquí debería de ir código para que se inicie sesion con el usuario que se debe guardar
+        ///en el archivo .txt
+         ////Concatenamos para que nos diga si hay error o no 
+         ///....
+         /// try
+         /// {
 
-                TextReader Inicio = new StreamReader(TBNombre.Text + ".txt");
+         ///     TextReader Inicio = new StreamReader(TBNombre.Text + ".txt");
 
 
-                using TextReader InicioDeSesion = new StreamReader(TBNombre.Text + ".txt");
+         ///    using TextReader InicioDeSesion = new StreamReader(TBNombre.Text + ".txt");
 
-                if (Inicio.ReadLine() == TBContraseña.Text)
-                {
-                    MessageBox.Show("Se inició sesión");
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo iniciar sesión");
-                }
-            }
-            catch (Exception z)
-            {
-                MessageBox.Show("Hubo un error" + z, "Error");
-            }
-
+         ///    if (Inicio.ReadLine() == TBContraseña.Text)
+         ///   {
+         ///      MessageBox.Show("Se inició sesión");
+         ///  }
+         ///  else
+         ///  {
+         ///     MessageBox.Show("No se pudo iniciar sesión");
+         /// }
+         /// }
+         /// catch (Exception z)
+         /// {
+         ///     MessageBox.Show("Hubo un error" + z, "Error");
+         ///}
+         //////
         }
 
         private void BTLimpiar_Click(object sender, EventArgs e)
