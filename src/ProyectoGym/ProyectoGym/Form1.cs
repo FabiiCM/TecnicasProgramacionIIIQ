@@ -1,10 +1,18 @@
 using Controller;
 using System.Security.Cryptography;
 
+using System;
+using System.Drawing;
+
+using System.Windows.Forms;
 namespace ProyectoGym
 {
     public partial class FRMInicio : Form
     {
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 7bcc39ac1d4a5ce188bc2344287b6f061523113b
         public FRMInicio()
         {
             InitializeComponent();
@@ -14,6 +22,16 @@ namespace ProyectoGym
 
         }
 
+<<<<<<< HEAD
+=======
+        private void InitializeComponent()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void BTInicioSesion_Click(object sender, EventArgs e)
+        { 
+>>>>>>> 7bcc39ac1d4a5ce188bc2344287b6f061523113b
 
         private void InitializeComponent()
         {

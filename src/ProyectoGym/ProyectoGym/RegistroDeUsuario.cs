@@ -36,20 +36,22 @@ namespace ProyectoGym
 
         private void BTRegistrar_Click(object sender, EventArgs e)
         {
-            ///Concatenar para evitar cualquier Error y muestra un mensaje de que hubo un error y si se registra bien o mal           
-            try
-            {
-                TextWriter RegistrarUsuario = new StreamWriter(@"C:\sources\RepoQ3\src\ProyectoGym\ProyectoGym\bin\Debug\" + TBNombreCompleto.Text+ ".txt", true);
-                RegistrarUsuario.WriteLine(TBContraseña.Text);
-                RegistrarUsuario.Close();
 
-                MessageBox.Show("Se registró correctamente");
-            }
-            catch (Exception x)
-            {
-                MessageBox.Show("Hubo un error" + x, "Error");
+        }
 
-            }
+        private void TBNombreCompleto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TBNombreDeUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RegistroDeUsuario_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
