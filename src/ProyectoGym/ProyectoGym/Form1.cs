@@ -90,6 +90,7 @@ namespace ProyectoGym
             BTClasesReservas.Text = "Clases y Reservas";
             BTClasesReservas.UseVisualStyleBackColor = true;
             BTClasesReservas.Click += BTClasesReservas_Click;
+
             // 
             // BTMembresias
             // 
@@ -164,9 +165,11 @@ namespace ProyectoGym
             nuevaVentana.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BTClasesReservas_Click(object? sender, EventArgs e)
         {
-
+            this.Hide();
+            FRMAsignacionHorarios ventanaSesion = new FRMAsignacionHorarios();
+            ventanaSesion.Show();
         }
     }
 }
