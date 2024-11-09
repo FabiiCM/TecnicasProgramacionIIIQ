@@ -87,9 +87,6 @@
             TBNombre.Name = "TBNombre";
             TBNombre.Size = new Size(559, 31);
             TBNombre.TabIndex = 20;
-
-            TBNombre.TextChanged += TBNombreDeUsuario_TextChanged;
-
             // 
             // LBRegistrar
      
@@ -103,7 +100,7 @@
 
             LBRegistrar.TabIndex = 16;
             LBRegistrar.Text = "Inicio De Sesión";
-            LBRegistrar.Click += LBRegistrar_Click;
+            
             // 
             // LBContraseña
             // 
