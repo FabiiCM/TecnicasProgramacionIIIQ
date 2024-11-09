@@ -13,7 +13,7 @@ namespace ProyectoGym
         private Button BTInicioSesion = null!;
         private Button BTRegistro = null!;
         private Button BTEntrenadores = null!;
-        private Button button1 = null!;
+        private Button BTClasesReservas = null!;
         private Button BTMembresias = null!;
         private Button BTInventario = null!;
         private Button BTFacturacion = null!;
@@ -31,7 +31,7 @@ namespace ProyectoGym
             BTInicioSesion = new Button();
             BTRegistro = new Button();
             BTEntrenadores = new Button();
-            button1 = new Button();
+            BTClasesReservas = new Button();
             BTMembresias = new Button();
             BTInventario = new Button();
             BTFacturacion = new Button();
@@ -81,14 +81,15 @@ namespace ProyectoGym
             BTEntrenadores.Text = "Entrenadores";
             BTEntrenadores.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // BTClasesReservas
             // 
-            button1.Location = new Point(384, 91);
-            button1.Name = "button1";
-            button1.Size = new Size(152, 65);
-            button1.TabIndex = 3;
-            button1.Text = "Clases y Reservas";
-            button1.UseVisualStyleBackColor = true;
+            BTClasesReservas.Location = new Point(384, 91);
+            BTClasesReservas.Name = "BTClasesReservas";
+            BTClasesReservas.Size = new Size(152, 65);
+            BTClasesReservas.TabIndex = 3;
+            BTClasesReservas.Text = "Clases y Reservas";
+            BTClasesReservas.UseVisualStyleBackColor = true;
+            BTClasesReservas.Click += button1_Click;
             // 
             // BTMembresias
             // 
@@ -123,7 +124,7 @@ namespace ProyectoGym
             Controls.Add(BTFacturacion);
             Controls.Add(BTInventario);
             Controls.Add(BTMembresias);
-            Controls.Add(button1);
+            Controls.Add(BTClasesReservas);
             Controls.Add(BTEntrenadores);
             Controls.Add(BTInicioSesion);
             Controls.Add(BTRegistro);
@@ -161,6 +162,11 @@ namespace ProyectoGym
         {
             FRMInicioDeSesion nuevaVentana = new FRMInicioDeSesion();
             nuevaVentana.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
