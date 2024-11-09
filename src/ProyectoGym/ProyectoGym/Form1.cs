@@ -89,7 +89,7 @@ namespace ProyectoGym
             BTClasesReservas.TabIndex = 3;
             BTClasesReservas.Text = "Clases y Reservas";
             BTClasesReservas.UseVisualStyleBackColor = true;
-            BTClasesReservas.Click += button1_Click;
+            BTClasesReservas.Click += BTClasesReservas_Click;
             // 
             // BTMembresias
             // 
