@@ -25,12 +25,12 @@ namespace ProyectoGym
             ///....
             try
             {
-<<<<<<< HEAD
+
                 TextReader Inicio = new StreamReader(TBNombre.Text + ".txt");
 
-=======
-                using TextReader Inicio = new StreamReader(TBNombre.Text + ".txt");
->>>>>>> 255c74d6e6f5fa116ee09c492edec0759d581cdd
+
+                using TextReader InicioDeSesion = new StreamReader(TBNombre.Text + ".txt");
+
                 if (Inicio.ReadLine() == TBContraseña.Text)
                 {
                     MessageBox.Show("Se inició sesión");
@@ -50,10 +50,8 @@ namespace ProyectoGym
         private void BTLimpiar_Click(object sender, EventArgs e)
         {
 
-<<<<<<< HEAD
-=======
-            TBNombreDeUsuario_TextChanged_1.Clear();
-            TBContraseña.Clear();
+
+           
         }
 
         private void TBNombreDeUsuario_TextChanged(object sender, EventArgs e)
@@ -63,7 +61,6 @@ namespace ProyectoGym
 
         private void TBNombreDeUsuario_TextChanged_1(object sender, EventArgs e)
         {
->>>>>>> 255c74d6e6f5fa116ee09c492edec0759d581cdd
 
         }
     }

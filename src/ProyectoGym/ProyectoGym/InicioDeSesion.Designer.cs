@@ -40,16 +40,12 @@
             // 
             // BTLimpiar
             // 
-
             BTLimpiar.BackColor = Color.White;
             BTLimpiar.FlatStyle = FlatStyle.Flat;
             BTLimpiar.ForeColor = Color.FromArgb(255, 128, 0);
-            BTLimpiar.Location = new Point(315, 372);
-
-            BTLimpiar.Margin = new Padding(2, 2, 2, 2);
-
+            BTLimpiar.Location = new Point(450, 620);
             BTLimpiar.Name = "BTLimpiar";
-            BTLimpiar.Size = new Size(93, 32);
+            BTLimpiar.Size = new Size(133, 53);
             BTLimpiar.TabIndex = 23;
             BTLimpiar.Text = "Limpiar";
             BTLimpiar.UseVisualStyleBackColor = false;
@@ -57,16 +53,13 @@
             // 
             // BTIniciarSesion
             // 
-
             BTIniciarSesion.BackColor = Color.White;
             BTIniciarSesion.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
             BTIniciarSesion.FlatStyle = FlatStyle.Flat;
             BTIniciarSesion.ForeColor = Color.FromArgb(255, 128, 0);
-            BTIniciarSesion.Location = new Point(314, 313);
-            
-            BTIniciarSesion.Margin = new Padding(2, 2, 2, 2);
+            BTIniciarSesion.Location = new Point(426, 327);
             BTIniciarSesion.Name = "BTIniciarSesion";
-            BTIniciarSesion.Size = new Size(93, 32);
+            BTIniciarSesion.Size = new Size(133, 53);
             BTIniciarSesion.TabIndex = 22;
             BTIniciarSesion.Text = "Iniciar Sesión";
             BTIniciarSesion.UseVisualStyleBackColor = false;
@@ -74,76 +67,73 @@
             // 
             // TBContraseña
             // 
-            TBContraseña.Location = new Point(80, 144);
-            TBContraseña.Margin = new Padding(2, 2, 2, 2);
+            TBContraseña.Location = new Point(161, 182);
             TBContraseña.Name = "TBContraseña";
-            TBContraseña.Size = new Size(392, 23);
+            TBContraseña.Size = new Size(558, 31);
             TBContraseña.TabIndex = 21;
             // 
             // TBNombre
-            //
+            // 
             TBNombre.BackColor = Color.White;
-            TBNombre.Location = new Point(115, 171);
+            TBNombre.Location = new Point(161, 271);
+            TBNombre.Margin = new Padding(4, 5, 4, 5);
             TBNombre.Name = "TBNombre";
-            TBNombre.Size = new Size(559, 31);
+            TBNombre.Size = new Size(558, 31);
             TBNombre.TabIndex = 20;
             // 
             // LBRegistrar
-     
+            // 
             LBRegistrar.AutoSize = true;
             LBRegistrar.BackColor = SystemColors.Window;
             LBRegistrar.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             LBRegistrar.ForeColor = Color.FromArgb(255, 128, 0);
-            LBRegistrar.Location = new Point(266, 36);
+            LBRegistrar.Location = new Point(381, 55);
+            LBRegistrar.Margin = new Padding(4, 0, 4, 0);
             LBRegistrar.Name = "LBRegistrar";
             LBRegistrar.Size = new Size(215, 38);
-
             LBRegistrar.TabIndex = 16;
             LBRegistrar.Text = "Inicio De Sesión";
-            
             // 
             // LBContraseña
             // 
             LBContraseña.AutoSize = true;
             LBContraseña.ForeColor = SystemColors.ControlDarkDark;
-            LBContraseña.Location = new Point(113, 212);
-
+            LBContraseña.Location = new Point(161, 231);
+            LBContraseña.Margin = new Padding(4, 0, 4, 0);
             LBContraseña.Name = "LBContraseña";
-            LBContraseña.Size = new Size(67, 15);
+            LBContraseña.Size = new Size(101, 25);
             LBContraseña.TabIndex = 15;
             LBContraseña.Text = "Contraseña";
             // 
             // LBNombreDeUsuario
             // 
             LBNombreDeUsuario.AutoSize = true;
-
             LBNombreDeUsuario.ForeColor = SystemColors.ControlDarkDark;
-            LBNombreDeUsuario.Location = new Point(113, 143);
-
+            LBNombreDeUsuario.Location = new Point(161, 144);
+            LBNombreDeUsuario.Margin = new Padding(4, 0, 4, 0);
             LBNombreDeUsuario.Name = "LBNombreDeUsuario";
-            LBNombreDeUsuario.Size = new Size(111, 15);
+            LBNombreDeUsuario.Size = new Size(170, 25);
             LBNombreDeUsuario.TabIndex = 14;
             LBNombreDeUsuario.Text = "Nombre De Usuario";
             // 
             // textBox1
             // 
-
             textBox1.AccessibleRole = AccessibleRole.TitleBar;
             textBox1.Font = new Font("Segoe UI", 16F, FontStyle.Underline, GraphicsUnit.Point, 0);
             textBox1.ForeColor = Color.FromArgb(255, 128, 0);
-            textBox1.Location = new Point(113, 28);
+            textBox1.Location = new Point(161, 47);
+            textBox1.Margin = new Padding(4, 5, 4, 5);
             textBox1.Name = "textBox1";
             textBox1.RightToLeft = RightToLeft.No;
             textBox1.ScrollBars = ScrollBars.Vertical;
-            textBox1.Size = new Size(559, 50);
-
+            textBox1.Size = new Size(558, 50);
             textBox1.TabIndex = 17;
             // 
             // FRMInicioDeSesion
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(560, 325);
+            ClientSize = new Size(1055, 585);
             Controls.Add(BTLimpiar);
             Controls.Add(BTIniciarSesion);
             Controls.Add(TBContraseña);
@@ -152,11 +142,8 @@
             Controls.Add(LBContraseña);
             Controls.Add(LBNombreDeUsuario);
             Controls.Add(textBox1);
-
             Name = "FRMInicioDeSesion";
             Text = "Inicio De Sesion";
-            Margin = new Padding(2, 2, 2, 2);
-            
             ResumeLayout(false);
             PerformLayout();
         }

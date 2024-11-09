@@ -80,6 +80,8 @@ namespace ProyectoGym
             }
         }
         private Button BTInicioSesion;
+        private Button BTInicioDeSesion;
+        private Button BTRegistrar;
         private Button BTRegistro;
 
         private void BTRegistro_Click(object sender, EventArgs e)
@@ -102,14 +104,43 @@ namespace ProyectoGym
 
         }
 
+        private void BTInicioDeSesion_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void InitializeComponent()
         {
+            BTInicioDeSesion = new Button();
+            BTRegistrar = new Button();
             SuspendLayout();
+            // 
+            // BTInicioDeSesion
+            // 
+            BTInicioDeSesion.Location = new Point(133, 87);
+            BTInicioDeSesion.Name = "BTInicioDeSesion";
+            BTInicioDeSesion.Size = new Size(150, 34);
+            BTInicioDeSesion.TabIndex = 0;
+            BTInicioDeSesion.Text = "Iniciar Sesión";
+            BTInicioDeSesion.UseVisualStyleBackColor = true;
+            BTInicioDeSesion.Click += BTInicioDeSesion_Click;
+            // 
+            // BTRegistrar
+            // 
+            BTRegistrar.Location = new Point(136, 176);
+            BTRegistrar.Name = "BTRegistrar";
+            BTRegistrar.Size = new Size(147, 34);
+            BTRegistrar.TabIndex = 1;
+            BTRegistrar.Text = "Registrar";
+            BTRegistrar.UseVisualStyleBackColor = true;
             // 
             // FRMInicio
             // 
             ClientSize = new Size(907, 385);
+            Controls.Add(BTRegistrar);
+            Controls.Add(BTInicioDeSesion);
             Name = "FRMInicio";
+            Text = "Inicio";
             Load += FRMInicio_Load;
             ResumeLayout(false);
         }
