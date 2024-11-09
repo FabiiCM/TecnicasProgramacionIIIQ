@@ -24,7 +24,7 @@ namespace ProyectoGym
             ////Concatenamos para que nos diga si hay error o no 
             try
             {
-                using TextReader Inicio = new StreamReader(path: TBNombreDeUsuario_TextChanged.Text + ".txt");
+                using TextReader Inicio = new StreamReader(TBNombre.Text + ".txt");
                 if (Inicio.ReadLine() == TBContraseña.Text)
                 {
                     MessageBox.Show("Se inició sesión");
@@ -44,7 +44,7 @@ namespace ProyectoGym
         private void BTLimpiar_Click(object sender, EventArgs e)
         {
 
-            TBNombreDeUsuario_TextChanged_1.Clear()
+            TBNombreDeUsuario_TextChanged_1.Clear();
             TBContraseña.Clear();
         }
 
