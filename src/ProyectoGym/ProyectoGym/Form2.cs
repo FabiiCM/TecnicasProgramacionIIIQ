@@ -86,6 +86,15 @@ namespace ProyectoGym
             }
         }
 
+        private void cmbDificultad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbHorario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

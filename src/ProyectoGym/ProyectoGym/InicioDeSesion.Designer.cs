@@ -43,7 +43,10 @@
             BTLimpiar.BackColor = Color.White;
             BTLimpiar.FlatStyle = FlatStyle.Flat;
             BTLimpiar.ForeColor = Color.FromArgb(255, 128, 0);
-            BTLimpiar.Location = new Point(450, 620);
+
+            BTLimpiar.Location = new Point(256, 351);
+            BTLimpiar.Margin = new Padding(2);
+
             BTLimpiar.Name = "BTLimpiar";
             BTLimpiar.Size = new Size(133, 53);
             BTLimpiar.TabIndex = 23;
@@ -57,7 +60,10 @@
             BTIniciarSesion.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
             BTIniciarSesion.FlatStyle = FlatStyle.Flat;
             BTIniciarSesion.ForeColor = Color.FromArgb(255, 128, 0);
-            BTIniciarSesion.Location = new Point(369, 335);
+
+            BTIniciarSesion.Location = new Point(256, 278);
+            BTIniciarSesion.Margin = new Padding(2);
+
             BTIniciarSesion.Name = "BTIniciarSesion";
             BTIniciarSesion.Size = new Size(133, 53);
             BTIniciarSesion.TabIndex = 22;
@@ -67,18 +73,22 @@
             // 
             // TBContraseña
             // 
-            TBContraseña.Location = new Point(161, 182);
+
+            TBContraseña.Location = new Point(256, 140);
+            TBContraseña.Margin = new Padding(2);
             TBContraseña.Name = "TBContraseña";
-            TBContraseña.Size = new Size(558, 31);
+            TBContraseña.Size = new Size(244, 23);
+
             TBContraseña.TabIndex = 21;
             // 
             // TBNombre
             // 
             TBNombre.BackColor = Color.White;
-            TBNombre.Location = new Point(161, 271);
-            TBNombre.Margin = new Padding(4, 5, 4, 5);
+
+            TBNombre.Location = new Point(256, 191);
             TBNombre.Name = "TBNombre";
-            TBNombre.Size = new Size(558, 31);
+            TBNombre.Size = new Size(366, 23);
+
             TBNombre.TabIndex = 20;
             // 
             // LBRegistrar
@@ -98,7 +108,9 @@
             // 
             LBContraseña.AutoSize = true;
             LBContraseña.ForeColor = SystemColors.ControlDarkDark;
-            LBContraseña.Location = new Point(161, 231);
+
+            LBContraseña.Location = new Point(113, 199);
+
             LBContraseña.Margin = new Padding(4, 0, 4, 0);
             LBContraseña.Name = "LBContraseña";
             LBContraseña.Size = new Size(101, 25);
@@ -109,8 +121,11 @@
             // 
             LBNombreDeUsuario.AutoSize = true;
             LBNombreDeUsuario.ForeColor = SystemColors.ControlDarkDark;
-            LBNombreDeUsuario.Location = new Point(161, 144);
+
+            LBNombreDeUsuario.Location = new Point(113, 143);
+
             LBNombreDeUsuario.Margin = new Padding(4, 0, 4, 0);
+
             LBNombreDeUsuario.Name = "LBNombreDeUsuario";
             LBNombreDeUsuario.Size = new Size(170, 25);
             LBNombreDeUsuario.TabIndex = 14;
@@ -126,7 +141,9 @@
             textBox1.Name = "textBox1";
             textBox1.RightToLeft = RightToLeft.No;
             textBox1.ScrollBars = ScrollBars.Vertical;
-            textBox1.Size = new Size(558, 50);
+
+            textBox1.Size = new Size(559, 36);
+
             textBox1.TabIndex = 17;
             // 
             // FRMInicioDeSesion
@@ -142,6 +159,9 @@
             Controls.Add(LBContraseña);
             Controls.Add(LBNombreDeUsuario);
             Controls.Add(textBox1);
+
+            Margin = new Padding(2);
+
             Name = "FRMInicioDeSesion";
             Text = "Inicio De Sesion";
             ResumeLayout(false);

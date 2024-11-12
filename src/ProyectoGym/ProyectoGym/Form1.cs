@@ -90,7 +90,6 @@ namespace ProyectoGym
             BTClasesReservas.Text = "Clases y Reservas";
             BTClasesReservas.UseVisualStyleBackColor = true;
             BTClasesReservas.Click += BTClasesReservas_Click;
-
             // 
             // BTMembresias
             // 
@@ -109,6 +108,7 @@ namespace ProyectoGym
             BTInventario.TabIndex = 5;
             BTInventario.Text = "Inventario";
             BTInventario.UseVisualStyleBackColor = true;
+            BTInventario.Click += BTInventario_Click;
             // 
             // BTFacturacion
             // 
@@ -170,6 +170,11 @@ namespace ProyectoGym
             this.Hide();
             FRMAsignacionHorarios ventanaSesion = new FRMAsignacionHorarios();
             ventanaSesion.Show();
+        }
+
+        private void BTInventario_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

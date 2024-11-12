@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProyectoGym", "ProyectoGym\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{948B299D-F1CE-4555-9B26-F78F68921EC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "..\Model\Model.csproj", "{6A3B971D-DFC6-4EE7-A8A1-C474939CA6D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "..\Model\Model.csproj", "{6A3B971D-DFC6-4EE7-A8A1-C474939CA6D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller", "..\Controller\Controller.csproj", "{2419EFA6-535B-4DD8-856B-E99F7ADF200E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Controller", "..\Controller\Controller.csproj", "{2419EFA6-535B-4DD8-856B-E99F7ADF200E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{720CD4E8-3D93-46BF-9FE4-8B36AEF087EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,12 +34,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{6A3B971D-DFC6-4EE7-A8A1-C474939CA6D6} = {948B299D-F1CE-4555-9B26-F78F68921EC9}
-		{2419EFA6-535B-4DD8-856B-E99F7ADF200E} = {948B299D-F1CE-4555-9B26-F78F68921EC9}
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D128AEB9-E765-4081-9ED1-12B89BD488B8}
 	EndGlobalSection
 EndGlobal
