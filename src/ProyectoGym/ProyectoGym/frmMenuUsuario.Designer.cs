@@ -43,15 +43,18 @@
             mnuSoporteTecnico = new ToolStripMenuItem();
             mnuSalir = new ToolStripMenuItem();
             mnuCerrarSesion = new ToolStripMenuItem();
+            BTSalir = new Button();
             mnsMenuUsuario.SuspendLayout();
             SuspendLayout();
             // 
             // mnsMenuUsuario
             // 
+            mnsMenuUsuario.ImageScalingSize = new Size(24, 24);
             mnsMenuUsuario.Items.AddRange(new ToolStripItem[] { muCaptura, mnuFacturacion, mnuInformacion, mnuAyuda, mnuSalir });
             mnsMenuUsuario.Location = new Point(0, 0);
             mnsMenuUsuario.Name = "mnsMenuUsuario";
-            mnsMenuUsuario.Size = new Size(352, 24);
+            mnsMenuUsuario.Padding = new Padding(9, 3, 0, 3);
+            mnsMenuUsuario.Size = new Size(503, 35);
             mnsMenuUsuario.TabIndex = 0;
             mnsMenuUsuario.Text = "menuStrip1";
             // 
@@ -59,104 +62,117 @@
             // 
             muCaptura.DropDownItems.AddRange(new ToolStripItem[] { mnuClasesReservas, mnuInstructores });
             muCaptura.Name = "muCaptura";
-            muCaptura.Size = new Size(66, 20);
+            muCaptura.Size = new Size(98, 29);
             muCaptura.Text = "Capturas";
             muCaptura.Click += clasesToolStripMenuItem_Click;
             // 
             // mnuClasesReservas
             // 
             mnuClasesReservas.Name = "mnuClasesReservas";
-            mnuClasesReservas.Size = new Size(180, 22);
+            mnuClasesReservas.Size = new Size(255, 34);
             mnuClasesReservas.Text = "Clases y Reservas ";
             mnuClasesReservas.Click += mnuClasesReservas_Click;
             // 
             // mnuInstructores
             // 
             mnuInstructores.Name = "mnuInstructores";
-            mnuInstructores.Size = new Size(180, 22);
+            mnuInstructores.Size = new Size(255, 34);
             mnuInstructores.Text = "Instructores";
             // 
             // mnuFacturacion
             // 
             mnuFacturacion.DropDownItems.AddRange(new ToolStripItem[] { mnuPagos });
             mnuFacturacion.Name = "mnuFacturacion";
-            mnuFacturacion.Size = new Size(81, 20);
+            mnuFacturacion.Size = new Size(117, 29);
             mnuFacturacion.Text = "Facturación";
             // 
             // mnuPagos
             // 
             mnuPagos.Name = "mnuPagos";
-            mnuPagos.Size = new Size(109, 22);
+            mnuPagos.Size = new Size(167, 34);
             mnuPagos.Text = "Pagos ";
             // 
             // mnuInformacion
             // 
             mnuInformacion.DropDownItems.AddRange(new ToolStripItem[] { mnuInfoClases, mnuInfoInstructores, mnuInfoSucursales, mnuInfoMaquinas });
             mnuInformacion.Name = "mnuInformacion";
-            mnuInformacion.Size = new Size(84, 20);
+            mnuInformacion.Size = new Size(124, 29);
             mnuInformacion.Text = "Información";
             mnuInformacion.Click += ayudaToolStripMenuItem_Click;
             // 
             // mnuInfoClases
             // 
             mnuInfoClases.Name = "mnuInfoClases";
-            mnuInfoClases.Size = new Size(136, 22);
+            mnuInfoClases.Size = new Size(207, 34);
             mnuInfoClases.Text = "Clases";
             // 
             // mnuInfoInstructores
             // 
             mnuInfoInstructores.Name = "mnuInfoInstructores";
-            mnuInfoInstructores.Size = new Size(136, 22);
+            mnuInfoInstructores.Size = new Size(207, 34);
             mnuInfoInstructores.Text = "Instructores";
             // 
             // mnuInfoSucursales
             // 
             mnuInfoSucursales.Name = "mnuInfoSucursales";
-            mnuInfoSucursales.Size = new Size(136, 22);
+            mnuInfoSucursales.Size = new Size(207, 34);
             mnuInfoSucursales.Text = "Sucursales";
             // 
             // mnuInfoMaquinas
             // 
             mnuInfoMaquinas.Name = "mnuInfoMaquinas";
-            mnuInfoMaquinas.Size = new Size(136, 22);
+            mnuInfoMaquinas.Size = new Size(207, 34);
             mnuInfoMaquinas.Text = "Maquinas";
             // 
             // mnuAyuda
             // 
             mnuAyuda.DropDownItems.AddRange(new ToolStripItem[] { mnuSoporteTecnico });
             mnuAyuda.Name = "mnuAyuda";
-            mnuAyuda.Size = new Size(53, 20);
+            mnuAyuda.Size = new Size(79, 29);
             mnuAyuda.Text = "Ayuda";
             // 
             // mnuSoporteTecnico
             // 
             mnuSoporteTecnico.Name = "mnuSoporteTecnico";
-            mnuSoporteTecnico.Size = new Size(158, 22);
+            mnuSoporteTecnico.Size = new Size(240, 34);
             mnuSoporteTecnico.Text = "Soporte Tecnico";
             // 
             // mnuSalir
             // 
             mnuSalir.DropDownItems.AddRange(new ToolStripItem[] { mnuCerrarSesion });
             mnuSalir.Name = "mnuSalir";
-            mnuSalir.Size = new Size(41, 20);
+            mnuSalir.Size = new Size(61, 29);
             mnuSalir.Text = "Salir";
             // 
             // mnuCerrarSesion
             // 
             mnuCerrarSesion.Name = "mnuCerrarSesion";
-            mnuCerrarSesion.Size = new Size(180, 22);
+            mnuCerrarSesion.Size = new Size(218, 34);
             mnuCerrarSesion.Text = "Cerrar Sesión";
             mnuCerrarSesion.Click += mnuCerrarSesion_Click;
             // 
+            // BTSalir
+            // 
+            BTSalir.Location = new Point(379, 367);
+            BTSalir.Name = "BTSalir";
+            BTSalir.Size = new Size(112, 34);
+            BTSalir.TabIndex = 1;
+            BTSalir.Text = "Salir";
+            BTSalir.UseVisualStyleBackColor = true;
+            BTSalir.Click += BTSalir_Click;
+            // 
             // frmMenuUsuario
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(352, 248);
+            ClientSize = new Size(503, 413);
+            Controls.Add(BTSalir);
             Controls.Add(mnsMenuUsuario);
             MainMenuStrip = mnsMenuUsuario;
+            Margin = new Padding(4, 5, 4, 5);
             Name = "frmMenuUsuario";
             Text = "Menu";
+            Load += frmMenuUsuario_Load;
             mnsMenuUsuario.ResumeLayout(false);
             mnsMenuUsuario.PerformLayout();
             ResumeLayout(false);
@@ -180,5 +196,6 @@
         private ToolStripMenuItem mnuInfoMaquinas;
         private ToolStripMenuItem mnuSoporteTecnico;
         private ToolStripMenuItem mnuCerrarSesion;
+        private Button BTSalir;
     }
 }

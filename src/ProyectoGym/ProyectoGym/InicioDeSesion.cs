@@ -21,6 +21,9 @@ namespace ProyectoGym
 
         private void BTIniciarSesion_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            frmMenuUsuario ventanaSesion = new frmMenuUsuario();
+            ventanaSesion.Show();
             ///Aquí debería de ir código para que se inicie sesion con el usuario que se debe guardar
             ///en el archivo .txt
             ////Concatenamos para que nos diga si hay error o no 
@@ -74,6 +77,13 @@ namespace ProyectoGym
         private void LBRegistrar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FRMInicio ventanaSesion = new FRMInicio();
+            ventanaSesion.Show();
         }
     }
 }

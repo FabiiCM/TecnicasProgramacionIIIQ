@@ -36,7 +36,15 @@ namespace ProyectoGym
 
         private void BTRegistrar_Click(object sender, EventArgs e)
         {
+            // Muestra mensaje de éxito
+            MessageBox.Show("Se registró correctamente", "Registro Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            // Limpia los campos después de guardar
+            BTLimpiar_Click(sender, e);
+
+            this.Hide();
+            FRMInicio ventanaSesion = new FRMInicio();
+            ventanaSesion.Show();
         }
 
         private void TBNombreCompleto_TextChanged(object sender, EventArgs e)
@@ -51,7 +59,7 @@ namespace ProyectoGym
 
         private void RegistroDeUsuario_Load(object sender, EventArgs e)
         {
-
-        }
+            
+        } 
+      }
     }
-}

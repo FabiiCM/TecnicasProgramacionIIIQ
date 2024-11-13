@@ -43,12 +43,24 @@ namespace ProyectoGym
             {
                 // Cerrar la ventana actual y mostrar el formulario de inicio de sesión
                 this.Hide();
-                FRMInicio loginForm = new FRMInicio ();
+                FRMInicio loginForm = new FRMInicio();
                 loginForm.Show();
                 this.Close();
             }
             // Si elige No, no hace nada y permanece en la aplicación
 
+        }
+
+        private void frmMenuUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BTSalir_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FRMInicio ventanaSesion = new FRMInicio();
+            ventanaSesion.Show();
         }
     }
 }

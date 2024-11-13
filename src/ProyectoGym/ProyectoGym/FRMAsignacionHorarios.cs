@@ -95,6 +95,13 @@ namespace ProyectoGym
         {
 
         }
+
+        private void BTNSalir_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FRMInicio ventanaSesion = new FRMInicio();
+            ventanaSesion.Show();
+        }
     }
 }
 
