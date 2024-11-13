@@ -85,12 +85,14 @@
             mnuFacturacion.Name = "mnuFacturacion";
             mnuFacturacion.Size = new Size(117, 29);
             mnuFacturacion.Text = "Facturación";
+            mnuFacturacion.Click += mnuFacturacion_Click;
             // 
             // mnuPagos
             // 
             mnuPagos.Name = "mnuPagos";
-            mnuPagos.Size = new Size(167, 34);
+            mnuPagos.Size = new Size(270, 34);
             mnuPagos.Text = "Pagos ";
+            mnuPagos.Click += mnuPagos_Click_1;
             // 
             // mnuInformacion
             // 

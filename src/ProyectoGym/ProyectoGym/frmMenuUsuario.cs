@@ -62,5 +62,22 @@ namespace ProyectoGym
             FRMInicio ventanaSesion = new FRMInicio();
             ventanaSesion.Show();
         }
+
+        private void mnuFacturacion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuPagos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuPagos_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            FRMFacturas ventanaSesion = new FRMFacturas();
+            ventanaSesion.Show();
+        }
     }
 }
