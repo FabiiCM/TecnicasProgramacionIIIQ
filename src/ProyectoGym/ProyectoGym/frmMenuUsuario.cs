@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace ProyectoGym
 {
-    public partial class FrmGestionMembresias : Form
+    public partial class frmMenuUsuario : Form
     {
-        public FrmGestionMembresias()
+        public frmMenuUsuario()
         {
             InitializeComponent();
         }
 
-        private void FrmGestionMembresias_Load(object sender, EventArgs e)
+        private void clasesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
