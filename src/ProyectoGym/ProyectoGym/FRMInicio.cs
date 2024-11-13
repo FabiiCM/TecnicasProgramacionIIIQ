@@ -12,11 +12,6 @@ namespace ProyectoGym
         /// </summary>
         private Button BTInicioSesion = null!;
         private Button BTRegistro = null!;
-        private Button BTEntrenadores = null!;
-        private Button BTClasesReservas = null!;
-        private Button BTMembresias = null!;
-        private Button BTInventario = null!;
-        private Button BTFacturacion = null!;
 
 
 
@@ -30,11 +25,6 @@ namespace ProyectoGym
         {
             BTInicioSesion = new Button();
             BTRegistro = new Button();
-            BTEntrenadores = new Button();
-            BTClasesReservas = new Button();
-            BTMembresias = new Button();
-            BTInventario = new Button();
-            BTFacturacion = new Button();
             SuspendLayout();
             // 
             // BTInicioSesion
@@ -47,7 +37,7 @@ namespace ProyectoGym
             BTInicioSesion.FlatStyle = FlatStyle.Flat;
             BTInicioSesion.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             BTInicioSesion.ForeColor = Color.FromArgb(255, 128, 0);
-            BTInicioSesion.Location = new Point(125, 47);
+            BTInicioSesion.Location = new Point(12, 174);
             BTInicioSesion.Name = "BTInicioSesion";
             BTInicioSesion.Size = new Size(155, 63);
             BTInicioSesion.TabIndex = 0;
@@ -64,7 +54,7 @@ namespace ProyectoGym
             BTRegistro.FlatStyle = FlatStyle.Flat;
             BTRegistro.Font = new Font("Segoe UI", 10F);
             BTRegistro.ForeColor = Color.FromArgb(255, 128, 0);
-            BTRegistro.Location = new Point(127, 138);
+            BTRegistro.Location = new Point(212, 174);
             BTRegistro.Name = "BTRegistro";
             BTRegistro.Size = new Size(153, 63);
             BTRegistro.TabIndex = 1;
@@ -72,61 +62,9 @@ namespace ProyectoGym
             BTRegistro.UseVisualStyleBackColor = false;
             BTRegistro.Click += BTRegistro_Click;
             // 
-            // BTEntrenadores
-            // 
-            BTEntrenadores.Location = new Point(125, 229);
-            BTEntrenadores.Name = "BTEntrenadores";
-            BTEntrenadores.Size = new Size(152, 63);
-            BTEntrenadores.TabIndex = 2;
-            BTEntrenadores.Text = "Entrenadores";
-            BTEntrenadores.UseVisualStyleBackColor = true;
-            // 
-            // BTClasesReservas
-            // 
-            BTClasesReservas.Location = new Point(384, 91);
-            BTClasesReservas.Name = "BTClasesReservas";
-            BTClasesReservas.Size = new Size(152, 65);
-            BTClasesReservas.TabIndex = 3;
-            BTClasesReservas.Text = "Clases y Reservas";
-            BTClasesReservas.UseVisualStyleBackColor = true;
-            BTClasesReservas.Click += BTClasesReservas_Click;
-            // 
-            // BTMembresias
-            // 
-            BTMembresias.Location = new Point(125, 317);
-            BTMembresias.Name = "BTMembresias";
-            BTMembresias.Size = new Size(152, 62);
-            BTMembresias.TabIndex = 4;
-            BTMembresias.Text = "Membresias";
-            BTMembresias.UseVisualStyleBackColor = true;
-            // 
-            // BTInventario
-            // 
-            BTInventario.Location = new Point(389, 182);
-            BTInventario.Name = "BTInventario";
-            BTInventario.Size = new Size(147, 63);
-            BTInventario.TabIndex = 5;
-            BTInventario.Text = "Inventario";
-            BTInventario.UseVisualStyleBackColor = true;
-            BTInventario.Click += BTInventario_Click;
-            // 
-            // BTFacturacion
-            // 
-            BTFacturacion.Location = new Point(389, 271);
-            BTFacturacion.Name = "BTFacturacion";
-            BTFacturacion.Size = new Size(147, 63);
-            BTFacturacion.TabIndex = 6;
-            BTFacturacion.Text = "Facturación";
-            BTFacturacion.UseVisualStyleBackColor = true;
-            // 
             // FRMInicio
             // 
-            ClientSize = new Size(774, 459);
-            Controls.Add(BTFacturacion);
-            Controls.Add(BTInventario);
-            Controls.Add(BTMembresias);
-            Controls.Add(BTClasesReservas);
-            Controls.Add(BTEntrenadores);
+            ClientSize = new Size(391, 346);
             Controls.Add(BTInicioSesion);
             Controls.Add(BTRegistro);
             Name = "FRMInicio";
@@ -173,6 +111,16 @@ namespace ProyectoGym
         }
 
         private void BTInventario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BTEntrenadores_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BTMembresias_Click(object sender, EventArgs e)
         {
 
         }

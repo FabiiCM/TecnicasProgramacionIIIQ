@@ -26,5 +26,29 @@ namespace ProyectoGym
         {
 
         }
+
+        private void mnuClasesReservas_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FRMAsignacionHorarios ventanaSesion = new FRMAsignacionHorarios();
+            ventanaSesion.Show();
+        }
+
+        private void mnuCerrarSesion_Click(object sender, EventArgs e)
+        {
+            // Mostrar cuadro de confirmación
+            DialogResult result = MessageBox.Show("¿Está seguro de que desea cerrar sesión?", "Confirmar cierre de sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // Cerrar la ventana actual y mostrar el formulario de inicio de sesión
+                this.Hide();
+                FRMInicio loginForm = new FRMInicio ();
+                loginForm.Show();
+                this.Close();
+            }
+            // Si elige No, no hace nada y permanece en la aplicación
+
+        }
     }
 }

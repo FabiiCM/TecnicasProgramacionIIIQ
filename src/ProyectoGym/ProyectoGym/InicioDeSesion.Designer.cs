@@ -35,7 +35,6 @@
             LBRegistrar = new Label();
             LBContraseña = new Label();
             LBNombreDeUsuario = new Label();
-            textBox1 = new TextBox();
             SuspendLayout();
             // 
             // BTLimpiar
@@ -44,7 +43,7 @@
             BTLimpiar.FlatStyle = FlatStyle.Flat;
             BTLimpiar.ForeColor = Color.FromArgb(255, 128, 0);
             BTLimpiar.Location = new Point(317, 220);
-            BTLimpiar.Margin = new Padding(1, 1, 1, 1);
+            BTLimpiar.Margin = new Padding(1);
             BTLimpiar.Name = "BTLimpiar";
             BTLimpiar.Size = new Size(93, 32);
             BTLimpiar.TabIndex = 23;
@@ -58,8 +57,8 @@
             BTIniciarSesion.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
             BTIniciarSesion.FlatStyle = FlatStyle.Flat;
             BTIniciarSesion.ForeColor = Color.FromArgb(255, 128, 0);
-            BTIniciarSesion.Location = new Point(179, 211);
-            BTIniciarSesion.Margin = new Padding(1, 1, 1, 1);
+            BTIniciarSesion.Location = new Point(113, 220);
+            BTIniciarSesion.Margin = new Padding(1);
             BTIniciarSesion.Name = "BTIniciarSesion";
             BTIniciarSesion.Size = new Size(93, 32);
             BTIniciarSesion.TabIndex = 22;
@@ -70,16 +69,16 @@
             // TBContraseña
             // 
             TBContraseña.Location = new Point(179, 84);
-            TBContraseña.Margin = new Padding(1, 1, 1, 1);
+            TBContraseña.Margin = new Padding(1);
             TBContraseña.Name = "TBContraseña";
-            TBContraseña.Size = new Size(172, 23);
+            TBContraseña.Size = new Size(257, 23);
             TBContraseña.TabIndex = 21;
             // 
             // TBNombre
             // 
             TBNombre.BackColor = Color.White;
             TBNombre.Location = new Point(179, 115);
-            TBNombre.Margin = new Padding(2, 2, 2, 2);
+            TBNombre.Margin = new Padding(2);
             TBNombre.Name = "TBNombre";
             TBNombre.Size = new Size(257, 23);
             TBNombre.TabIndex = 20;
@@ -90,11 +89,12 @@
             LBRegistrar.BackColor = SystemColors.Window;
             LBRegistrar.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             LBRegistrar.ForeColor = Color.FromArgb(255, 128, 0);
-            LBRegistrar.Location = new Point(220, 33);
+            LBRegistrar.Location = new Point(232, 39);
             LBRegistrar.Name = "LBRegistrar";
             LBRegistrar.Size = new Size(146, 25);
             LBRegistrar.TabIndex = 16;
             LBRegistrar.Text = "Inicio De Sesión";
+            LBRegistrar.Click += LBRegistrar_Click;
             // 
             // LBContraseña
             // 
@@ -116,18 +116,6 @@
             LBNombreDeUsuario.TabIndex = 14;
             LBNombreDeUsuario.Text = "Nombre De Usuario";
             // 
-            // textBox1
-            // 
-            textBox1.AccessibleRole = AccessibleRole.TitleBar;
-            textBox1.Font = new Font("Segoe UI", 16F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            textBox1.ForeColor = Color.FromArgb(255, 128, 0);
-            textBox1.Location = new Point(113, 28);
-            textBox1.Name = "textBox1";
-            textBox1.RightToLeft = RightToLeft.No;
-            textBox1.ScrollBars = ScrollBars.Vertical;
-            textBox1.Size = new Size(392, 36);
-            textBox1.TabIndex = 17;
-            // 
             // FRMInicioDeSesion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -140,8 +128,7 @@
             Controls.Add(LBRegistrar);
             Controls.Add(LBContraseña);
             Controls.Add(LBNombreDeUsuario);
-            Controls.Add(textBox1);
-            Margin = new Padding(1, 1, 1, 1);
+            Margin = new Padding(1);
             Name = "FRMInicioDeSesion";
             Text = "Inicio De Sesion";
             ResumeLayout(false);
@@ -157,6 +144,5 @@
         private Label LBRegistrar;
         private Label LBContraseña;
         private Label LBNombreDeUsuario;
-        private TextBox textBox1;
     }
 }
