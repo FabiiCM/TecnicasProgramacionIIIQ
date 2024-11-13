@@ -45,7 +45,6 @@
             cmbEspecialidad.Size = new Size(183, 33);
             cmbEspecialidad.TabIndex = 0;
             cmbEspecialidad.Text = "Clases";
-            cmbEspecialidad.SelectedIndexChanged += cmbEspecialidad_SelectedIndexChanged;
             // 
             // cmbHorario
             // 
@@ -55,7 +54,6 @@
             cmbHorario.Size = new Size(183, 33);
             cmbHorario.TabIndex = 1;
             cmbHorario.Text = "Horario";
-            cmbHorario.SelectedIndexChanged += cmbHorario_SelectedIndexChanged;
             // 
             // btnAsignar
             // 
@@ -92,7 +90,6 @@
             cmbDificultad.Size = new Size(183, 33);
             cmbDificultad.TabIndex = 5;
             cmbDificultad.Text = "Intensidad";
-            cmbDificultad.SelectedIndexChanged += cmbDificultad_SelectedIndexChanged;
             // 
             // BTNSalir
             // 
@@ -102,7 +99,7 @@
             BTNSalir.TabIndex = 6;
             BTNSalir.Text = "Salir";
             BTNSalir.UseVisualStyleBackColor = true;
-            BTNSalir.Click += BTNSalir_Click;
+            BTNSalir.Click += BTNSalir_Click_1;
             // 
             // FRMAsignacionHorarios
             // 
@@ -118,7 +115,6 @@
             Controls.Add(cmbEspecialidad);
             Name = "FRMAsignacionHorarios";
             Text = "Asignación Horarios";
-            Load += FRMAsignacionHorarios_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -86,17 +86,12 @@ namespace ProyectoGym
             }
         }
 
-        private void cmbDificultad_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
 
-        private void cmbHorario_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
 
-        private void BTNSalir_Click(object sender, EventArgs e)
+
+        private void BTNSalir_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             FRMInicio ventanaSesion = new FRMInicio();
