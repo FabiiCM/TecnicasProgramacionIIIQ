@@ -86,6 +86,7 @@ namespace ProyectoGym
         /// </summary>
         private void BTRegistro_Click(object? sender, EventArgs e)
         {
+            
             this.Hide();
             RegistroDeUsuario ventanaRegistro = new RegistroDeUsuario();
             ventanaRegistro.Show();
