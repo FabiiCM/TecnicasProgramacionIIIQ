@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using ProyectoGym.Model.Personas;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Controller
 {
@@ -10,9 +11,8 @@ namespace Controller
         public static List<Person> GetPeople()
         {
             return new List<Person>()
-        {
-            new Person(" Christopher Calvo",  DateTime.Today)
-           
+            {
+            new Person(1123,"Martin","uiboaid",12,"uid@gmail.com","8888")
         };
             
       }
