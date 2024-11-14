@@ -15,7 +15,7 @@ namespace Controller.DataHandler
         {
             var path = Path.Combine(Directory.GetCurrentDirectory(), "Assets", "clientes.xlx");
             var fileString = File.ReadAllText(path);
-            
+
 
         }
 

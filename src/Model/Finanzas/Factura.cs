@@ -1,6 +1,5 @@
 ﻿// Model/Finanzas/Factura.cs
 using ProyectoGym.Model.Personas; //para acceder a la clase Cliente
-using System;
 
 namespace ProyectoGym.Model.Finanzas
 {

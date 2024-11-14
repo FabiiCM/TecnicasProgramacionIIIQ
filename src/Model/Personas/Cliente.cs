@@ -1,6 +1,5 @@
 ﻿// Model/Personas/Cliente.cs
 using ProyectoGym.Model.Gestion;
-using System;
 
 namespace ProyectoGym.Model.Personas
 {

@@ -1,10 +1,5 @@
 ﻿
 using ProyectoGym.Model.Personas;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 // Model/Gestion/Clase.cs
 namespace ProyectoGym.Model.Gestion

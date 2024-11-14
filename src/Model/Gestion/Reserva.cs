@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 // Model/Gestion/Reserva.cs
-namespace ProyectoGym.Model.Gestion
+namespace Model.Gestion
 {
     public class Reserva
     {

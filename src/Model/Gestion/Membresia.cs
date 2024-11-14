@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-// Model/Gestion/Membresia.cs
+﻿// Model/Gestion/Membresia.cs
 namespace ProyectoGym.Model.Gestion
 {
     public class Membresia : IMembresia

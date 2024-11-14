@@ -1,5 +1,4 @@
 ﻿using ProyectoGym.Model.Personas;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Controller
 {
@@ -12,11 +11,9 @@ namespace Controller
         {
             return new List<Person>()
             {
-            new Person(1123,"Martin","uiboaid",12,"uid@gmail.com","8888")
+            new (123,"Maria","Perez",new DateTime (1999,1,1),"maria@gmail.com","")
         };
-            
-      }
-   }
+
+        }
+    }
 }
-// Prueba   
-//prueba
