@@ -51,9 +51,8 @@ namespace ProyectoGym
 
     private void BTLimpiar_Click(object sender, EventArgs e)
         {
-
-
-
+            TBNombre.Clear();
+            TBContraseña.Clear();
         }
 
         private void TBNombreDeUsuario_TextChanged(object sender, EventArgs e)

@@ -33,7 +33,6 @@
             LBNombreDeUsuario = new Label();
             LBContraseña = new Label();
             LBRegistrar = new Label();
-            textBox1 = new TextBox();
             TBNombreCompleto = new TextBox();
             TBMail = new TextBox();
             TBNombreDeUsuario = new TextBox();
@@ -45,7 +44,7 @@
             // LBNombre
             // 
             LBNombre.AutoSize = true;
-            LBNombre.Location = new Point(121, 112);
+            LBNombre.Location = new Point(244, 91);
             LBNombre.Name = "LBNombre";
             LBNombre.Size = new Size(162, 25);
             LBNombre.TabIndex = 0;
@@ -55,7 +54,7 @@
             // LBMail
             // 
             LBMail.AutoSize = true;
-            LBMail.Location = new Point(127, 170);
+            LBMail.Location = new Point(292, 168);
             LBMail.Name = "LBMail";
             LBMail.Size = new Size(61, 25);
             LBMail.TabIndex = 1;
@@ -64,7 +63,7 @@
             // LBNombreDeUsuario
             // 
             LBNombreDeUsuario.AutoSize = true;
-            LBNombreDeUsuario.Location = new Point(127, 230);
+            LBNombreDeUsuario.Location = new Point(236, 245);
             LBNombreDeUsuario.Name = "LBNombreDeUsuario";
             LBNombreDeUsuario.Size = new Size(170, 25);
             LBNombreDeUsuario.TabIndex = 2;
@@ -73,7 +72,7 @@
             // LBContraseña
             // 
             LBContraseña.AutoSize = true;
-            LBContraseña.Location = new Point(127, 298);
+            LBContraseña.Location = new Point(269, 322);
             LBContraseña.Name = "LBContraseña";
             LBContraseña.Size = new Size(101, 25);
             LBContraseña.TabIndex = 3;
@@ -84,23 +83,16 @@
             LBRegistrar.AutoSize = true;
             LBRegistrar.BackColor = SystemColors.Window;
             LBRegistrar.Font = new Font("Mongolian Baiti", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LBRegistrar.Location = new Point(329, 53);
+            LBRegistrar.ForeColor = Color.FromArgb(255, 128, 0);
+            LBRegistrar.Location = new Point(209, 36);
             LBRegistrar.Name = "LBRegistrar";
-            LBRegistrar.Size = new Size(132, 34);
+            LBRegistrar.Size = new Size(241, 34);
             LBRegistrar.TabIndex = 4;
-            LBRegistrar.Text = "Registrar";
-            // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(129, 42);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(558, 50);
-            textBox1.TabIndex = 5;
+            LBRegistrar.Text = "Registrar Usuario";
             // 
             // TBNombreCompleto
             // 
-            TBNombreCompleto.Location = new Point(129, 140);
+            TBNombreCompleto.Location = new Point(52, 119);
             TBNombreCompleto.Name = "TBNombreCompleto";
             TBNombreCompleto.Size = new Size(558, 31);
             TBNombreCompleto.TabIndex = 6;
@@ -108,14 +100,14 @@
             // 
             // TBMail
             // 
-            TBMail.Location = new Point(129, 197);
+            TBMail.Location = new Point(52, 196);
             TBMail.Name = "TBMail";
             TBMail.Size = new Size(558, 31);
             TBMail.TabIndex = 7;
             // 
             // TBNombreDeUsuario
             // 
-            TBNombreDeUsuario.Location = new Point(129, 258);
+            TBNombreDeUsuario.Location = new Point(52, 273);
             TBNombreDeUsuario.Name = "TBNombreDeUsuario";
             TBNombreDeUsuario.Size = new Size(558, 31);
             TBNombreDeUsuario.TabIndex = 8;
@@ -123,7 +115,7 @@
             // 
             // TBContraseña
             // 
-            TBContraseña.Location = new Point(129, 327);
+            TBContraseña.Location = new Point(52, 350);
             TBContraseña.Name = "TBContraseña";
             TBContraseña.Size = new Size(558, 31);
             TBContraseña.TabIndex = 9;
@@ -131,7 +123,11 @@
             // BTRegistrar
             // 
             BTRegistrar.BackColor = SystemColors.Window;
-            BTRegistrar.Location = new Point(327, 408);
+            BTRegistrar.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
+            BTRegistrar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
+            BTRegistrar.FlatStyle = FlatStyle.Flat;
+            BTRegistrar.ForeColor = Color.FromArgb(255, 128, 0);
+            BTRegistrar.Location = new Point(52, 457);
             BTRegistrar.Name = "BTRegistrar";
             BTRegistrar.Size = new Size(133, 53);
             BTRegistrar.TabIndex = 10;
@@ -142,7 +138,11 @@
             // BTLimpiar
             // 
             BTLimpiar.BackColor = SystemColors.Window;
-            BTLimpiar.Location = new Point(329, 467);
+            BTLimpiar.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
+            BTLimpiar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
+            BTLimpiar.FlatStyle = FlatStyle.Flat;
+            BTLimpiar.ForeColor = Color.FromArgb(255, 128, 0);
+            BTLimpiar.Location = new Point(477, 457);
             BTLimpiar.Name = "BTLimpiar";
             BTLimpiar.Size = new Size(133, 53);
             BTLimpiar.TabIndex = 11;
@@ -154,7 +154,8 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 540);
+            BackColor = SystemColors.Window;
+            ClientSize = new Size(676, 521);
             Controls.Add(BTLimpiar);
             Controls.Add(BTRegistrar);
             Controls.Add(TBContraseña);
@@ -166,7 +167,6 @@
             Controls.Add(LBNombreDeUsuario);
             Controls.Add(LBMail);
             Controls.Add(LBNombre);
-            Controls.Add(textBox1);
             Name = "RegistroDeUsuario";
             Text = "RegistroDeUsuario";
             Load += RegistroDeUsuario_Load;
@@ -181,7 +181,6 @@
         private Label LBNombreDeUsuario;
         private Label LBContraseña;
         private Label LBRegistrar;
-        private TextBox textBox1;
         private TextBox TBNombreCompleto;
         private TextBox TBMail;
         private TextBox TBNombreDeUsuario;
