@@ -17,15 +17,6 @@ namespace ProyectoGym
             InitializeComponent();
         }
 
-        private void clasesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void mnuClasesReservas_Click(object sender, EventArgs e)
         {

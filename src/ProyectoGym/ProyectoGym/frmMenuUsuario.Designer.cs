@@ -64,7 +64,6 @@
             muCaptura.Name = "muCaptura";
             muCaptura.Size = new Size(98, 29);
             muCaptura.Text = "Capturas";
-            muCaptura.Click += clasesToolStripMenuItem_Click;
             // 
             // mnuClasesReservas
             // 
@@ -100,7 +99,6 @@
             mnuInformacion.Name = "mnuInformacion";
             mnuInformacion.Size = new Size(124, 29);
             mnuInformacion.Text = "Información";
-            mnuInformacion.Click += ayudaToolStripMenuItem_Click;
             // 
             // mnuInfoClases
             // 

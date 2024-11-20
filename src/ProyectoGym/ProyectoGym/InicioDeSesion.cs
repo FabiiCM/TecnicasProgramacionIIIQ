@@ -21,38 +21,35 @@ namespace ProyectoGym
 
         private void BTIniciarSesion_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmMenuUsuario ventanaSesion = new frmMenuUsuario();
-            ventanaSesion.Show();
-            ///Aquí debería de ir código para que se inicie sesion con el usuario que se debe guardar
-            ///en el archivo .txt
-            ////Concatenamos para que nos diga si hay error o no 
-            ///....
-            /// try
-            /// {
+            // Verificar campos vacíos
+            if (string.IsNullOrEmpty(TBNombre.Text) ||
+                string.IsNullOrEmpty(TBContraseña.Text) ||
+                cmbUsuarios.SelectedItem == null)
+            {
+                MessageBox.Show("Por favor, complete todos los campos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Salir del evento si los campos no están completos
+            }
 
-            ///     TextReader Inicio = new StreamReader(TBNombre.Text + ".txt");
+            // Obtener el tipo de usuario seleccionado (asegurándose de que no sea nulo)
+            string tipoUsuario = cmbUsuarios.SelectedItem?.ToString() ?? string.Empty; // Asignamos un valor predeterminado si es nulo
 
+            // Validar las credenciales
+            if (Cliente.Validacion(TBNombre.Text, TBContraseña.Text, tipoUsuario))
+            {
+                MessageBox.Show("Inicio de sesión exitoso.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            ///    using TextReader InicioDeSesion = new StreamReader(TBNombre.Text + ".txt");
+                // Abrir otro formulario
+                this.Hide();
+                frmMenuUsuario ventanaSesion = new frmMenuUsuario();
+                ventanaSesion.Show();
+            }
+            else
+            {
+                MessageBox.Show("Usuario, contraseña o rol incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+    }
 
-            ///    if (Inicio.ReadLine() == TBContraseña.Text)
-            ///   {
-            ///      MessageBox.Show("Se inició sesión");
-            ///  }
-            ///  else
-            ///  {
-            ///     MessageBox.Show("No se pudo iniciar sesión");
-            /// }
-            /// }
-            /// catch (Exception z)
-            /// {
-            ///     MessageBox.Show("Hubo un error" + z, "Error");
-            ///}
-            //////
-        }
-
-        private void BTLimpiar_Click(object sender, EventArgs e)
+    private void BTLimpiar_Click(object sender, EventArgs e)
         {
 
 

@@ -1,27 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProyectoGym
 {
-   
-        public class Cliente
-        {
-        private List<Cliente> ObtenerClientes()
-{
-    return new List<Cliente>
+    public class Cliente
     {
-        new Cliente { MatriculaID = 1, Nombre = "Juan Perez", Email = "juan.perez@example.com" },
-        new Cliente { MatriculaID = 2, Nombre = "Maria Gomez", Email = "maria.gomez@example.com" }
-    };
-}
+        // Método estático para validar credenciales
+        public static bool Validacion(string usuario, string contraseña, string tipousuario)
+        {
+            // Lista de usuarios en memoria (puedes reemplazar con una base de datos)
+            var usuarios = new Dictionary<string, (string Contraseña, string tipousuario)>
+            {
+                { "cliente1", ("1234", "Cliente") },
+                { "entrenador1", ("abcd", "Entrenador") }
+            };
 
-            public int MatriculaID { get; set; }  // ID único de cliente (matrícula)
-            public string? Nombre { get; set; }     // Nombre del cliente
-            public string? Email { get; set; }      // Correo electrónico del cliente
+            // Validar si existe el usuario y si los datos coinciden
+            return usuarios.ContainsKey(usuario) &&
+                   usuarios[usuario].Contraseña == contraseña &&
+                   usuarios[usuario].tipousuario == tipousuario;
         }
-
     }
+}
 

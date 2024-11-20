@@ -11,7 +11,6 @@ namespace ProyectoGym
         /// la advertencia sin afectar el comportamiento del programa.
         /// </summary>
         private Button BTInicioSesion = null!;
-        private Button BTNAdmin = null!;
         private Button BTRegistro = null!;
 
 
@@ -26,7 +25,6 @@ namespace ProyectoGym
         {
             BTInicioSesion = new Button();
             BTRegistro = new Button();
-            BTNAdmin = new Button();
             SuspendLayout();
             // 
             // BTInicioSesion
@@ -64,27 +62,9 @@ namespace ProyectoGym
             BTRegistro.UseVisualStyleBackColor = false;
             BTRegistro.Click += BTRegistro_Click;
             // 
-            // BTNAdmin
-            // 
-            BTNAdmin.BackColor = SystemColors.Window;
-            BTNAdmin.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
-            BTNAdmin.FlatAppearance.BorderSize = 2;
-            BTNAdmin.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
-            BTNAdmin.FlatStyle = FlatStyle.Flat;
-            BTNAdmin.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BTNAdmin.ForeColor = Color.FromArgb(255, 128, 0);
-            BTNAdmin.Location = new Point(114, 268);
-            BTNAdmin.Name = "BTNAdmin";
-            BTNAdmin.Size = new Size(128, 58);
-            BTNAdmin.TabIndex = 2;
-            BTNAdmin.Text = "Admin";
-            BTNAdmin.UseVisualStyleBackColor = false;
-            BTNAdmin.Click += BTNAdmin_Click;
-            // 
             // FRMInicio
             // 
             ClientSize = new Size(391, 346);
-            Controls.Add(BTNAdmin);
             Controls.Add(BTInicioSesion);
             Controls.Add(BTRegistro);
             Name = "FRMInicio";
@@ -146,12 +126,7 @@ namespace ProyectoGym
 
         }
 
-        private void BTNAdmin_Click(object? sender, EventArgs e)
-        {
-            this.Hide();
-            FRMInicioAdm ventanaSesion = new FRMInicioAdm();
-            ventanaSesion.Show();
-        }
+    
     }
 }
 
