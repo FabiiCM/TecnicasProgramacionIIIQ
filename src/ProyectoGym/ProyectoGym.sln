@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "..\Model\Model.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Controller", "..\Controller\Controller.csproj", "{2419EFA6-535B-4DD8-856B-E99F7ADF200E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{C5F75CB4-D0E5-4924-9AD8-3D216DBAF668}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1FF5D753-4880-42DC-80B5-0A46E3F125C7} = {948B299D-F1CE-4555-9B26-F78F68921EC9}
+		{6A3B971D-DFC6-4EE7-A8A1-C474939CA6D6} = {948B299D-F1CE-4555-9B26-F78F68921EC9}
+		{2419EFA6-535B-4DD8-856B-E99F7ADF200E} = {948B299D-F1CE-4555-9B26-F78F68921EC9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6556FCF3-C23D-4219-9ED5-5C18CDE4456F}
