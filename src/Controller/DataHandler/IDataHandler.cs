@@ -4,19 +4,22 @@ namespace Controller.DataHandler
 {
 
     /// <summary>
-    //coctato para elementos que manejan datos
+    //contato para elementos que manejan datos
     /// </summary>
     public interface IDataHandler
     {
         /// <summary>
-        //Lee los archivos 
+        /// Lee datos de un archivo.
         /// </summary>
-        public void ReadData();
+        /// <param name="filePath">Ruta del archivo.</param>
+        /// <returns>Lista de cadenas con los datos.</returns>
+        List<string> ReadData(string filePath);
 
         /// <summary>
-        //escribe los archivos
+        /// Escribe datos en un archivo.
         /// </summary>
-        public void WriteData();
-
+        /// <param name="filePath">Ruta del archivo.</param>
+        /// <param name="data">Datos a escribir.</param>
+        void WriteData(string filePath, List<string> data);
     }
 }

@@ -1,0 +1,101 @@
+IDCliente,NombreCompleto,CorreoElectronico,Telefono,FechaNacimiento,TipoMembresia,FechaInicio,FechaVencimiento,EstadoMembresia,Contraseña
+1,Amber Hunt,ntaylor@ramos.com,250-886-3876,1954-05-02,Mensual,2022-09-14,2021-04-16,Vigente,mSd0BKr5
+2,Alexandra Kelly,xlopez@hotmail.com,+1-085-221-3103x154,2005-12-18,Mensual,2024-08-18,2025-09-02,Vigente,7zQ5tp0l
+3,Mrs. Dana Mejia,brian25@mahoney-smith.org,001-670-947-5891x762,2003-06-26,Trimestral,2023-10-09,2026-08-11,Vigente,5g0XWZzr
+4,Sarah Nelson,sullivanstephen@kidd.biz,164-441-9170,2005-06-11,Trimestral,2024-05-01,2028-08-02,Vigente,wc9STAqD
+5,Jon Miranda MD,bryanjones@huerta-garcia.org,+1-865-398-3688x206,1986-07-05,Trimestral,2021-03-12,2029-10-04,Vigente,9hJYdTNl
+6,Thomas Meza,cohenalison@sharp.org,001-267-810-6150x1487,1985-07-22,Trimestral,2024-01-14,2026-11-03,Vencida,FxD23tod
+7,Michelle Blackwell,collinswilliam@reeves-diaz.com,812.184.7931,1998-11-30,Trimestral,2024-08-01,2020-06-27,Vigente,lV1VFWUm
+8,Jeremy Ayala,stewartwendy@yahoo.com,+1-305-912-7420x9061,1989-06-05,Anual,2023-11-13,2023-12-15,A punto de vencer,TqDh5mXa
+9,Alexander Thompson,lindsay76@cunningham.com,506.526.9699x7763,1967-11-12,Mensual,2021-04-17,2022-08-03,Vigente,PJabkL12
+10,Zachary Anderson,sarahho@watkins.info,600-215-5754x8768,1961-09-22,Anual,2022-11-23,2029-07-23,Vigente,SQN39IQk
+11,Alicia Douglas,amykhan@yahoo.com,(831)424-7863,1984-03-07,Anual,2024-05-28,2028-02-04,Vigente,ySvXLRST
+12,Joy Snow,lingary@yahoo.com,318-575-3246x04626,1955-10-06,Mensual,2022-12-28,2024-09-23,Vigente,bX78sefs
+13,Mary Ingram,larrymiller@yahoo.com,(034)084-2674,2001-08-08,Anual,2021-08-18,2028-11-13,Vigente,ktLtZ5UY
+14,Adam Russell,patrickmclean@yahoo.com,(842)198-5331x655,1955-10-25,Mensual,2022-09-01,2021-05-06,Vigente,Jj4Gr8Xu
+15,Juan Nelson,mahoneyjerome@gmail.com,+1-133-099-9912x6816,1961-06-21,Anual,2022-10-30,2025-06-08,Vigente,LYE0aZgU
+16,Justin Greene,amanda59@sullivan.org,+1-810-567-6235x48688,1962-11-04,Mensual,2022-11-29,2026-11-15,Vigente,f20pbxWh
+17,Jeffrey Harvey,amber83@martinez.com,001-530-992-1210,1963-01-02,Trimestral,2021-12-18,2020-02-14,Vigente,bRCpMc7N
+18,Jamie Mendoza,edward97@hotmail.com,(633)131-3214x8205,1996-04-09,Anual,2023-04-01,2023-03-28,Vencida,uSd5y9Id
+19,Stacy Smith,chapmanmicheal@gmail.com,+1-405-477-0519x84937,2006-08-12,Mensual,2023-09-14,2021-02-23,A punto de vencer,1c6Q7o15
+20,Joseph Hamilton,cheryl90@payne.info,807.227.2613,1980-03-25,Mensual,2021-10-17,2028-11-14,Vigente,OZN2SoKp
+21,Ashley Cordova,dblackburn@huff-clarke.com,001-079-854-9083x9877,1975-06-14,Anual,2022-04-04,2024-05-16,Vigente,YIbaRRF8
+22,Christine Hall,jerry38@hanna.com,895.595.2401x399,2002-10-24,Trimestral,2024-06-08,2025-11-22,Vigente,e78Fx9nz
+23,Erin Walker,dmills@sherman-walker.com,125.831.7656,1994-08-16,Mensual,2022-05-26,2028-02-03,Vencida,HDik7GjU
+24,Matthew Clark,zthompson@hotmail.com,+1-827-983-7636x826,1964-02-09,Anual,2023-08-04,2026-07-06,Vigente,UcFVcjkG
+25,Kevin Estrada,elijah61@yahoo.com,523-210-8898,1955-04-23,Anual,2023-02-24,2027-04-26,Vigente,Kt5YPMji
+26,Matthew Barnes,ismith@yahoo.com,379-247-5127,1961-10-09,Anual,2024-06-05,2024-11-25,Vigente,WXCyH8fS
+27,Lauren Barton,driley@yahoo.com,001-711-297-8815x1384,2006-01-30,Trimestral,2021-02-08,2029-01-06,Vigente,5IK9YlEp
+28,Douglas Bowen,jacobslisa@brooks.com,060.157.0549x74402,1958-07-22,Trimestral,2021-01-08,2021-07-04,Vigente,3j8Q8P5z
+29,Paul Robbins,robertbauer@yahoo.com,482.659.6550,1974-07-21,Mensual,2021-05-24,2024-03-14,Vigente,K6vYAKNY
+30,Sara Whitaker,michelle10@hotmail.com,852.584.7369x2039,1963-09-12,Trimestral,2020-09-30,2023-03-13,Vencida,fkI6WUUS
+31,Elizabeth Watkins,eric94@payne.net,5300873037,1962-10-26,Anual,2021-12-27,2027-08-20,Vigente,yPMhLShu
+32,Alisha Cruz,steven51@clark.com,524.234.6343x701,1978-03-29,Trimestral,2023-11-07,2024-02-04,Vigente,StEBTMNE
+33,Patricia Brown,vmurphy@warner.com,253-294-2096x16275,2000-01-18,Mensual,2023-07-21,2024-12-10,Vigente,URgQ8P0a
+34,Mary Mathews,william16@lucas-chavez.com,1537158855,2002-09-26,Mensual,2022-02-19,2029-05-01,Vigente,1CxKJhoR
+35,Andrew Joseph,sarahsmith@gmail.com,357.299.2525,1960-08-08,Trimestral,2022-05-18,2022-12-09,Vigente,3jb275qO
+36,Stacy Rodriguez,sandra11@rhodes.net,977.979.9864,1962-02-20,Trimestral,2020-02-29,2020-09-23,Vigente,GpL150UG
+37,Dr. Wanda Guerrero,nmurray@perez-benton.net,279-683-0058x27886,1981-06-18,Mensual,2023-06-01,2021-08-17,Vencida,elBvu4DN
+38,Sarah Howard,coopernancy@hotmail.com,001-277-444-1041x05493,1958-04-10,Mensual,2024-05-07,2021-02-22,Vigente,P51IVRpG
+39,Erik Perez,lopezandrea@yahoo.com,(991)317-7402x1017,1974-09-27,Trimestral,2023-10-19,2027-07-23,Vigente,kROVEeYB
+40,Michelle Gill,deborah01@munoz.com,(021)812-1649,1987-05-16,Trimestral,2023-11-16,2025-11-09,A punto de vencer,IjSf4bb3
+41,Samuel West,andreachristensen@yahoo.com,596.947.6720,2005-05-31,Trimestral,2022-05-23,2022-03-25,Vigente,3ptaBwHo
+42,Douglas Bennett,blackgrant@peterson-anthony.com,323.496.3642x6164,1965-11-27,Trimestral,2023-03-26,2020-02-17,Vigente,bZIWUnzD
+43,Albert Mitchell,haneydiana@yahoo.com,988-335-6060x47207,1958-01-14,Anual,2021-10-05,2029-09-09,Vigente,sIr82duV
+44,Jordan Chandler,ocunningham@yahoo.com,+1-889-487-5460,1992-03-15,Mensual,2023-09-01,2020-11-08,Vigente,RrjiTlbT
+45,Sean Lee,theresa54@hotmail.com,838-171-0872,1985-07-20,Mensual,2021-07-01,2028-02-29,Vigente,ba5xCe3h
+46,Corey Richmond,jenny08@martin-wilson.com,(721)442-3936x03204,1973-12-19,Trimestral,2024-02-27,2023-10-24,Vigente,8IOeOTlK
+47,Kevin Brown,youngmichael@nelson-lane.com,511-235-5544x68959,1973-08-25,Mensual,2021-09-16,2027-03-13,Vigente,5qzqKCiT
+48,Mrs. Erika Taylor,wilsonjeremy@gmail.com,+1-714-508-0470,2003-10-06,Mensual,2023-01-04,2025-09-12,Vigente,rpUL7oD6
+49,Corey Newton,qmyers@stephens.com,(254)094-1117,1957-11-13,Mensual,2020-11-17,2026-09-19,Vigente,uhTx4gf4
+50,Patrick Taylor,ymeza@yahoo.com,808.157.1011,1960-01-14,Mensual,2020-01-22,2029-08-19,Vencida,tTEo5w8f
+51,Tim Manning,eric91@gmail.com,250-069-5951,1982-11-02,Trimestral,2021-05-23,2028-03-26,Vigente,Tz6TprIB
+52,Karen Hicks,lutzsteven@yahoo.com,334-512-1471x81480,1960-12-08,Trimestral,2022-10-27,2025-01-30,Vigente,5g5CJjs8
+53,Erika Nguyen,jacksonbenjamin@dunn.biz,771.630.8723x2291,1961-03-24,Trimestral,2024-10-08,2027-03-02,Vigente,XiJC351A
+54,Lorraine Huff,hgray@gmail.com,(087)019-3763x4322,2000-10-14,Anual,2022-02-16,2024-03-29,Vigente,NTGE9GaM
+55,Joan Klein,margaret37@yahoo.com,650-775-2286x33623,1962-01-28,Anual,2022-01-18,2021-10-30,Vigente,VznQkOTJ
+56,Jeanne Simon,katie98@yahoo.com,+1-198-109-8718x54935,1966-05-17,Trimestral,2023-04-29,2020-03-31,Vigente,JMwrLrY7
+57,Laurie Ramirez MD,kristen36@simmons.com,+1-314-230-1435x10667,1997-06-02,Mensual,2021-11-09,2023-02-25,Vigente,XD2juivI
+58,David Jones,jlove@yahoo.com,001-449-956-7220,1986-06-21,Trimestral,2022-02-20,2022-02-10,Vigente,ESpjtWv7
+59,Robert Guerrero,jesse51@yahoo.com,(016)478-8677x1359,1958-05-10,Trimestral,2024-03-21,2024-06-14,Vigente,KW4oM25X
+60,Courtney Proctor,george51@dixon.com,(974)600-1010x943,1980-12-06,Trimestral,2022-07-15,2022-09-21,Vigente,uwWtVI6R
+61,Jocelyn Bender,njackson@hotmail.com,762.847.5695,1972-02-04,Trimestral,2022-08-14,2020-07-26,Vigente,rWLWztpf
+62,Mikayla Jensen,nbates@allen-douglas.com,133.639.5290,2004-12-10,Mensual,2024-05-29,2023-09-04,Vencida,puuenGjN
+63,Ana Carter,qrobertson@jones-murray.net,380.394.1042x04840,1962-10-12,Trimestral,2022-01-22,2024-08-16,Vigente,zESnoZxA
+64,Diane Curtis,richard66@smith.com,335-566-8941x81336,1977-06-17,Mensual,2020-01-06,2021-01-06,Vigente,p7AA8Uyq
+65,Christina Fuller,laura78@hotmail.com,377-377-7958,1980-02-11,Mensual,2023-01-05,2028-09-02,Vencida,YLIkqV7j
+66,Molly Williams,vklein@wall.com,001-722-032-2984x388,1977-01-26,Anual,2022-06-21,2023-06-11,A punto de vencer,OqvOIuEV
+67,Richard Ramirez,amills@gmail.com,(857)329-6531x4484,1973-12-10,Anual,2021-01-02,2029-09-19,Vigente,EsQa4SL1
+68,Corey Moreno,sarah54@lewis-cook.biz,001-364-284-6594,1994-09-29,Mensual,2021-09-27,2020-08-22,Vigente,71DgzjJE
+69,John Barton,kathleen40@yahoo.com,+1-647-373-5427x935,1958-08-13,Mensual,2021-06-12,2026-01-30,Vigente,Vys6EuLa
+70,Kevin Moss,pjennings@stevens.org,(692)763-3820x10561,1953-12-31,Anual,2021-04-11,2027-05-23,Vigente,9nuhU0us
+71,Michael Wells,mcknightkathleen@gmail.com,+1-898-674-1348x20769,1990-04-25,Anual,2023-05-13,2029-08-18,Vigente,oECu0AxS
+72,Laura Maxwell,meganpage@williams.com,941.515.0529,1980-07-27,Mensual,2022-07-23,2021-01-12,Vigente,j3n782DY
+73,Andrew Velasquez,margaretstephenson@hotmail.com,2292149904,1959-02-27,Mensual,2021-09-02,2026-10-18,A punto de vencer,ZPAbfB1x
+74,Leonard Meyer,jamesmartinez@gmail.com,563.018.8349,1954-06-30,Mensual,2022-05-24,2025-02-25,A punto de vencer,11GOnkoE
+75,Kelly Estes,nyoung@short.biz,001-625-090-6495x26035,1979-11-11,Anual,2020-02-29,2023-11-29,Vencida,hxkKKGB0
+76,Rebecca Davies,elizabeth59@bright-walker.info,693-655-1360,1972-03-28,Trimestral,2024-06-14,2028-12-04,A punto de vencer,O28lPPLB
+77,Christopher Zuniga,vanessaellison@woods.com,(555)318-4294x187,1989-08-24,Trimestral,2022-10-01,2020-10-23,Vigente,qsPGTJZ1
+78,Lauren Adams,ruth63@king-klein.com,(649)926-6996,1959-11-19,Anual,2024-03-21,2021-01-15,Vigente,JIAu5TLT
+79,Christopher Salazar,ramirezjames@yahoo.com,560-977-7631,1979-04-20,Mensual,2022-06-18,2027-01-06,Vigente,TPYZuK7S
+80,Alexis Russell,bcastillo@yahoo.com,245.989.8613,1968-12-27,Trimestral,2023-09-09,2027-03-15,Vigente,Jm1AtgiT
+81,Melissa Johnson,davilasarah@olson.com,(729)647-1287,1972-10-18,Mensual,2020-07-07,2027-08-05,Vigente,ywAb3nVa
+82,Rhonda Patterson,meredith36@mitchell.com,620.941.5390x060,1975-11-02,Trimestral,2020-02-11,2028-11-02,Vigente,YW09W0Bw
+83,Nicole Rivers,lbrown@morgan.net,018.476.2027,1994-05-15,Anual,2024-08-01,2027-09-09,Vigente,S8R11sez
+84,Barbara Cruz,andersonbryce@gmail.com,001-262-277-5291,1966-01-14,Trimestral,2020-12-09,2022-04-16,Vigente,0aXpUaOT
+85,Amber Williams,nwood@gmail.com,(764)618-5332x23514,1972-10-09,Trimestral,2020-03-01,2029-04-28,Vigente,rbM2qS1E
+86,Tanya Owens,santiagobradley@gmail.com,(405)171-4008,1957-05-24,Mensual,2023-03-20,2022-09-24,Vigente,jSbTGJJ3
+87,Justin Hutchinson,brianjones@pena.info,561-990-5573x00620,2000-09-15,Mensual,2022-12-27,2022-07-27,Vigente,cNNotcFx
+88,David Harper,savannahhayes@alexander-thompson.net,001-262-569-5226x23893,1964-10-18,Mensual,2023-11-19,2022-04-03,A punto de vencer,NBiZlluF
+89,Jessica Turner,joshuagarcia@deleon.com,624-388-7573,1961-07-24,Trimestral,2021-09-12,2020-09-21,Vencida,ZQqB5C1I
+90,Michael Barron,shahcolton@yahoo.com,001-733-305-3907,1985-10-28,Trimestral,2020-06-08,2021-04-18,Vigente,mXAS1ZHd
+91,Robert Ward,angela99@collins.com,+1-158-508-7318,1982-04-17,Trimestral,2022-12-31,2023-09-26,Vencida,7QmhvRtb
+92,Rebecca Herman,jennifer17@yahoo.com,001-920-164-8367x8261,1959-08-25,Anual,2022-06-25,2023-05-16,Vigente,nQP2qUfp
+93,Carlos Madden,christy96@yahoo.com,001-627-477-8839x072,1980-05-18,Mensual,2020-11-25,2022-02-07,Vigente,3vuAylm9
+94,Oscar Warren,uward@jones-orr.org,948-895-8495,1975-08-22,Anual,2024-03-19,2027-08-17,A punto de vencer,FgDA3DL5
+95,Eric Allen,tammy81@hart.com,(235)233-6188x498,1956-08-27,Anual,2020-02-23,2027-05-04,Vigente,HPynGm0o
+96,Daniel Allen,upacheco@andrade.com,+1-596-511-2811x547,1981-05-29,Anual,2023-11-13,2028-02-03,Vigente,3EdegcAr
+97,Ethan Williams,smithbrooke@yahoo.com,973-683-8330x1115,1962-11-03,Anual,2022-07-17,2025-05-19,Vigente,qK2Iouhz
+98,Brandon Young,billstewart@black.com,268.532.7861x474,2003-06-17,Anual,2020-01-30,2022-07-29,Vigente,PiMNQsxG
+99,Scott Garcia,stewartjason@hotmail.com,(846)720-8472,1979-08-10,Mensual,2020-12-27,2024-05-07,Vigente,As3nVI32
+100,Michael Hernandez,davidlopez@hotmail.com,(187)727-4888x97213,1960-06-02,Anual,2021-10-26,2028-12-18,Vencida,32YepHU2
