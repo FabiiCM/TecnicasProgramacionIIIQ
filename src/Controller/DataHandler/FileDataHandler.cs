@@ -3,29 +3,57 @@ namespace Controller.DataHandler
 {
 
     /// <summary>
-    /// Implementación de <see cref="IDataHandler"/> al usar archivos
+    /// Implementación de las interfaces para manejar los archivos CSV.
     /// </summary>
-    /// <see cref="Controller.DataHandler.IDataHandler"/>
-    internal class FileDataHandler : IDataHandler
+    public class FileDataHandler : IDataHandler, IClientDataHandler, ITrainerDataHandler
     {
-        /// <summary>
-        /// lee el dato de un file
-        /// </summary>
-        public void ReadData()
-        {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "Assets", "clientes.xlx");
-            var fileString = File.ReadAllText(path);
-            
+        private readonly string clientesPath;
+        private readonly string entrenadoresPath;
 
+        /// <summary>
+        /// Inicializa las rutas de los archivos.
+        /// </summary>
+        /// <param name="clientesPath">Ruta del archivo de clientes.</param>
+        /// <param name="entrenadoresPath">Ruta del archivo de entrenadores.</param>
+        public FileDataHandler(string clientesPath, string entrenadoresPath)
+        {
+            this.clientesPath = clientesPath;
+            this.entrenadoresPath = entrenadoresPath;
         }
 
         /// <summary>
-        /// Escribe el dato de un file
+        /// Lee datos desde un archivo.
         /// </summary>
-        /// <exception cref="System.NotImplementedException"></exception>
-        public void WriteData()
+        public List<string> ReadData(string filePath)
         {
-            throw new NotImplementedException();
+            if (!File.Exists(filePath))
+                throw new FileNotFoundException($"El archivo {filePath} no existe.");
+
+            return new List<string>(File.ReadAllLines(filePath));
+        }
+
+        /// <summary>
+        /// Escribe datos en un archivo.
+        /// </summary>
+        public void WriteData(string filePath, List<string> data)
+        {
+            File.WriteAllLines(filePath, data);
+        }
+
+        /// <summary>
+        /// Obtiene los datos de clientes.
+        /// </summary>
+        public List<string> GetClientes()
+        {
+            return ReadData(clientesPath);
+        }
+
+        /// <summary>
+        /// Obtiene los datos de entrenadores.
+        /// </summary>
+        public List<string> GetEntrenadores()
+        {
+            return ReadData(entrenadoresPath);
         }
     }
 }
