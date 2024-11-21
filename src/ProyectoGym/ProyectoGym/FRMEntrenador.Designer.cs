@@ -66,23 +66,24 @@
             MSInventario.Name = "MSInventario";
             MSInventario.Size = new Size(107, 29);
             MSInventario.Text = "Inventario";
+            MSInventario.Click += MSInventario_Click;
             // 
             // MSAgregar
             // 
             MSAgregar.Name = "MSAgregar";
-            MSAgregar.Size = new Size(178, 34);
+            MSAgregar.Size = new Size(270, 34);
             MSAgregar.Text = "Agregar";
             // 
             // MSEditar
             // 
             MSEditar.Name = "MSEditar";
-            MSEditar.Size = new Size(178, 34);
+            MSEditar.Size = new Size(270, 34);
             MSEditar.Text = "Editar";
             // 
             // MSEliminar
             // 
             MSEliminar.Name = "MSEliminar";
-            MSEliminar.Size = new Size(178, 34);
+            MSEliminar.Size = new Size(270, 34);
             MSEliminar.Text = "Eliminar";
             // 
             // MSMembresias
@@ -92,23 +93,24 @@
             MSMembresias.Name = "MSMembresias";
             MSMembresias.Size = new Size(124, 29);
             MSMembresias.Text = "Membresías";
+            MSMembresias.Click += MSMembresias_Click;
             // 
             // MSAgregarMembresia
             // 
             MSAgregarMembresia.Name = "MSAgregarMembresia";
-            MSAgregarMembresia.Size = new Size(178, 34);
+            MSAgregarMembresia.Size = new Size(270, 34);
             MSAgregarMembresia.Text = "Agregar";
             // 
             // MSRenovarMembresia
             // 
             MSRenovarMembresia.Name = "MSRenovarMembresia";
-            MSRenovarMembresia.Size = new Size(178, 34);
+            MSRenovarMembresia.Size = new Size(270, 34);
             MSRenovarMembresia.Text = "Renovar";
             // 
             // MSEliminarMembresia
             // 
             MSEliminarMembresia.Name = "MSEliminarMembresia";
-            MSEliminarMembresia.Size = new Size(178, 34);
+            MSEliminarMembresia.Size = new Size(270, 34);
             MSEliminarMembresia.Text = "Eliminar";
             // 
             // MSReservas
@@ -118,23 +120,24 @@
             MSReservas.Name = "MSReservas";
             MSReservas.Size = new Size(96, 29);
             MSReservas.Text = "Reservas";
+            MSReservas.Click += MSReservas_Click;
             // 
             // MSAgregarReserva
             // 
             MSAgregarReserva.Name = "MSAgregarReserva";
-            MSAgregarReserva.Size = new Size(243, 34);
+            MSAgregarReserva.Size = new Size(270, 34);
             MSAgregarReserva.Text = "Agregar Reserva";
             // 
             // MSEditarReserva
             // 
             MSEditarReserva.Name = "MSEditarReserva";
-            MSEditarReserva.Size = new Size(243, 34);
+            MSEditarReserva.Size = new Size(270, 34);
             MSEditarReserva.Text = "Editar Reserva";
             // 
             // MSEliminarReserva
             // 
             MSEliminarReserva.Name = "MSEliminarReserva";
-            MSEliminarReserva.Size = new Size(243, 34);
+            MSEliminarReserva.Size = new Size(270, 34);
             MSEliminarReserva.Text = "Eliminar Reserva";
             // 
             // MSReportes
@@ -144,23 +147,25 @@
             MSReportes.Name = "MSReportes";
             MSReportes.Size = new Size(98, 29);
             MSReportes.Text = "Reportes";
+            MSReportes.Click += MSReportes_Click;
             // 
             // MSIngresos
             // 
             MSIngresos.Name = "MSIngresos";
-            MSIngresos.Size = new Size(210, 34);
+            MSIngresos.Size = new Size(270, 34);
             MSIngresos.Text = "Ingresos";
+            MSIngresos.Click += MSIngresos_Click;
             // 
             // MSMembresiasR
             // 
             MSMembresiasR.Name = "MSMembresiasR";
-            MSMembresiasR.Size = new Size(210, 34);
+            MSMembresiasR.Size = new Size(270, 34);
             MSMembresiasR.Text = "Membresías";
             // 
             // MSReservasR
             // 
             MSReservasR.Name = "MSReservasR";
-            MSReservasR.Size = new Size(210, 34);
+            MSReservasR.Size = new Size(270, 34);
             MSReservasR.Text = "Reservas";
             // 
             // BTNSalir
@@ -188,6 +193,7 @@
             MainMenuStrip = menuStrip1;
             Name = "FRMEntrenador";
             Text = "Entrenador";
+            Load += FRMEntrenador_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
