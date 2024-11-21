@@ -9,7 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Cliente.cs" />
     <Compile Remove="Factura,cs.cs" />
+    <Compile Remove="Factura.cs" />
   </ItemGroup>
 
   <ItemGroup>

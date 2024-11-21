@@ -1,4 +1,4 @@
-﻿namespace Model
+﻿namespace Model.Personas
 {
 
     /// <summary>
@@ -8,8 +8,8 @@
     {
         public Person(string name, DateTime birth)
         {
-            this.Name = name;
-            this.Birthday = birth;
+            Name = name;
+            Birthday = birth;
         }
 
         public string Name { get; set; }
