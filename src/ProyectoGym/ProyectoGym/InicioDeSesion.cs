@@ -38,18 +38,27 @@ namespace ProyectoGym
             {
                 MessageBox.Show("Inicio de sesión exitoso.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Abrir otro formulario
+                // Abrir el formulario correspondiente según el tipo de usuario
                 this.Hide();
-                frmMenuUsuario ventanaSesion = new frmMenuUsuario();
-                ventanaSesion.Show();
+                if (tipoUsuario.Equals("Cliente", StringComparison.OrdinalIgnoreCase))
+                {
+                    frmMenuUsuario ventanaCliente = new frmMenuUsuario();
+                    ventanaCliente.Show();
+                }
+                else if (tipoUsuario.Equals("Entrenador", StringComparison.OrdinalIgnoreCase))
+                {
+                    FRMEntrenador ventanaCliente = new FRMEntrenador();
+                    ventanaCliente.Show();
+                }
             }
             else
             {
                 MessageBox.Show("Usuario, contraseña o rol incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-    }
 
-    private void BTLimpiar_Click(object sender, EventArgs e)
+        }
+
+        private void BTLimpiar_Click(object sender, EventArgs e)
         {
             TBNombre.Clear();
             TBContraseña.Clear();
