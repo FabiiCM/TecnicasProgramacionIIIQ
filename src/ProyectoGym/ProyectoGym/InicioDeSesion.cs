@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.IO;
+using Controller.DataHandler;
 
 namespace ProyectoGym
 {
@@ -21,40 +22,81 @@ namespace ProyectoGym
 
         private void BTIniciarSesion_Click(object sender, EventArgs e)
         {
-            // Verificar campos vacíos
-            if (string.IsNullOrEmpty(TBNombre.Text) ||
-                string.IsNullOrEmpty(TBContraseña.Text) ||
-                cmbUsuarios.SelectedItem == null)
+            try
             {
-                MessageBox.Show("Por favor, complete todos los campos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; // Salir del evento si los campos no están completos
-            }
+                // Obtener datos del formulario
+                string nombreUsuario = TBNombre.Text.Trim(); // Capturar Nombre de Usuario
+                string contraseña = TBContraseña.Text.Trim(); // Capturar Contraseña
+                string tipoUsuario = cmbUsuarios.SelectedItem?.ToString(); // Validar tipo de usuario
 
-            // Obtener el tipo de usuario seleccionado (asegurándose de que no sea nulo)
-            string tipoUsuario = cmbUsuarios.SelectedItem?.ToString() ?? string.Empty; // Asignamos un valor predeterminado si es nulo
-
-            // Validar las credenciales
-            if (Cliente.Validacion(TBNombre.Text, TBContraseña.Text, tipoUsuario))
-            {
-                MessageBox.Show("Inicio de sesión exitoso.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Abrir el formulario correspondiente según el tipo de usuario
-                this.Hide();
-                if (tipoUsuario.Equals("Cliente", StringComparison.OrdinalIgnoreCase))
+                if (string.IsNullOrEmpty(nombreUsuario) || string.IsNullOrEmpty(contraseña) || string.IsNullOrEmpty(tipoUsuario))
                 {
-                    frmMenuUsuario ventanaCliente = new frmMenuUsuario();
-                    ventanaCliente.Show();
+                    MessageBox.Show("Por favor, complete todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
-                else if (tipoUsuario.Equals("Entrenador", StringComparison.OrdinalIgnoreCase))
+
+                // Crear instancia del FileDataHandler
+                var fileDataHandler = new FileDataHandler("Assets/clientes.csv", "Assets/entrenadores.csv");
+                List<string> usuarios;
+
+                // Determinar el archivo correcto según el tipo de usuario
+                int indiceUsuario, indiceContraseña;
+                if (tipoUsuario == "Cliente")
                 {
-                    FRMEntrenador ventanaCliente = new FRMEntrenador();
-                    ventanaCliente.Show();
+                    usuarios = fileDataHandler.GetClientes();
+                    indiceUsuario = 10; // Índice de NombreUsuario en clientes.csv
+                    indiceContraseña = 9; // Índice de Contraseña en clientes.csv
+                }
+                else if (tipoUsuario == "Entrenador")
+                {
+                    usuarios = fileDataHandler.GetEntrenadores();
+                    indiceUsuario = 8; // Índice de NombreUsuario en entrenadores.csv
+                    indiceContraseña = 7; // Índice de Contraseña en entrenadores.csv
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un tipo de usuario válido.");
+                    return;
+                }
+
+                // Buscar el usuario en el archivo CSV
+                var usuario = usuarios.FirstOrDefault(u =>
+                {
+                    var datos = u.Split(','); // Separar por comas
+                    return datos.Length > Math.Max(indiceUsuario, indiceContraseña) &&
+                           datos[indiceUsuario].Trim() == nombreUsuario; // Comparar NombreUsuario
+                });
+
+                if (usuario == null)
+                {
+                    // Usuario no existe
+                    MessageBox.Show("El usuario no está registrado. Por favor, regístrese.");
+                    return;
+                }
+
+                // Verificar contraseña
+                var datosUsuario = usuario.Split(',');
+                if (datosUsuario[indiceContraseña].Trim() == contraseña) // Comparar Contraseña
+                {
+                    // Contraseña correcta
+                    MessageBox.Show("Inicio de sesión exitoso.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Redirigir al menú correspondiente (según tipoUsuario)
+                }
+                else
+                {
+                    // Contraseña incorrecta
+                    MessageBox.Show("La contraseña es incorrecta. Intente de nuevo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            else
+            catch (FileNotFoundException ex)
             {
-                MessageBox.Show("Usuario, contraseña o rol incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Archivo no encontrado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error inesperado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
 
         }
 
@@ -89,6 +131,11 @@ namespace ProyectoGym
             this.Hide();
             FRMInicio ventanaSesion = new FRMInicio();
             ventanaSesion.Show();
+        }
+
+        private void TBNombre_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
