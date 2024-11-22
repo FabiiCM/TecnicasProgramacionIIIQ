@@ -27,10 +27,20 @@ namespace ProyectoGym
 
         private void BTLimpiar_Click(object sender, EventArgs e)
         {
+            //limpia los campos de texto
             TBNombreCompleto.Clear();
             TBMail.Clear();
             TBNombreDeUsuario.Clear();
             TBContraseña.Clear();
+
+            //Desmarca los radio buttons
+            RBtnCliente.Checked = false;
+            RBtnEntrenador.Checked = false;
+
+
+            //Enfoca el primer campo de texto por si quieren registrar a una nueva persona
+            TBNombreCompleto.Focus();
+
 
         }
 
@@ -59,7 +69,19 @@ namespace ProyectoGym
 
         private void RegistroDeUsuario_Load(object sender, EventArgs e)
         {
-            
-        } 
-      }
+
+        }
+
+
+
+        private void RBtnCliente_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RBtnEntrenador_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
+}

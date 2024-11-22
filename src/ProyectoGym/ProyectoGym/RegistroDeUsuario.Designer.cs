@@ -39,14 +39,17 @@
             TBContraseña = new TextBox();
             BTRegistrar = new Button();
             BTLimpiar = new Button();
+            RBtnCliente = new RadioButton();
+            RBtnEntrenador = new RadioButton();
             SuspendLayout();
             // 
             // LBNombre
             // 
             LBNombre.AutoSize = true;
-            LBNombre.Location = new Point(244, 91);
+            LBNombre.Location = new Point(171, 55);
+            LBNombre.Margin = new Padding(2, 0, 2, 0);
             LBNombre.Name = "LBNombre";
-            LBNombre.Size = new Size(162, 25);
+            LBNombre.Size = new Size(107, 15);
             LBNombre.TabIndex = 0;
             LBNombre.Text = "Nombre Completo";
             LBNombre.Click += LBNombre_Click;
@@ -54,27 +57,30 @@
             // LBMail
             // 
             LBMail.AutoSize = true;
-            LBMail.Location = new Point(292, 168);
+            LBMail.Location = new Point(204, 101);
+            LBMail.Margin = new Padding(2, 0, 2, 0);
             LBMail.Name = "LBMail";
-            LBMail.Size = new Size(61, 25);
+            LBMail.Size = new Size(41, 15);
             LBMail.TabIndex = 1;
             LBMail.Text = "E-mail";
             // 
             // LBNombreDeUsuario
             // 
             LBNombreDeUsuario.AutoSize = true;
-            LBNombreDeUsuario.Location = new Point(236, 245);
+            LBNombreDeUsuario.Location = new Point(165, 147);
+            LBNombreDeUsuario.Margin = new Padding(2, 0, 2, 0);
             LBNombreDeUsuario.Name = "LBNombreDeUsuario";
-            LBNombreDeUsuario.Size = new Size(170, 25);
+            LBNombreDeUsuario.Size = new Size(111, 15);
             LBNombreDeUsuario.TabIndex = 2;
             LBNombreDeUsuario.Text = "Nombre De Usuario";
             // 
             // LBContraseña
             // 
             LBContraseña.AutoSize = true;
-            LBContraseña.Location = new Point(269, 322);
+            LBContraseña.Location = new Point(188, 193);
+            LBContraseña.Margin = new Padding(2, 0, 2, 0);
             LBContraseña.Name = "LBContraseña";
-            LBContraseña.Size = new Size(101, 25);
+            LBContraseña.Size = new Size(67, 15);
             LBContraseña.TabIndex = 3;
             LBContraseña.Text = "Contraseña";
             // 
@@ -84,40 +90,45 @@
             LBRegistrar.BackColor = SystemColors.Window;
             LBRegistrar.Font = new Font("Mongolian Baiti", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
             LBRegistrar.ForeColor = Color.FromArgb(255, 128, 0);
-            LBRegistrar.Location = new Point(209, 36);
+            LBRegistrar.Location = new Point(146, 22);
+            LBRegistrar.Margin = new Padding(2, 0, 2, 0);
             LBRegistrar.Name = "LBRegistrar";
-            LBRegistrar.Size = new Size(241, 34);
+            LBRegistrar.Size = new Size(167, 24);
             LBRegistrar.TabIndex = 4;
             LBRegistrar.Text = "Registrar Usuario";
             // 
             // TBNombreCompleto
             // 
-            TBNombreCompleto.Location = new Point(52, 119);
+            TBNombreCompleto.Location = new Point(36, 71);
+            TBNombreCompleto.Margin = new Padding(2);
             TBNombreCompleto.Name = "TBNombreCompleto";
-            TBNombreCompleto.Size = new Size(558, 31);
+            TBNombreCompleto.Size = new Size(392, 23);
             TBNombreCompleto.TabIndex = 6;
             TBNombreCompleto.TextChanged += TBNombreCompleto_TextChanged;
             // 
             // TBMail
             // 
-            TBMail.Location = new Point(52, 196);
+            TBMail.Location = new Point(36, 118);
+            TBMail.Margin = new Padding(2);
             TBMail.Name = "TBMail";
-            TBMail.Size = new Size(558, 31);
+            TBMail.Size = new Size(392, 23);
             TBMail.TabIndex = 7;
             // 
             // TBNombreDeUsuario
             // 
-            TBNombreDeUsuario.Location = new Point(52, 273);
+            TBNombreDeUsuario.Location = new Point(36, 164);
+            TBNombreDeUsuario.Margin = new Padding(2);
             TBNombreDeUsuario.Name = "TBNombreDeUsuario";
-            TBNombreDeUsuario.Size = new Size(558, 31);
+            TBNombreDeUsuario.Size = new Size(392, 23);
             TBNombreDeUsuario.TabIndex = 8;
             TBNombreDeUsuario.TextChanged += TBNombreDeUsuario_TextChanged;
             // 
             // TBContraseña
             // 
-            TBContraseña.Location = new Point(52, 350);
+            TBContraseña.Location = new Point(36, 210);
+            TBContraseña.Margin = new Padding(2);
             TBContraseña.Name = "TBContraseña";
-            TBContraseña.Size = new Size(558, 31);
+            TBContraseña.Size = new Size(392, 23);
             TBContraseña.TabIndex = 9;
             // 
             // BTRegistrar
@@ -127,9 +138,10 @@
             BTRegistrar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
             BTRegistrar.FlatStyle = FlatStyle.Flat;
             BTRegistrar.ForeColor = Color.FromArgb(255, 128, 0);
-            BTRegistrar.Location = new Point(52, 457);
+            BTRegistrar.Location = new Point(39, 321);
+            BTRegistrar.Margin = new Padding(2);
             BTRegistrar.Name = "BTRegistrar";
-            BTRegistrar.Size = new Size(133, 53);
+            BTRegistrar.Size = new Size(93, 32);
             BTRegistrar.TabIndex = 10;
             BTRegistrar.Text = "Registrar";
             BTRegistrar.UseVisualStyleBackColor = false;
@@ -142,20 +154,47 @@
             BTLimpiar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
             BTLimpiar.FlatStyle = FlatStyle.Flat;
             BTLimpiar.ForeColor = Color.FromArgb(255, 128, 0);
-            BTLimpiar.Location = new Point(477, 457);
+            BTLimpiar.Location = new Point(335, 321);
+            BTLimpiar.Margin = new Padding(2);
             BTLimpiar.Name = "BTLimpiar";
-            BTLimpiar.Size = new Size(133, 53);
+            BTLimpiar.Size = new Size(93, 32);
             BTLimpiar.TabIndex = 11;
             BTLimpiar.Text = "Limpiar";
             BTLimpiar.UseVisualStyleBackColor = false;
             BTLimpiar.Click += BTLimpiar_Click;
             // 
+            // RBtnCliente
+            // 
+            RBtnCliente.AutoSize = true;
+            RBtnCliente.Location = new Point(69, 254);
+            RBtnCliente.Name = "RBtnCliente";
+            RBtnCliente.Size = new Size(63, 19);
+            RBtnCliente.TabIndex = 12;
+            RBtnCliente.TabStop = true;
+            RBtnCliente.Text = "Cliento\r\n";
+            RBtnCliente.UseVisualStyleBackColor = true;
+            RBtnCliente.CheckedChanged += RBtnCliente_CheckedChanged;
+            // 
+            // RBtnEntrenador
+            // 
+            RBtnEntrenador.AutoSize = true;
+            RBtnEntrenador.Location = new Point(335, 254);
+            RBtnEntrenador.Name = "RBtnEntrenador";
+            RBtnEntrenador.Size = new Size(83, 19);
+            RBtnEntrenador.TabIndex = 13;
+            RBtnEntrenador.TabStop = true;
+            RBtnEntrenador.Text = "Entrenador";
+            RBtnEntrenador.UseVisualStyleBackColor = true;
+            RBtnEntrenador.CheckedChanged += RBtnEntrenador_CheckedChanged;
+            // 
             // RegistroDeUsuario
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(676, 521);
+            ClientSize = new Size(473, 370);
+            Controls.Add(RBtnEntrenador);
+            Controls.Add(RBtnCliente);
             Controls.Add(BTLimpiar);
             Controls.Add(BTRegistrar);
             Controls.Add(TBContraseña);
@@ -167,6 +206,7 @@
             Controls.Add(LBNombreDeUsuario);
             Controls.Add(LBMail);
             Controls.Add(LBNombre);
+            Margin = new Padding(2);
             Name = "RegistroDeUsuario";
             Text = "RegistroDeUsuario";
             Load += RegistroDeUsuario_Load;
@@ -187,5 +227,7 @@
         private TextBox TBContraseña;
         private Button BTRegistrar;
         private Button BTLimpiar;
+        private RadioButton RBtnCliente;
+        private RadioButton RBtnEntrenador;
     }
 }
