@@ -27,7 +27,7 @@ namespace ProyectoGym
                 // Obtener datos del formulario
                 string nombreUsuario = TBNombre.Text.Trim(); // Capturar Nombre de Usuario
                 string contraseña = TBContraseña.Text.Trim(); // Capturar Contraseña
-                string tipoUsuario = cmbUsuarios.SelectedItem?.ToString(); // Validar tipo de usuario
+                string? tipoUsuario = cmbUsuarios.SelectedItem?.ToString(); // Validar tipo de usuario
 
                 if (string.IsNullOrEmpty(nombreUsuario) || string.IsNullOrEmpty(contraseña) || string.IsNullOrEmpty(tipoUsuario))
                 {
@@ -80,7 +80,22 @@ namespace ProyectoGym
                 {
                     // Contraseña correcta
                     MessageBox.Show("Inicio de sesión exitoso.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // Redirigir al menú correspondiente (según tipoUsuario)
+
+                    // Redirigir al formulario correspondiente
+                    if (tipoUsuario == "Cliente")
+                    {
+                        // Abrir formulario de cliente
+                        frmMenuUsuario clienteForm = new frmMenuUsuario();
+                        clienteForm.Show();
+                        this.Hide(); // Ocultar la ventana de inicio de sesión si es necesario
+                    }
+                    else if (tipoUsuario == "Entrenador")
+                    {
+                        // Abrir formulario de entrenador
+                        FRMEntrenador entrenadorForm = new FRMEntrenador();
+                        entrenadorForm.Show();
+                        this.Hide(); // Ocultar la ventana de inicio de sesión si es necesario
+                    }
                 }
                 else
                 {
@@ -96,8 +111,6 @@ namespace ProyectoGym
             {
                 MessageBox.Show($"Error inesperado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
         }
 
         private void BTLimpiar_Click(object sender, EventArgs e)

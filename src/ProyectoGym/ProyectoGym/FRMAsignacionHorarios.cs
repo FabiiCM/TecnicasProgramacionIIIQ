@@ -58,7 +58,7 @@ namespace ProyectoGym
 
         }
 
-        private void btnAsignar_Click(object sender, EventArgs e)
+        private void BtnAsignar_Click(object sender, EventArgs e)
         {
             // Obtener valores seleccionados
             string especialidad = cmbEspecialidad.SelectedItem?.ToString() ?? string.Empty;

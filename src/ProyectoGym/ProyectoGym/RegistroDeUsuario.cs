@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Diagnostics;
-
 using System.IO;
+using System.Windows.Forms;
 
 namespace ProyectoGym
 {
@@ -20,68 +11,87 @@ namespace ProyectoGym
             InitializeComponent();
         }
 
-        private void LBNombre_Click(object sender, EventArgs e)
+        private void BTRegistrar_Click(object sender, EventArgs e)
         {
+            // Validar que los campos no estén vacíos
+            if (string.IsNullOrWhiteSpace(TBNombreCompleto.Text) ||
+                string.IsNullOrWhiteSpace(TBMail.Text) ||
+                string.IsNullOrWhiteSpace(TBNombreDeUsuario.Text) ||
+                string.IsNullOrWhiteSpace(TBContraseña.Text))
+            {
+                MessageBox.Show("Por favor, complete todos los campos.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            // Validar si se seleccionó el tipo de usuario
+            if (!RBtnCliente.Checked && !RBtnEntrenador.Checked)
+            {
+                MessageBox.Show("Por favor, seleccione el tipo de usuario.", "Tipo de usuario no seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Obtener los datos del usuario
+            string nombreCompleto = TBNombreCompleto.Text;
+            string email = TBMail.Text;
+            string nombreDeUsuario = TBNombreDeUsuario.Text;
+            string contraseña = TBContraseña.Text;
+
+            // Ruta de la carpeta donde se guardarán los archivos
+            string folderPath = @"C:\sources\RepoQ3\src\Controller\Assets";
+
+            // Crear la carpeta si no existe
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+
+            // Determinar el archivo donde se guardará la información
+            string filePath;
+            if (RBtnCliente.Checked)
+            {
+                filePath = Path.Combine(folderPath, "clientes.csv");
+            }
+            else
+            {
+                filePath = Path.Combine(folderPath, "entrenadores.csv");
+            }
+
+            // Formatear los datos para guardarlos en CSV
+            string datos = $"{nombreCompleto},{email},{nombreDeUsuario},{contraseña}";
+
+            try
+            {
+                // Guardar los datos en el archivo correspondiente
+                File.AppendAllText(filePath, datos + Environment.NewLine);
+                MessageBox.Show("Usuario registrado exitosamente.", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Limpiar los campos
+                LimpiarCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al guardar los datos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
-        private void BTLimpiar_Click(object sender, EventArgs e)
+        private void LimpiarCampos()
         {
-            //limpia los campos de texto
             TBNombreCompleto.Clear();
             TBMail.Clear();
             TBNombreDeUsuario.Clear();
             TBContraseña.Clear();
-
-            //Desmarca los radio buttons
             RBtnCliente.Checked = false;
             RBtnEntrenador.Checked = false;
-
-
-            //Enfoca el primer campo de texto por si quieren registrar a una nueva persona
-            TBNombreCompleto.Focus();
-
-
         }
 
-        private void BTRegistrar_Click(object sender, EventArgs e)
+        private void BTLimpiar_Click(object sender, EventArgs e)
         {
-            // Muestra mensaje de éxito
-            MessageBox.Show("Se registró correctamente", "Registro Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            // Limpia los campos después de guardar
-            BTLimpiar_Click(sender, e);
-
-            this.Hide();
-            FRMInicio ventanaSesion = new FRMInicio();
-            ventanaSesion.Show();
-        }
-
-        private void TBNombreCompleto_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TBNombreDeUsuario_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RegistroDeUsuario_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void RBtnCliente_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RBtnEntrenador_CheckedChanged(object sender, EventArgs e)
-        {
-
+            TBNombreCompleto.Clear();
+            TBMail.Clear();
+            TBNombreDeUsuario.Clear();
+            TBContraseña.Clear();
+            RBtnCliente.Checked = false;
+            RBtnEntrenador.Checked = false;
         }
     }
 }
+
