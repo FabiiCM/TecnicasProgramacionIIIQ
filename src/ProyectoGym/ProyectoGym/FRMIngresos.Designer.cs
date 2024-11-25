@@ -31,7 +31,7 @@
             components = new System.ComponentModel.Container();
             contextMenuStrip1 = new ContextMenuStrip(components);
             toolStripTextBox1 = new ToolStripTextBox();
-            dataGridView1 = new DataGridView();
+            DGVUno = new DataGridView();
             DGId = new DataGridViewTextBoxColumn();
             DGFecha = new DataGridViewTextBoxColumn();
             DGConcepto = new DataGridViewTextBoxColumn();
@@ -54,7 +54,7 @@
             BTEliminar = new Button();
             BTGenerar = new Button();
             contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DGVUno).BeginInit();
             SuspendLayout();
             // 
             // contextMenuStrip1
@@ -70,16 +70,18 @@
             toolStripTextBox1.Size = new Size(100, 31);
             toolStripTextBox1.Click += toolStripTextBox1_Click;
             // 
-            // dataGridView1
+            // DGVUno
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { DGId, DGFecha, DGConcepto, DGMonto, DGMetodo, DGCliente });
-            dataGridView1.Location = new Point(26, 139);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(961, 130);
-            dataGridView1.TabIndex = 1;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            DGVUno.BackgroundColor = SystemColors.Window;
+            DGVUno.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGVUno.Columns.AddRange(new DataGridViewColumn[] { DGId, DGFecha, DGConcepto, DGMonto, DGMetodo, DGCliente });
+            DGVUno.GridColor = SystemColors.MenuText;
+            DGVUno.Location = new Point(26, 139);
+            DGVUno.Name = "DGVUno";
+            DGVUno.RowHeadersWidth = 62;
+            DGVUno.Size = new Size(961, 130);
+            DGVUno.TabIndex = 1;
+            DGVUno.CellContentClick += dataGridView1_CellContentClick;
             // 
             // DGId
             // 
@@ -272,13 +274,13 @@
             Controls.Add(textBox1);
             Controls.Add(comboBox1);
             Controls.Add(dateTimePicker1);
-            Controls.Add(dataGridView1);
+            Controls.Add(DGVUno);
             Name = "FRMIngresos";
             Text = "Ingresos";
             Load += FRMIngresos_Load;
             contextMenuStrip1.ResumeLayout(false);
             contextMenuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DGVUno).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -287,7 +289,7 @@
 
         private ContextMenuStrip contextMenuStrip1;
         private ToolStripTextBox toolStripTextBox1;
-        private DataGridView dataGridView1;
+        private DataGridView DGVUno;
         private DataGridViewTextBoxColumn DGId;
         private DataGridViewTextBoxColumn DGFecha;
         private DataGridViewTextBoxColumn DGConcepto;

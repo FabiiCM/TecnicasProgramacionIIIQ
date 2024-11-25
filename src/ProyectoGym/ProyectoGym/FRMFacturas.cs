@@ -26,13 +26,7 @@ namespace ProyectoGym
 
         }
 
-        private void btnGenerarFacturas_Click(object sender, EventArgs e)
-        {
-           
 
-            // Confirmación al usuario
-            MessageBox.Show("Facturas generadas y guardadas en el archivo Excel.", "Facturación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
 
         private void GenerarFacturasExcel(List<Cliente> clientes)
         {
@@ -42,6 +36,13 @@ namespace ProyectoGym
         private List<Cliente> ObtenerClientes()
         {
             throw new NotImplementedException();
+        }
+
+        private void BTNSalir_Click(object sender, EventArgs e)
+        {
+            FRMInicio inicio = new FRMInicio();
+            inicio.Show();
+            this.Hide();
         }
     }
 }

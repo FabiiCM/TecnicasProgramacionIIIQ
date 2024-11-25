@@ -72,7 +72,11 @@ namespace ProyectoGym
             {
                 MessageBox.Show($"Ocurrió un error al guardar los datos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            FRMInicio inicio = new FRMInicio();
+            inicio.Show();
+            this.Hide();
         }
+
         private void LimpiarCampos()
         {
             TBNombreCompleto.Clear();

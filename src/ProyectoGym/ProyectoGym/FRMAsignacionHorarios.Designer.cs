@@ -57,13 +57,17 @@
             // 
             // btnAsignar
             // 
-            btnAsignar.Location = new Point(257, 172);
+            btnAsignar.BackColor = SystemColors.Window;
+            btnAsignar.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
+            btnAsignar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
+            btnAsignar.FlatStyle = FlatStyle.Flat;
+            btnAsignar.ForeColor = Color.FromArgb(255, 128, 0);
+            btnAsignar.Location = new Point(236, 172);
             btnAsignar.Name = "btnAsignar";
             btnAsignar.Size = new Size(176, 33);
             btnAsignar.TabIndex = 2;
             btnAsignar.Text = "Asignar Horario";
-            btnAsignar.UseVisualStyleBackColor = true;
-            btnAsignar.Click += btnAsignar_Click;
+            btnAsignar.UseVisualStyleBackColor = false;
             // 
             // lstAsignaciones
             // 
@@ -93,18 +97,24 @@
             // 
             // BTNSalir
             // 
+            BTNSalir.BackColor = SystemColors.Window;
+            BTNSalir.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
+            BTNSalir.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
+            BTNSalir.FlatStyle = FlatStyle.Flat;
+            BTNSalir.ForeColor = Color.FromArgb(255, 128, 0);
             BTNSalir.Location = new Point(532, 404);
             BTNSalir.Name = "BTNSalir";
             BTNSalir.Size = new Size(112, 34);
             BTNSalir.TabIndex = 6;
             BTNSalir.Text = "Salir";
-            BTNSalir.UseVisualStyleBackColor = true;
+            BTNSalir.UseVisualStyleBackColor = false;
             BTNSalir.Click += BTNSalir_Click_1;
             // 
             // FRMAsignacionHorarios
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Window;
             ClientSize = new Size(656, 450);
             Controls.Add(BTNSalir);
             Controls.Add(cmbDificultad);

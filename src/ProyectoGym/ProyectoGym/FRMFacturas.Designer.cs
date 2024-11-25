@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             menuStrip1 = new MenuStrip();
-            btnGenerarFacturas = new Button();
             btnConsultarFacturas = new Button();
+            BTNSalir = new Button();
             SuspendLayout();
             // 
             // menuStrip1
@@ -38,36 +38,46 @@
             menuStrip1.ImageScalingSize = new Size(24, 24);
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(582, 24);
+            menuStrip1.Size = new Size(356, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
-            // btnGenerarFacturas
-            // 
-            btnGenerarFacturas.Location = new Point(71, 116);
-            btnGenerarFacturas.Name = "btnGenerarFacturas";
-            btnGenerarFacturas.Size = new Size(170, 56);
-            btnGenerarFacturas.TabIndex = 1;
-            btnGenerarFacturas.Text = "Generar Facturas";
-            btnGenerarFacturas.UseVisualStyleBackColor = true;
-            btnGenerarFacturas.Click += btnGenerarFacturas_Click;
-            // 
             // btnConsultarFacturas
             // 
-            btnConsultarFacturas.Location = new Point(296, 116);
+            btnConsultarFacturas.BackColor = SystemColors.Window;
+            btnConsultarFacturas.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
+            btnConsultarFacturas.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
+            btnConsultarFacturas.FlatStyle = FlatStyle.Flat;
+            btnConsultarFacturas.ForeColor = Color.FromArgb(255, 128, 0);
+            btnConsultarFacturas.Location = new Point(70, 62);
             btnConsultarFacturas.Name = "btnConsultarFacturas";
             btnConsultarFacturas.Size = new Size(202, 56);
             btnConsultarFacturas.TabIndex = 2;
             btnConsultarFacturas.Text = "Consultar Facturas";
-            btnConsultarFacturas.UseVisualStyleBackColor = true;
+            btnConsultarFacturas.UseVisualStyleBackColor = false;
+            // 
+            // BTNSalir
+            // 
+            BTNSalir.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
+            BTNSalir.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
+            BTNSalir.FlatStyle = FlatStyle.Flat;
+            BTNSalir.ForeColor = Color.FromArgb(255, 128, 0);
+            BTNSalir.Location = new Point(115, 142);
+            BTNSalir.Name = "BTNSalir";
+            BTNSalir.Size = new Size(112, 34);
+            BTNSalir.TabIndex = 3;
+            BTNSalir.Text = "Salir";
+            BTNSalir.UseVisualStyleBackColor = true;
+            BTNSalir.Click += BTNSalir_Click;
             // 
             // FRMFacturas
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(582, 274);
+            BackColor = SystemColors.Window;
+            ClientSize = new Size(356, 241);
+            Controls.Add(BTNSalir);
             Controls.Add(btnConsultarFacturas);
-            Controls.Add(btnGenerarFacturas);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "FRMFacturas";
@@ -80,7 +90,7 @@
         #endregion
 
         private MenuStrip menuStrip1;
-        private Button btnGenerarFacturas;
         private Button btnConsultarFacturas;
+        private Button BTNSalir;
     }
 }
