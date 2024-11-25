@@ -20,7 +20,7 @@ namespace ProyectoGym
         private void BTNSalir_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FRMInicio ventanaSesion = new FRMInicio();
+            FRMInicio ventanaSesion = new();
             ventanaSesion.Show();
         }
 
@@ -52,8 +52,30 @@ namespace ProyectoGym
         private void MSIngresos_Click(object sender, EventArgs e)
         {
             // Abre el formulario de reportes de ingresos
-            FRMIngresos reporteIngresos = new FRMIngresos();
+            FRMIngresos reporteIngresos = new();
             reporteIngresos.Show();
+            // Cerrar el formulario actual (FRMMembresias)
+            this.Close();
+        }
+
+        private void MSAgregar_Click(object sender, EventArgs e)
+        {
+            // Abre el formulario de inventario
+            FRMInventario inventarioForm = new();
+            inventarioForm.Show();
+            // Cerrar el formulario actual (FRMMembresias)
+            this.Close();
+
+        }
+
+        private void MSAgregarMembresia_Click(object sender, EventArgs e)
+        {
+                // Abre el formulario de membresías
+                FRMMembresias membresiasForm = new();
+                membresiasForm.Show();
+            // Cerrar el formulario actual (FRMMembresias)
+            this.Close();
+
         }
     }
 }

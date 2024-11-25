@@ -53,6 +53,7 @@
             BTEditar = new Button();
             BTEliminar = new Button();
             BTGenerar = new Button();
+            BTNCerrar = new Button();
             contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DGVUno).BeginInit();
             SuspendLayout();
@@ -68,7 +69,6 @@
             // 
             toolStripTextBox1.Name = "toolStripTextBox1";
             toolStripTextBox1.Size = new Size(100, 31);
-            toolStripTextBox1.Click += toolStripTextBox1_Click;
             // 
             // DGVUno
             // 
@@ -81,7 +81,6 @@
             DGVUno.RowHeadersWidth = 62;
             DGVUno.Size = new Size(961, 130);
             DGVUno.TabIndex = 1;
-            DGVUno.CellContentClick += dataGridView1_CellContentClick;
             // 
             // DGId
             // 
@@ -129,7 +128,7 @@
             // 
             dateTimePicker1.Location = new Point(148, 19);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(300, 31);
+            dateTimePicker1.Size = new Size(325, 31);
             dateTimePicker1.TabIndex = 2;
             // 
             // comboBox1
@@ -159,7 +158,7 @@
             // LBFechaHasta
             // 
             LBFechaHasta.AutoSize = true;
-            LBFechaHasta.Location = new Point(469, 24);
+            LBFechaHasta.Location = new Point(479, 19);
             LBFechaHasta.Name = "LBFechaHasta";
             LBFechaHasta.Size = new Size(111, 25);
             LBFechaHasta.TabIndex = 6;
@@ -169,7 +168,7 @@
             // 
             dateTimePicker2.Location = new Point(586, 19);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(300, 31);
+            dateTimePicker2.Size = new Size(327, 31);
             dateTimePicker2.TabIndex = 7;
             // 
             // LBTipoIngreso
@@ -219,46 +218,83 @@
             // 
             // BTAgregar
             // 
+            BTAgregar.BackColor = SystemColors.Window;
+            BTAgregar.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
+            BTAgregar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
+            BTAgregar.FlatStyle = FlatStyle.Flat;
+            BTAgregar.ForeColor = Color.FromArgb(255, 128, 0);
             BTAgregar.Location = new Point(76, 399);
             BTAgregar.Name = "BTAgregar";
             BTAgregar.Size = new Size(112, 34);
             BTAgregar.TabIndex = 13;
             BTAgregar.Text = "Agregar";
-            BTAgregar.UseVisualStyleBackColor = true;
+            BTAgregar.UseVisualStyleBackColor = false;
             BTAgregar.Click += BTAgregar_Click;
             // 
             // BTEditar
             // 
+            BTEditar.BackColor = SystemColors.Window;
+            BTEditar.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
+            BTEditar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
+            BTEditar.FlatStyle = FlatStyle.Flat;
+            BTEditar.ForeColor = Color.FromArgb(255, 128, 0);
             BTEditar.Location = new Point(304, 399);
             BTEditar.Name = "BTEditar";
             BTEditar.Size = new Size(112, 34);
             BTEditar.TabIndex = 14;
             BTEditar.Text = "Editar";
-            BTEditar.UseVisualStyleBackColor = true;
+            BTEditar.UseVisualStyleBackColor = false;
             // 
             // BTEliminar
             // 
+            BTEliminar.BackColor = SystemColors.Window;
+            BTEliminar.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
+            BTEliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
+            BTEliminar.FlatStyle = FlatStyle.Flat;
+            BTEliminar.ForeColor = Color.FromArgb(255, 128, 0);
             BTEliminar.Location = new Point(544, 399);
             BTEliminar.Name = "BTEliminar";
             BTEliminar.Size = new Size(121, 34);
             BTEliminar.TabIndex = 15;
             BTEliminar.Text = "Eliminar";
-            BTEliminar.UseVisualStyleBackColor = true;
+            BTEliminar.UseVisualStyleBackColor = false;
             // 
             // BTGenerar
             // 
+            BTGenerar.BackColor = SystemColors.Window;
+            BTGenerar.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
+            BTGenerar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
+            BTGenerar.FlatStyle = FlatStyle.Flat;
+            BTGenerar.ForeColor = Color.FromArgb(255, 128, 0);
             BTGenerar.Location = new Point(801, 399);
             BTGenerar.Name = "BTGenerar";
             BTGenerar.Size = new Size(171, 34);
             BTGenerar.TabIndex = 16;
             BTGenerar.Text = "Generar Reporte";
-            BTGenerar.UseVisualStyleBackColor = true;
+            BTGenerar.UseVisualStyleBackColor = false;
+            // 
+            // BTNCerrar
+            // 
+            BTNCerrar.BackColor = SystemColors.Window;
+            BTNCerrar.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
+            BTNCerrar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
+            BTNCerrar.FlatStyle = FlatStyle.Flat;
+            BTNCerrar.ForeColor = Color.FromArgb(255, 128, 0);
+            BTNCerrar.Location = new Point(890, 463);
+            BTNCerrar.Name = "BTNCerrar";
+            BTNCerrar.Size = new Size(82, 38);
+            BTNCerrar.TabIndex = 17;
+            BTNCerrar.Text = "Cerrar";
+            BTNCerrar.UseVisualStyleBackColor = false;
+            BTNCerrar.Click += BTNCerrar_Click;
             // 
             // FRMIngresos
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1010, 456);
+            BackColor = SystemColors.Window;
+            ClientSize = new Size(1033, 513);
+            Controls.Add(BTNCerrar);
             Controls.Add(BTGenerar);
             Controls.Add(BTEliminar);
             Controls.Add(BTEditar);
@@ -311,5 +347,6 @@
         private Button BTEditar;
         private Button BTEliminar;
         private Button BTGenerar;
+        private Button BTNCerrar;
     }
 }

@@ -85,14 +85,14 @@ namespace ProyectoGym
                     if (tipoUsuario == "Cliente")
                     {
                         // Abrir formulario de cliente
-                        frmMenuUsuario clienteForm = new frmMenuUsuario();
+                        frmMenuUsuario clienteForm = new();
                         clienteForm.Show();
                         this.Hide(); // Ocultar la ventana de inicio de sesión si es necesario
                     }
                     else if (tipoUsuario == "Entrenador")
                     {
                         // Abrir formulario de entrenador
-                        FRMEntrenador entrenadorForm = new FRMEntrenador();
+                        FRMEntrenador entrenadorForm = new();
                         entrenadorForm.Show();
                         this.Hide(); // Ocultar la ventana de inicio de sesión si es necesario
                     }
@@ -129,24 +129,26 @@ namespace ProyectoGym
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void LBRegistrar_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BTInicioPag_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FRMInicio ventanaSesion = new FRMInicio();
+            FRMInicio ventanaSesion = new();
             ventanaSesion.Show();
         }
 
         private void TBNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FRMInicioDeSesion_Load(object sender, EventArgs e)
         {
 
         }

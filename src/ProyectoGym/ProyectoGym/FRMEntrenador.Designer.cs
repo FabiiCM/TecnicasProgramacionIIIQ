@@ -73,6 +73,7 @@
             MSAgregar.Name = "MSAgregar";
             MSAgregar.Size = new Size(270, 34);
             MSAgregar.Text = "Agregar";
+            MSAgregar.Click += MSAgregar_Click;
             // 
             // MSEditar
             // 
@@ -100,6 +101,7 @@
             MSAgregarMembresia.Name = "MSAgregarMembresia";
             MSAgregarMembresia.Size = new Size(270, 34);
             MSAgregarMembresia.Text = "Agregar";
+            MSAgregarMembresia.Click += MSAgregarMembresia_Click;
             // 
             // MSRenovarMembresia
             // 

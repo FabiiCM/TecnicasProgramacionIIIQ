@@ -41,6 +41,7 @@
             BTLimpiar = new Button();
             RBtnCliente = new RadioButton();
             RBtnEntrenador = new RadioButton();
+            BTNCerrar = new Button();
             SuspendLayout();
             // 
             // LBNombre
@@ -141,7 +142,7 @@
             BTLimpiar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
             BTLimpiar.FlatStyle = FlatStyle.Flat;
             BTLimpiar.ForeColor = Color.FromArgb(255, 128, 0);
-            BTLimpiar.Location = new Point(479, 535);
+            BTLimpiar.Location = new Point(269, 533);
             BTLimpiar.Name = "BTLimpiar";
             BTLimpiar.Size = new Size(133, 53);
             BTLimpiar.TabIndex = 11;
@@ -173,12 +174,26 @@
             RBtnEntrenador.Text = "Entrenador";
             RBtnEntrenador.UseVisualStyleBackColor = true;
             // 
+            // BTNCerrar
+            // 
+            BTNCerrar.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
+            BTNCerrar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
+            BTNCerrar.FlatStyle = FlatStyle.Flat;
+            BTNCerrar.ForeColor = Color.FromArgb(255, 128, 0);
+            BTNCerrar.Location = new Point(479, 535);
+            BTNCerrar.Name = "BTNCerrar";
+            BTNCerrar.Size = new Size(130, 51);
+            BTNCerrar.TabIndex = 14;
+            BTNCerrar.Text = "Cerrar";
+            BTNCerrar.UseVisualStyleBackColor = true;
+            // 
             // RegistroDeUsuario
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(676, 617);
+            ClientSize = new Size(667, 626);
+            Controls.Add(BTNCerrar);
             Controls.Add(RBtnEntrenador);
             Controls.Add(RBtnCliente);
             Controls.Add(BTLimpiar);
@@ -213,5 +228,6 @@
         private Button BTLimpiar;
         private RadioButton RBtnCliente;
         private RadioButton RBtnEntrenador;
+        private Button BTNCerrar;
     }
 }

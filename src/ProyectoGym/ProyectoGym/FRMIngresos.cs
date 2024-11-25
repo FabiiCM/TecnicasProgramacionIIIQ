@@ -26,20 +26,28 @@ namespace ProyectoGym
 
         }
 
-        private void toolStripTextBox1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
         private void BTAgregar_Click(object sender, EventArgs e)
         {
-            
-            }
+
+        }
+
+        private void BTNCerrar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FRMInicio ventanaSesion = new();
+            ventanaSesion.Show();
+        }
+
+        private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
+}
 
