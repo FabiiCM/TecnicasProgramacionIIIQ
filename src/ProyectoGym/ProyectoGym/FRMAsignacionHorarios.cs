@@ -60,6 +60,23 @@ namespace ProyectoGym
 
         private void BtnAsignar_Click(object sender, EventArgs e)
         {
+            
+        }
+
+
+
+
+
+
+        private void BTNSalir_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            FRMInicio ventanaSesion = new FRMInicio();
+            ventanaSesion.Show();
+        }
+
+        private void btnAsignar_Click_1(object sender, EventArgs e)
+        {
             // Obtener valores seleccionados
             string especialidad = cmbEspecialidad.SelectedItem?.ToString() ?? string.Empty;
             string horario = cmbHorario.SelectedItem?.ToString() ?? string.Empty;
@@ -84,18 +101,7 @@ namespace ProyectoGym
             {
                 MessageBox.Show("Por favor, complete todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
 
-
-
-
-
-
-        private void BTNSalir_Click_1(object sender, EventArgs e)
-        {
-            this.Hide();
-            FRMInicio ventanaSesion = new FRMInicio();
-            ventanaSesion.Show();
         }
     }
 }

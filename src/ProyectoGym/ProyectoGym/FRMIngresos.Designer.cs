@@ -63,12 +63,12 @@
             contextMenuStrip1.ImageScalingSize = new Size(24, 24);
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { toolStripTextBox1 });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(161, 39);
+            contextMenuStrip1.Size = new Size(161, 29);
             // 
             // toolStripTextBox1
             // 
             toolStripTextBox1.Name = "toolStripTextBox1";
-            toolStripTextBox1.Size = new Size(100, 31);
+            toolStripTextBox1.Size = new Size(100, 23);
             // 
             // DGVUno
             // 
@@ -76,10 +76,11 @@
             DGVUno.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DGVUno.Columns.AddRange(new DataGridViewColumn[] { DGId, DGFecha, DGConcepto, DGMonto, DGMetodo, DGCliente });
             DGVUno.GridColor = SystemColors.MenuText;
-            DGVUno.Location = new Point(26, 139);
+            DGVUno.Location = new Point(18, 83);
+            DGVUno.Margin = new Padding(2, 2, 2, 2);
             DGVUno.Name = "DGVUno";
             DGVUno.RowHeadersWidth = 62;
-            DGVUno.Size = new Size(961, 130);
+            DGVUno.Size = new Size(673, 78);
             DGVUno.TabIndex = 1;
             // 
             // DGId
@@ -126,93 +127,104 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(148, 19);
+            dateTimePicker1.Location = new Point(104, 11);
+            dateTimePicker1.Margin = new Padding(2, 2, 2, 2);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(325, 31);
+            dateTimePicker1.Size = new Size(229, 23);
             dateTimePicker1.TabIndex = 2;
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(173, 72);
+            comboBox1.Location = new Point(121, 43);
+            comboBox1.Margin = new Padding(2, 2, 2, 2);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(275, 33);
+            comboBox1.Size = new Size(194, 23);
             comboBox1.TabIndex = 3;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(544, 72);
+            textBox1.Location = new Point(381, 43);
+            textBox1.Margin = new Padding(2, 2, 2, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(342, 31);
+            textBox1.Size = new Size(241, 23);
             textBox1.TabIndex = 4;
             // 
             // LBFechaDesde
             // 
             LBFechaDesde.AutoSize = true;
-            LBFechaDesde.Location = new Point(26, 19);
+            LBFechaDesde.Location = new Point(18, 11);
+            LBFechaDesde.Margin = new Padding(2, 0, 2, 0);
             LBFechaDesde.Name = "LBFechaDesde";
-            LBFechaDesde.Size = new Size(116, 25);
+            LBFechaDesde.Size = new Size(76, 15);
             LBFechaDesde.TabIndex = 5;
             LBFechaDesde.Text = "Fecha Desde:";
             // 
             // LBFechaHasta
             // 
             LBFechaHasta.AutoSize = true;
-            LBFechaHasta.Location = new Point(479, 19);
+            LBFechaHasta.Location = new Point(335, 11);
+            LBFechaHasta.Margin = new Padding(2, 0, 2, 0);
             LBFechaHasta.Name = "LBFechaHasta";
-            LBFechaHasta.Size = new Size(111, 25);
+            LBFechaHasta.Size = new Size(74, 15);
             LBFechaHasta.TabIndex = 6;
             LBFechaHasta.Text = "Fecha Hasta:";
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(586, 19);
+            dateTimePicker2.Location = new Point(410, 11);
+            dateTimePicker2.Margin = new Padding(2, 2, 2, 2);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(327, 31);
+            dateTimePicker2.Size = new Size(230, 23);
             dateTimePicker2.TabIndex = 7;
             // 
             // LBTipoIngreso
             // 
             LBTipoIngreso.AutoSize = true;
-            LBTipoIngreso.Location = new Point(26, 75);
+            LBTipoIngreso.Location = new Point(18, 45);
+            LBTipoIngreso.Margin = new Padding(2, 0, 2, 0);
             LBTipoIngreso.Name = "LBTipoIngreso";
-            LBTipoIngreso.Size = new Size(141, 25);
+            LBTipoIngreso.Size = new Size(91, 15);
             LBTipoIngreso.TabIndex = 8;
             LBTipoIngreso.Text = "Tipo de Ingreso:";
             // 
             // LBCliente
             // 
             LBCliente.AutoSize = true;
-            LBCliente.Location = new Point(469, 72);
+            LBCliente.Location = new Point(328, 43);
+            LBCliente.Margin = new Padding(2, 0, 2, 0);
             LBCliente.Name = "LBCliente";
-            LBCliente.Size = new Size(69, 25);
+            LBCliente.Size = new Size(47, 15);
             LBCliente.TabIndex = 9;
             LBCliente.Text = "Cliente:";
             // 
             // LBTotalIngresos
             // 
             LBTotalIngresos.AutoSize = true;
-            LBTotalIngresos.Location = new Point(26, 302);
+            LBTotalIngresos.Location = new Point(18, 181);
+            LBTotalIngresos.Margin = new Padding(2, 0, 2, 0);
             LBTotalIngresos.Name = "LBTotalIngresos";
-            LBTotalIngresos.Size = new Size(126, 25);
+            LBTotalIngresos.Size = new Size(82, 15);
             LBTotalIngresos.TabIndex = 10;
             LBTotalIngresos.Text = "Total Ingresos:";
             // 
             // Membresías
             // 
             Membresías.AutoSize = true;
-            Membresías.Location = new Point(443, 302);
+            Membresías.Location = new Point(310, 181);
+            Membresías.Margin = new Padding(2, 0, 2, 0);
             Membresías.Name = "Membresías";
-            Membresías.Size = new Size(112, 25);
+            Membresías.Size = new Size(74, 15);
             Membresías.TabIndex = 11;
             Membresías.Text = "Membresías:";
             // 
             // LBIngresoPromedio
             // 
             LBIngresoPromedio.AutoSize = true;
-            LBIngresoPromedio.Location = new Point(832, 302);
+            LBIngresoPromedio.Location = new Point(582, 181);
+            LBIngresoPromedio.Margin = new Padding(2, 0, 2, 0);
             LBIngresoPromedio.Name = "LBIngresoPromedio";
-            LBIngresoPromedio.Size = new Size(159, 25);
+            LBIngresoPromedio.Size = new Size(104, 15);
             LBIngresoPromedio.TabIndex = 12;
             LBIngresoPromedio.Text = "Ingreso Promedio:";
             // 
@@ -223,9 +235,10 @@
             BTAgregar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
             BTAgregar.FlatStyle = FlatStyle.Flat;
             BTAgregar.ForeColor = Color.FromArgb(255, 128, 0);
-            BTAgregar.Location = new Point(76, 399);
+            BTAgregar.Location = new Point(53, 239);
+            BTAgregar.Margin = new Padding(2, 2, 2, 2);
             BTAgregar.Name = "BTAgregar";
-            BTAgregar.Size = new Size(112, 34);
+            BTAgregar.Size = new Size(78, 20);
             BTAgregar.TabIndex = 13;
             BTAgregar.Text = "Agregar";
             BTAgregar.UseVisualStyleBackColor = false;
@@ -238,9 +251,10 @@
             BTEditar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
             BTEditar.FlatStyle = FlatStyle.Flat;
             BTEditar.ForeColor = Color.FromArgb(255, 128, 0);
-            BTEditar.Location = new Point(304, 399);
+            BTEditar.Location = new Point(213, 239);
+            BTEditar.Margin = new Padding(2, 2, 2, 2);
             BTEditar.Name = "BTEditar";
-            BTEditar.Size = new Size(112, 34);
+            BTEditar.Size = new Size(78, 20);
             BTEditar.TabIndex = 14;
             BTEditar.Text = "Editar";
             BTEditar.UseVisualStyleBackColor = false;
@@ -252,9 +266,10 @@
             BTEliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
             BTEliminar.FlatStyle = FlatStyle.Flat;
             BTEliminar.ForeColor = Color.FromArgb(255, 128, 0);
-            BTEliminar.Location = new Point(544, 399);
+            BTEliminar.Location = new Point(381, 239);
+            BTEliminar.Margin = new Padding(2, 2, 2, 2);
             BTEliminar.Name = "BTEliminar";
-            BTEliminar.Size = new Size(121, 34);
+            BTEliminar.Size = new Size(85, 20);
             BTEliminar.TabIndex = 15;
             BTEliminar.Text = "Eliminar";
             BTEliminar.UseVisualStyleBackColor = false;
@@ -266,9 +281,10 @@
             BTGenerar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
             BTGenerar.FlatStyle = FlatStyle.Flat;
             BTGenerar.ForeColor = Color.FromArgb(255, 128, 0);
-            BTGenerar.Location = new Point(801, 399);
+            BTGenerar.Location = new Point(561, 239);
+            BTGenerar.Margin = new Padding(2, 2, 2, 2);
             BTGenerar.Name = "BTGenerar";
-            BTGenerar.Size = new Size(171, 34);
+            BTGenerar.Size = new Size(120, 20);
             BTGenerar.TabIndex = 16;
             BTGenerar.Text = "Generar Reporte";
             BTGenerar.UseVisualStyleBackColor = false;
@@ -280,9 +296,10 @@
             BTNCerrar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
             BTNCerrar.FlatStyle = FlatStyle.Flat;
             BTNCerrar.ForeColor = Color.FromArgb(255, 128, 0);
-            BTNCerrar.Location = new Point(890, 463);
+            BTNCerrar.Location = new Point(623, 278);
+            BTNCerrar.Margin = new Padding(2, 2, 2, 2);
             BTNCerrar.Name = "BTNCerrar";
-            BTNCerrar.Size = new Size(82, 38);
+            BTNCerrar.Size = new Size(57, 23);
             BTNCerrar.TabIndex = 17;
             BTNCerrar.Text = "Cerrar";
             BTNCerrar.UseVisualStyleBackColor = false;
@@ -290,10 +307,10 @@
             // 
             // FRMIngresos
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(1033, 513);
+            ClientSize = new Size(723, 429);
             Controls.Add(BTNCerrar);
             Controls.Add(BTGenerar);
             Controls.Add(BTEliminar);
@@ -311,6 +328,7 @@
             Controls.Add(comboBox1);
             Controls.Add(dateTimePicker1);
             Controls.Add(DGVUno);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "FRMIngresos";
             Text = "Ingresos";
             Load += FRMIngresos_Load;

@@ -16,6 +16,7 @@ namespace ProyectoGym
             // Validar que los campos no estén vacíos
             if (string.IsNullOrWhiteSpace(TBNombreCompleto.Text) ||
                 string.IsNullOrWhiteSpace(TBMail.Text) ||
+                 string.IsNullOrWhiteSpace(TBIdentificacion.Text) ||
                 string.IsNullOrWhiteSpace(TBNombreDeUsuario.Text) ||
                 string.IsNullOrWhiteSpace(TBContraseña.Text))
             {
@@ -31,7 +32,8 @@ namespace ProyectoGym
             }
 
             // Obtener los datos del usuario
-            string nombreCompleto = TBNombreCompleto.Text;
+            String id = TBIdentificacion.Text;
+            string nombreCompleto = TBNombreCompleto.Text; 
             string email = TBMail.Text;
             string nombreDeUsuario = TBNombreDeUsuario.Text;
             string contraseña = TBContraseña.Text;
@@ -57,7 +59,7 @@ namespace ProyectoGym
             }
 
             // Formatear los datos para guardarlos en CSV
-            string datos = $"{nombreCompleto},{email},{nombreDeUsuario},{contraseña}";
+            string datos = $"{id},{nombreCompleto},{email},{nombreDeUsuario},{contraseña}";
 
             try
             {
@@ -79,6 +81,7 @@ namespace ProyectoGym
 
         private void LimpiarCampos()
         {
+            TBIdentificacion.Clear();
             TBNombreCompleto.Clear();
             TBMail.Clear();
             TBNombreDeUsuario.Clear();
@@ -89,12 +92,19 @@ namespace ProyectoGym
 
         private void BTLimpiar_Click(object sender, EventArgs e)
         {
-            TBNombreCompleto.Clear();
-            TBMail.Clear();
-            TBNombreDeUsuario.Clear();
-            TBContraseña.Clear();
-            RBtnCliente.Checked = false;
-            RBtnEntrenador.Checked = false;
+            LimpiarCampos();
+
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TBNombreDeUsuario_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

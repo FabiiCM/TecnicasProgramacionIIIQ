@@ -40,18 +40,20 @@
             // cmbEspecialidad
             // 
             cmbEspecialidad.FormattingEnabled = true;
-            cmbEspecialidad.Location = new Point(31, 27);
+            cmbEspecialidad.Location = new Point(22, 16);
+            cmbEspecialidad.Margin = new Padding(2);
             cmbEspecialidad.Name = "cmbEspecialidad";
-            cmbEspecialidad.Size = new Size(183, 33);
+            cmbEspecialidad.Size = new Size(129, 23);
             cmbEspecialidad.TabIndex = 0;
             cmbEspecialidad.Text = "Clases";
             // 
             // cmbHorario
             // 
             cmbHorario.FormattingEnabled = true;
-            cmbHorario.Location = new Point(236, 27);
+            cmbHorario.Location = new Point(165, 16);
+            cmbHorario.Margin = new Padding(2);
             cmbHorario.Name = "cmbHorario";
-            cmbHorario.Size = new Size(183, 33);
+            cmbHorario.Size = new Size(129, 23);
             cmbHorario.TabIndex = 1;
             cmbHorario.Text = "Horario";
             // 
@@ -62,36 +64,41 @@
             btnAsignar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
             btnAsignar.FlatStyle = FlatStyle.Flat;
             btnAsignar.ForeColor = Color.FromArgb(255, 128, 0);
-            btnAsignar.Location = new Point(236, 172);
+            btnAsignar.Location = new Point(165, 93);
+            btnAsignar.Margin = new Padding(2);
             btnAsignar.Name = "btnAsignar";
-            btnAsignar.Size = new Size(176, 33);
+            btnAsignar.Size = new Size(123, 32);
             btnAsignar.TabIndex = 2;
             btnAsignar.Text = "Asignar Horario";
             btnAsignar.UseVisualStyleBackColor = false;
+            btnAsignar.Click += btnAsignar_Click_1;
             // 
             // lstAsignaciones
             // 
             lstAsignaciones.FormattingEnabled = true;
-            lstAsignaciones.ItemHeight = 25;
-            lstAsignaciones.Location = new Point(31, 232);
+            lstAsignaciones.ItemHeight = 15;
+            lstAsignaciones.Location = new Point(22, 139);
+            lstAsignaciones.Margin = new Padding(2);
             lstAsignaciones.Name = "lstAsignaciones";
-            lstAsignaciones.Size = new Size(588, 129);
+            lstAsignaciones.Size = new Size(413, 79);
             lstAsignaciones.TabIndex = 3;
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Location = new Point(31, 88);
+            txtDescripcion.Location = new Point(22, 53);
+            txtDescripcion.Margin = new Padding(2);
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(601, 31);
+            txtDescripcion.Size = new Size(422, 23);
             txtDescripcion.TabIndex = 4;
             txtDescripcion.Text = "Descripción";
             // 
             // cmbDificultad
             // 
             cmbDificultad.FormattingEnabled = true;
-            cmbDificultad.Location = new Point(450, 27);
+            cmbDificultad.Location = new Point(315, 16);
+            cmbDificultad.Margin = new Padding(2);
             cmbDificultad.Name = "cmbDificultad";
-            cmbDificultad.Size = new Size(183, 33);
+            cmbDificultad.Size = new Size(129, 23);
             cmbDificultad.TabIndex = 5;
             cmbDificultad.Text = "Intensidad";
             // 
@@ -102,9 +109,10 @@
             BTNSalir.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
             BTNSalir.FlatStyle = FlatStyle.Flat;
             BTNSalir.ForeColor = Color.FromArgb(255, 128, 0);
-            BTNSalir.Location = new Point(532, 404);
+            BTNSalir.Location = new Point(372, 242);
+            BTNSalir.Margin = new Padding(2);
             BTNSalir.Name = "BTNSalir";
-            BTNSalir.Size = new Size(112, 34);
+            BTNSalir.Size = new Size(78, 32);
             BTNSalir.TabIndex = 6;
             BTNSalir.Text = "Salir";
             BTNSalir.UseVisualStyleBackColor = false;
@@ -112,10 +120,10 @@
             // 
             // FRMAsignacionHorarios
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(656, 450);
+            ClientSize = new Size(495, 301);
             Controls.Add(BTNSalir);
             Controls.Add(cmbDificultad);
             Controls.Add(txtDescripcion);
@@ -123,6 +131,7 @@
             Controls.Add(btnAsignar);
             Controls.Add(cmbHorario);
             Controls.Add(cmbEspecialidad);
+            Margin = new Padding(2);
             Name = "FRMAsignacionHorarios";
             Text = "Asignación Horarios";
             ResumeLayout(false);

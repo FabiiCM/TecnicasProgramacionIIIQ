@@ -1,4 +1,4 @@
-IDCliente,NombreCompleto,CorreoElectronico,Telefono,FechaNacimiento,TipoMembresia,FechaInicio,FechaVencimiento,EstadoMembresia,Contraseña,NombreUsuario
+ID,NombreCompleto,CorreoElectronico,Telefono,FechaNacimiento,TipoMembresia,FechaInicio,FechaVencimiento,EstadoMembresia,Contraseña,NombreUsuario
 1,Amber Hunt,ntaylor@ramos.com,250-886-3876,1954-05-02,Mensual,2022-09-14,2021-04-16,Vigente,nn0lkXAq,user203
 2,Alexandra Kelly,xlopez@hotmail.com,+1-085-221-3103x154,2005-12-18,Mensual,2024-08-18,2025-09-02,Vigente,qWu9c7np,user603
 3,Mrs. Dana Mejia,brian25@mahoney-smith.org,001-670-947-5891x762,2003-06-26,Trimestral,2023-10-09,2026-08-11,Vigente,MZKzg16Z,user911
