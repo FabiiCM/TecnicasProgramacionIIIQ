@@ -22,6 +22,22 @@ namespace Controller.DataHandler
         }
 
         /// <summary>
+        /// Obtiene los datos de clientes.
+        /// </summary>
+        public List<string> GetClientes()
+        {
+            return ReadData(clientesPath);
+        }
+
+        /// <summary>
+        /// Obtiene los datos de entrenadores.
+        /// </summary>
+        public List<string> GetEntrenadores()
+        {
+            return ReadData(entrenadoresPath);
+        }
+
+        /// <summary>
         /// Lee datos desde un archivo.
         /// </summary>
         public List<string> ReadData(string filePath)
@@ -38,22 +54,6 @@ namespace Controller.DataHandler
         public void WriteData(string filePath, List<string> data)
         {
             File.WriteAllLines(filePath, data);
-        }
-
-        /// <summary>
-        /// Obtiene los datos de clientes.
-        /// </summary>
-        public List<string> GetClientes()
-        {
-            return ReadData(clientesPath);
-        }
-
-        /// <summary>
-        /// Obtiene los datos de entrenadores.
-        /// </summary>
-        public List<string> GetEntrenadores()
-        {
-            return ReadData(entrenadoresPath);
         }
     }
 }

@@ -1,18 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Model.Gestion
 {
+    /// <summary>
+    /// Representa una reserva realizada por un cliente para una clase en el sistema.
+    /// </summary>
     public class Reserva
     {
-        public int ID { get; set; }
-        public int ClienteID { get; set; }
+        /// <summary>
+        /// Obtiene o establece el identificador de la clase reservada.
+        /// </summary>
         public int ClaseID { get; set; }
+
+        /// <summary>
+        /// Obtiene o establece el identificador del cliente que realizó la reserva.
+        /// </summary>
+        public int ClienteID { get; set; }
+
+        /// <summary>
+        /// Obtiene o establece la fecha en que se realizó la reserva.
+        /// </summary>
         public DateTime FechaReserva { get; set; }
 
+        /// <summary>
+        /// Obtiene o establece el identificador único de la reserva.
+        /// </summary>
+        public int ID { get; set; }
+
+        /// <summary>
+        /// Inicializa una nueva instancia de la clase <see cref="Reserva"/>.
+        /// </summary>
+        /// <param name="id">Identificador único de la reserva.</param>
+        /// <param name="clienteID">Identificador del cliente que realizó la reserva.</param>
+        /// <param name="claseID">Identificador de la clase reservada.</param>
+        /// <param name="fechaReserva">Fecha en que se realizó la reserva.</param>
         public Reserva(int id, int clienteID, int claseID, DateTime fechaReserva)
         {
             ID = id;
@@ -21,6 +42,10 @@ namespace Model.Gestion
             FechaReserva = fechaReserva;
         }
 
+        /// <summary>
+        /// Devuelve una representación en cadena de la reserva.
+        /// </summary>
+        /// <returns>Una cadena con los detalles de la reserva.</returns>
         public override string ToString()
         {
             return $"Reserva ID: {ID}, Cliente ID: {ClienteID}, Clase ID: {ClaseID}, Fecha: {FechaReserva.ToShortDateString()}";

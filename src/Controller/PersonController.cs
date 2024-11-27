@@ -3,20 +3,20 @@
 namespace Controller
 {
     /// <summary>
-    /// Class in charge of managing the Person entity.
+    /// Clase encargada de gestionar la entidad Persona.
     /// </summary>
     public static class PersonController
     {
+        /// <summary>
+        /// Obtiene una lista de personas.
+        /// </summary>
+        /// <returns>Una lista de objetos <see cref="Person"/> con los datos de las personas.</returns>
         public static List<Person> GetPeople()
         {
             return new List<Person>()
-        {
-            new Person(" Christopher Calvo",  DateTime.Today)
-           
-        };
-            
-      }
-   }
+            {
+                new Person("Christopher Calvo", DateTime.Today)
+            };
+        }
+    }
 }
-// Prueba   
-//prueba

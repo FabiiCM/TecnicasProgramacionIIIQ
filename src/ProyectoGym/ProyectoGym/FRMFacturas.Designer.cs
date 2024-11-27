@@ -38,7 +38,8 @@
             menuStrip1.ImageScalingSize = new Size(24, 24);
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(356, 24);
+            menuStrip1.Padding = new Padding(4, 1, 0, 1);
+            menuStrip1.Size = new Size(249, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -49,12 +50,14 @@
             btnConsultarFacturas.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
             btnConsultarFacturas.FlatStyle = FlatStyle.Flat;
             btnConsultarFacturas.ForeColor = Color.FromArgb(255, 128, 0);
-            btnConsultarFacturas.Location = new Point(70, 62);
+            btnConsultarFacturas.Location = new Point(49, 37);
+            btnConsultarFacturas.Margin = new Padding(2, 2, 2, 2);
             btnConsultarFacturas.Name = "btnConsultarFacturas";
-            btnConsultarFacturas.Size = new Size(202, 56);
+            btnConsultarFacturas.Size = new Size(141, 34);
             btnConsultarFacturas.TabIndex = 2;
             btnConsultarFacturas.Text = "Consultar Facturas";
             btnConsultarFacturas.UseVisualStyleBackColor = false;
+            btnConsultarFacturas.Click += btnConsultarFacturas_Click;
             // 
             // BTNSalir
             // 
@@ -62,9 +65,10 @@
             BTNSalir.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
             BTNSalir.FlatStyle = FlatStyle.Flat;
             BTNSalir.ForeColor = Color.FromArgb(255, 128, 0);
-            BTNSalir.Location = new Point(115, 142);
+            BTNSalir.Location = new Point(80, 85);
+            BTNSalir.Margin = new Padding(2, 2, 2, 2);
             BTNSalir.Name = "BTNSalir";
-            BTNSalir.Size = new Size(112, 34);
+            BTNSalir.Size = new Size(78, 20);
             BTNSalir.TabIndex = 3;
             BTNSalir.Text = "Salir";
             BTNSalir.UseVisualStyleBackColor = true;
@@ -72,14 +76,15 @@
             // 
             // FRMFacturas
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(356, 241);
+            ClientSize = new Size(249, 145);
             Controls.Add(BTNSalir);
             Controls.Add(btnConsultarFacturas);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(2, 2, 2, 2);
             Name = "FRMFacturas";
             Text = "FRMFacturas";
             Load += FRMFacturas_Load;

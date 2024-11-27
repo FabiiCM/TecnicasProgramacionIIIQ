@@ -1,25 +1,73 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
+using System;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Model.Personas
 {
+    /// <summary>
+    /// Representa a un entrenador del sistema de gimnasio.
+    /// </summary>
     public class Entrenador
     {
-        // Propiedades del entrenador
-        public int ID { get; set; }
-        public string NombreCompleto { get; set; }
-        public string Especialidad { get; set; }
-        public string HorariosDisponibles { get; set; }
-        public string Telefono { get; set; }
-        public string CorreoElectronico { get; set; }
+        /// <summary>
+        /// Obtiene o establece los años de experiencia del entrenador.
+        /// </summary>
         public int AñosDeExperiencia { get; set; }
+
+        /// <summary>
+        /// Obtiene o establece la contraseña del entrenador.
+        /// </summary>
         public string Contraseña { get; set; }
+
+        /// <summary>
+        /// Obtiene o establece el correo electrónico del entrenador.
+        /// </summary>
+        public string CorreoElectronico { get; set; }
+
+        /// <summary>
+        /// Obtiene o establece la especialidad del entrenador.
+        /// </summary>
+        public string Especialidad { get; set; }
+
+        /// <summary>
+        /// Obtiene o establece los horarios disponibles del entrenador.
+        /// </summary>
+        public string HorariosDisponibles { get; set; }
+
+        /// <summary>
+        /// Obtiene o establece el identificador único del entrenador.
+        /// </summary>
+        public int ID { get; set; }
+
+        /// <summary>
+        /// Obtiene o establece el nombre completo del entrenador.
+        /// </summary>
+        public string NombreCompleto { get; set; }
+
+        /// <summary>
+        /// Obtiene o establece el nombre de usuario del entrenador.
+        /// </summary>
         public string NombreUsuario { get; set; }
 
-        // Constructor
+        /// <summary>
+        /// Obtiene o establece el número de teléfono del entrenador.
+        /// </summary>
+        public string Telefono { get; set; }
+
+        /// <summary>
+        /// Inicializa una nueva instancia de la clase <see cref="Entrenador"/>.
+        /// </summary>
+        /// <param name="id">Identificador único del entrenador.</param>
+        /// <param name="nombreCompleto">Nombre completo del entrenador.</param>
+        /// <param name="especialidad">Especialidad del entrenador.</param>
+        /// <param name="horariosDisponibles">Horarios disponibles del entrenador.</param>
+        /// <param name="telefono">Número de teléfono del entrenador.</param>
+        /// <param name="correoElectronico">Correo electrónico del entrenador.</param>
+        /// <param name="añosDeExperiencia">Años de experiencia del entrenador.</param>
+        /// <param name="contraseña">Contraseña del entrenador.</param>
+        /// <param name="nombreUsuario">Nombre de usuario del entrenador.</param>
         public Entrenador(int id, string nombreCompleto, string especialidad, string horariosDisponibles,
                           string telefono, string correoElectronico, int añosDeExperiencia, string contraseña, string nombreUsuario)
         {
@@ -34,7 +82,15 @@ namespace Model.Personas
             NombreUsuario = nombreUsuario;
         }
 
-        // Método para validar credenciales del entrenador
+        /// <summary>
+        /// Valida las credenciales de un entrenador buscando en un archivo CSV.
+        /// </summary>
+        /// <param name="usuario">Nombre de usuario proporcionado.</param>
+        /// <param name="contraseña">Contraseña proporcionada.</param>
+        /// <param name="rutaArchivo">Ruta del archivo CSV que contiene los datos de los entrenadores.</param>
+        /// <returns>
+        /// <c>true</c> si las credenciales son válidas; de lo contrario, <c>false</c>.
+        /// </returns>
         public static bool ValidarEntrenador(string usuario, string contraseña, string rutaArchivo)
         {
             try
@@ -60,3 +116,4 @@ namespace Model.Personas
         }
     }
 }
+

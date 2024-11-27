@@ -44,5 +44,10 @@ namespace ProyectoGym
             inicio.Show();
             this.Hide();
         }
+
+        private void btnConsultarFacturas_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

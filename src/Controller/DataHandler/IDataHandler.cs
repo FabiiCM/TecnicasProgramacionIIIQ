@@ -1,10 +1,10 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
 
 namespace Controller.DataHandler
 {
-
     /// <summary>
-    //contato para elementos que manejan datos
+    /// Contrato para elementos que manejan datos.
     /// </summary>
     public interface IDataHandler
     {

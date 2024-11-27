@@ -1,18 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProyectoGym
 {
+    /// <summary>
+    /// Representa una factura generada en el sistema.
+    /// </summary>
     public class Factura
     {
+        /// <summary>
+        /// Obtiene o establece el ID de la matrícula asociada a la factura.
+        /// </summary>
+        public int MatriculaID { get; set; }
 
-        public int MatriculaID { get; set; }    // ID de cliente asociado a la factura
-        public DateTime Fecha { get; set; }     // Fecha de emisión de la factura
-        public decimal Monto { get; set; }      // Monto de la factura
+        /// <summary>
+        /// Obtiene o establece la fecha de emisión de la factura.
+        /// </summary>
+        public DateTime Fecha { get; set; }
+
+        /// <summary>
+        /// Obtiene o establece el monto de la factura.
+        /// </summary>
+        public decimal Monto { get; set; }
     }
-
 }
+
 
