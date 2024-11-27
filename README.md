@@ -46,24 +46,41 @@ Gestiona la generación automática de facturas mensuales para clientes, almacen
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 
 Cómo Usar
-1-Registro de Usuarios
-Los administradores pueden crear y gestionar los perfiles de los entrenadores y clientes.
-Los entrenadores pueden configurar sus horarios y especializaciones, mientras que los clientes pueden visualizar y reservar clases.
+1-Registro de Usuarios  
 
-2-Gestión de Membresías
-El sistema envía notificaciones a los clientes cuando sus membresías están próximas a expirar.
-Los administradores pueden gestionar y actualizar las membresías según sea necesario.
+Los administradores pueden crear y gestionar los perfiles de los entrenadores y clientes. Los entrenadores pueden configurar sus horarios y especializaciones, mientras que los clientes pueden visualizar y reservar clases. 
 
-3-Gestión de Clases y Reservas
-Los entrenadores pueden crear nuevas clases, asignando detalles como horarios y niveles de dificultad.
-Los clientes pueden visualizar un calendario de clases y reservar espacios en las que estén interesados.
+ 
 
-4-Gestión de Inventario
-El sistema permite agregar, editar y eliminar equipos de gimnasio.
-Además, registra el uso de equipamiento en cada clase para mantener un control de los recursos.
+2-Gestión de Membresías 
 
-5-Generación de Reportes
-Los entrenadores y administradores pueden generar reportes detallados sobre las clases más populares, la asistencia y el crecimiento de las membresías.
+El sistema requiere los datos de almacenamiento necesarios que el usuario debe llenar para crear la membresia. 
+
+A excepcion que falta la parte lógica para almacenar datos y enviar notificaciones a los entrenadores. 
+
+ 
+
+3-Gestión de Clases y Reservas  
+
+Los entrenadores y clientes pueden crear nuevas clases, asignando detalles como horarios y niveles de dificultad. Los clientes pueden visualizar un calendario de clases y reservar espacios en las que estén interesados. 
+
+ 
+
+4-Gestión de Inventario  
+
+El sistema permite agregar, editar y eliminar equipos de gimnasio. Además, registra el uso de equipamiento en cada clase para mantener un control de los recursos. 
+
+ 
+
+5-Generación de Reportes  
+
+Los entrenadores pueden generar reportes detallados sobre las clases, inventario, la asistencia y el crecimiento de las membresías. 
+
+ 
+
+6-Facturación   
+
+Los usuarios pueden consultar sus facturas en cualquier momento. 
 
 6-Facturación
 El sistema genera facturas automáticamente cada mes para cada cliente, basadas en sus membresías activas.
