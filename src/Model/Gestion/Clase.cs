@@ -9,9 +9,9 @@ namespace Model.Gestion
     public class Clase
     {
         /// <summary>
-        /// Lista de identificadores de los clientes inscritos en la clase.
+        /// Lista de reservas asociadas a la clase.
         /// </summary>
-        public List<int> ClientesInscritos { get; set; }
+        public List<Reserva> Reservas { get; set; }
 
         /// <summary>
         /// Capacidad máxima de la clase.
@@ -53,36 +53,51 @@ namespace Model.Gestion
             Horario = horario;
             CupoMaximo = cupoMaximo;
             EntrenadorID = entrenadorID;
-            ClientesInscritos = new List<int>();
+            Reservas = new List<Reserva>();
         }
 
         /// <summary>
-        /// Inscribe un cliente en la clase si hay cupo disponible.
+        /// Inscribe a un cliente en la clase si hay cupo disponible.
         /// </summary>
-        /// <param name="clienteID">Identificador del cliente a inscribir.</param>
+        /// <param name="reserva">Objeto reserva con los detalles del cliente y la clase.</param>
         /// <returns>
-        /// <c>true</c> si el cliente fue inscrito correctamente; de lo contrario, <c>false</c>.
+        /// <c>true</c> si la inscripción fue exitosa; de lo contrario, <c>false</c>.
         /// </returns>
-        public bool InscribirCliente(int clienteID)
+        public bool InscribirCliente(Reserva reserva)
         {
-            if (ClientesInscritos.Count < CupoMaximo)
+            if (Reservas.Count < CupoMaximo)
             {
-                ClientesInscritos.Add(clienteID);
+                Reservas.Add(reserva);
                 return true;
             }
             return false;
         }
 
         /// <summary>
-        /// Elimina a un cliente inscrito en la clase.
+        /// Elimina una reserva de la clase.
         /// </summary>
-        /// <param name="clienteID">Identificador del cliente a eliminar.</param>
+        /// <param name="clienteID">Identificador del cliente cuya reserva se eliminará.</param>
         /// <returns>
-        /// <c>true</c> si el cliente fue eliminado correctamente; de lo contrario, <c>false</c>.
+        /// <c>true</c> si la reserva fue eliminada correctamente; de lo contrario, <c>false</c>.
         /// </returns>
         public bool EliminarCliente(int clienteID)
         {
-            return ClientesInscritos.Remove(clienteID);
+            var reserva = Reservas.Find(r => r.ClienteID == clienteID);
+            if (reserva != null)
+            {
+                Reservas.Remove(reserva);
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Obtiene una lista de los identificadores de los clientes inscritos en la clase.
+        /// </summary>
+        /// <returns>Lista de IDs de clientes inscritos.</returns>
+        public List<int> ObtenerClientesInscritos()
+        {
+            return Reservas.ConvertAll(r => r.ClienteID);
         }
 
         /// <summary>
@@ -91,8 +106,7 @@ namespace Model.Gestion
         /// <returns>Una cadena con los detalles de la clase.</returns>
         public override string ToString()
         {
-            return $"Clase: {Nombre}, Horario: {Horario}, Cupo: {ClientesInscritos.Count}/{CupoMaximo}, Entrenador ID: {EntrenadorID}";
+            return $"Clase: {Nombre}, Horario: {Horario}, Cupo: {Reservas.Count}/{CupoMaximo}, Entrenador ID: {EntrenadorID}";
         }
     }
 }
-

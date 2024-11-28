@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model.Gestion;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -41,6 +42,11 @@ namespace ProyectoGym
         public string NombreUsuario { get; set; }
 
         /// <summary>
+        /// Obtiene o establece la membresía asociada al cliente.
+        /// </summary>
+        public Membresia Membresia { get; set; }
+
+        /// <summary>
         /// Obtiene o establece el número de teléfono del cliente.
         /// </summary>
         public string Telefono { get; set; }
@@ -49,6 +55,11 @@ namespace ProyectoGym
         /// Obtiene o establece el tipo de usuario del cliente.
         /// </summary>
         public string TipoUsuario { get; set; }
+
+        /// <summary>
+        /// Obtiene o establece las reservas asociadas al cliente.
+        /// </summary>
+        public List<Reserva> Reservas { get; set; } = new List<Reserva>();
 
         /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="Cliente"/>.
@@ -61,8 +72,9 @@ namespace ProyectoGym
         /// <param name="tipoUsuario">Tipo de usuario (Cliente, Administrador, etc.).</param>
         /// <param name="contraseña">Contraseña del cliente.</param>
         /// <param name="nombreUsuario">Nombre de usuario para iniciar sesión.</param>
+        /// <param name="membresia">Membresía asociada al cliente.</param>
         public Cliente(int idCliente, string nombreCompleto, string correoElectronico, string telefono,
-                       DateTime fechaNacimiento, string tipoUsuario, string contraseña, string nombreUsuario)
+                       DateTime fechaNacimiento, string tipoUsuario, string contraseña, string nombreUsuario, Membresia membresia)
         {
             IDCliente = idCliente;
             NombreCompleto = nombreCompleto;
@@ -72,6 +84,49 @@ namespace ProyectoGym
             TipoUsuario = tipoUsuario;
             Contraseña = contraseña;
             NombreUsuario = nombreUsuario;
+            Membresia = membresia;
+        }
+
+        /// <summary>
+        /// Notifica al cliente si su membresía está por vencer.
+        /// </summary>
+        /// <returns>
+        /// Un mensaje notificando que la membresía está por vencer; de lo contrario, una cadena vacía.
+        /// </returns>
+        public string NotificarMembresia()
+        {
+            if (Membresia != null && Membresia.EstaPorVencer())
+            {
+                return "¡Atención! Su membresía está por vencer en los próximos días. Por favor, renueve su mensualidad.";
+            }
+            return string.Empty;
+        }
+
+        /// <summary>
+        /// Realiza una reserva para el cliente.
+        /// </summary>
+        /// <param name="reserva">Objeto reserva a agregar.</param>
+        public void AgregarReserva(Reserva reserva)
+        {
+            Reservas.Add(reserva);
+        }
+
+        /// <summary>
+        /// Elimina una reserva específica del cliente.
+        /// </summary>
+        /// <param name="reservaID">ID de la reserva a eliminar.</param>
+        /// <returns>
+        /// <c>true</c> si la reserva fue eliminada correctamente; de lo contrario, <c>false</c>.
+        /// </returns>
+        public bool EliminarReserva(int reservaID)
+        {
+            var reserva = Reservas.FirstOrDefault(r => r.ID == reservaID);
+            if (reserva != null)
+            {
+                Reservas.Remove(reserva);
+                return true;
+            }
+            return false;
         }
 
         /// <summary>
@@ -111,4 +166,3 @@ namespace ProyectoGym
         }
     }
 }
-
