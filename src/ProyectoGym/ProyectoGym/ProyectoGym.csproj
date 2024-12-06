@@ -19,11 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Controller\Controller.csproj" />
-    <ProjectReference Include="..\..\Model\Model.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Program.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>

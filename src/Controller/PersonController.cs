@@ -15,7 +15,6 @@ namespace Controller
         {
             return new List<Person>()
             {
-                new Person("Christopher Calvo", DateTime.Today)
             };
         }
     }
