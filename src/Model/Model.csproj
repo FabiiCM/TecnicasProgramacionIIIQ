@@ -10,4 +10,8 @@
     <PackageReference Include="EPPlus" Version="7.4.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Context\" />
+  </ItemGroup>
+
 </Project>

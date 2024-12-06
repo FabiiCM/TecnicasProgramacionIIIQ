@@ -60,7 +60,7 @@ namespace ProyectoGym
 
         private void BtnAsignar_Click(object sender, EventArgs e)
         {
-            
+
         }
 
 
@@ -101,6 +101,11 @@ namespace ProyectoGym
             {
                 MessageBox.Show("Por favor, complete todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+        }
+
+        private void FRMAsignacionHorarios_Load_1(object sender, EventArgs e)
+        {
 
         }
     }
