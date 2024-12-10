@@ -1,0 +1,415 @@
+[33mcommit 99483d9bae9bcf2e35e4260406e0dc13da204bb2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Fri Dec 6 14:39:55 2024 -0600
+
+    Orden en Carpetas, implementación código
+
+[33mcommit 9de10d259c82f78e7b47dec53116ed891dc5472d[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Thu Dec 5 19:18:52 2024 -0600
+
+    Cambio Carpetas y elimar un poco codigo basura
+
+[33mcommit 21de2863322c7d8181cd30d1a2bb0970c0f013aa[m
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Wed Nov 27 18:09:29 2024 -0600
+
+    Carpeta inventario
+
+[33mcommit 19fc52a7c55b93bc27213ac67a7b40245afee21d[m
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Wed Nov 27 17:29:44 2024 -0600
+
+    Organizacion por orden alfabetica de metodos y comentarios en metodods publicos
+
+[33mcommit 220f923607e6e0110bb14f7bfc0996061430f91a[m
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Wed Nov 27 16:47:28 2024 -0600
+
+    Añadiendo Entregable 1: Planificación inicial del gimnasio
+
+[33mcommit 19bab422cef3ec77357cfef360179d3563ef20c3[m
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Wed Nov 27 16:33:22 2024 -0600
+
+    Añadiendo carpeta docs y documentación técnica
+
+[33mcommit 9e9eae1e355963d7d3e49348267a304bad54af42[m
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Wed Nov 27 16:24:25 2024 -0600
+
+    ...
+
+[33mcommit 983979055f983e6e7c224d90cfcaed889effcd56[m
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Wed Nov 27 14:17:11 2024 -0600
+
+    Añadiendo documentación técnica en la carpeta docs
+
+[33mcommit e562c4845ad8dcec71005831585facc729cef172[m
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Wed Nov 27 14:04:55 2024 -0600
+
+    se añadio la carpeta docs
+
+[33mcommit b796657d0afb831539e9e107d67734c088f7ccd7[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Tue Nov 26 21:03:16 2024 -0600
+
+    Update README.md
+
+[33mcommit a54bf9df897313ecd152c6b1a3a41330446a0c40[m
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Mon Nov 25 23:24:05 2024 -0600
+
+    Implementacion del ID
+
+[33mcommit 12bd572223ebf8520115853f808cad76fd5f17c8[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Mon Nov 25 01:21:13 2024 -0600
+
+    Actualización 2
+    Form nuevos para Usuario Entrenador
+
+[33mcommit b2487cf11d1e0759ad90e9bbd67996c08d6c1ec3[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Sun Nov 24 19:53:08 2024 -0600
+
+    Actualización
+
+[33mcommit a10988b11587de3ef4083effe3f82c4befd2e155[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Sun Nov 24 16:47:37 2024 -0600
+
+    Implementación Registros en excell
+
+[33mcommit e65b3c261033836e2963f1f39c2bf51f5f4f0abd[m
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Fri Nov 22 14:42:09 2024 -0600
+
+    Se implemento el metodo limpiar en los espacios de resgistro
+
+[33mcommit 80cb48fd76087f5497c593b133b52bf10bc9c129[m
+Merge: 8ddd092 6f543f6
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Fri Nov 22 13:02:12 2024 -0600
+
+    Merge branch 'master' of https://github.com/FabiiCM/TecnicasProgramacionIIIQ
+
+[33mcommit 8ddd092bb88c21cfc97a4f8c4dd23949e99cd42e[m
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Fri Nov 22 13:01:43 2024 -0600
+
+    Validaciones de inicio de sesion Clientes - Entrenador
+
+[33mcommit 6f543f607428839656800299e4dfeb8e9ddf350e[m
+Merge: 28a0f49 95afa34
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Thu Nov 21 17:13:48 2024 -0600
+
+    Merge branch 'master' of https://github.com/FabiiCM/TecnicasProgramacionIIIQ
+
+[33mcommit 28a0f49eb85f6ae0a88136c2e0dcf7a507469586[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Thu Nov 21 17:13:41 2024 -0600
+
+    Interfaz de Entrenador-Reportes
+    Logica de Ingreso e IngresoManager falta conectar al FORM
+    sin errores
+
+[33mcommit 95afa34c3309497f368f6fca926477e4f09c8389[m
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Thu Nov 21 15:04:07 2024 -0600
+
+    Actualizacion de documento entrenadores.csv
+
+[33mcommit 4941a4155e4f80651fec5631c77e93861da1519c[m
+Merge: b59e176 9024c55
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Thu Nov 21 14:55:15 2024 -0600
+
+    Merge branch 'master' of https://github.com/FabiiCM/TecnicasProgramacionIIIQ
+
+[33mcommit b59e176395d4ca53b7e216aeb2b7a3ca3367c4d6[m
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Thu Nov 21 14:55:05 2024 -0600
+
+    actualizacion de clientes.csv
+
+[33mcommit 9024c55915e95ecc0fb746f67f7edbcb5c6bf02b[m
+Merge: f7093ef d652d19
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Thu Nov 21 13:49:16 2024 -0600
+
+    Merge branch 'master' of https://github.com/FabiiCM/TecnicasProgramacionIIIQ
+
+[33mcommit f7093efbcbc3088ac37ab992d7a821ba1b96f3bc[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Thu Nov 21 13:47:02 2024 -0600
+
+    FORMEntrenador
+    Menú entrenador
+    implementar entrenador al iniciar sesion
+    Interfaz
+
+[33mcommit d652d19c5a2cfd5ef7f7f6eeb447757a111d7632[m
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Thu Nov 21 13:41:41 2024 -0600
+
+    Se hizo el cambio de tipo de documento. xlsx a csv... tambien se implemento
+
+[33mcommit 24e510df9905018f2e7a4f3861caff2d9cd7e0ed[m
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Wed Nov 20 22:03:47 2024 -0600
+
+    prueba commit
+
+[33mcommit 63895d6b67c74c51a2668b1aad1ed8be090d292a[m
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Wed Nov 20 18:35:04 2024 -0600
+
+    carpeta model: se por carpetas finanzas, persona y gestion... para comenzar a trabajar la parte logica
+
+[33mcommit 7d3c12252c76179f072c4a8d5141867affb7dbcb[m
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Wed Nov 20 14:09:49 2024 -0600
+
+    excel entrenador
+
+[33mcommit a1335899dc6cd6816a210422f58415b41ac7f482[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Wed Nov 20 02:39:37 2024 -0600
+
+    Imagen Inicio, mejora interfaz
+    (Se puede cambiar)
+
+[33mcommit e0762bff9ece5516b5aae322a24ea89503c306ff[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Wed Nov 20 02:09:14 2024 -0600
+
+    Modificación IniciodeSesión
+    CmbTipoUsuario
+    Generador de Usuario
+
+[33mcommit 19a01805078ae1a16e4bcff785ad723a7f7eea5d[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Mon Nov 18 15:14:16 2024 -0600
+
+    Agregué Form ADMIN
+    Modificación Inicio
+
+[33mcommit 287d44de9b99259bc79cdc25f2995c5417d85f5d[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Wed Nov 13 16:53:02 2024 -0600
+
+    Boton Salir en Asignacion reservas clases
+
+[33mcommit 9590eb9cb222ccc8dd551f0c2ef2d3d7ebeddc9e[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Wed Nov 13 16:18:44 2024 -0600
+
+    Interfaz Grafica botones de Facturación
+
+[33mcommit 56a4852617a590b589ac15b65d1969b938ceb2b5[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Wed Nov 13 14:44:32 2024 -0600
+
+    Implementación Función de botones Registrar e Inicio de sesión y Salir
+
+[33mcommit c0eb1d0dbfe9eed189a0065b169f7b1d0f03eb6f[m
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Wed Nov 13 04:51:28 2024 +0100
+
+    actualizacion menu inicio
+
+[33mcommit a605e1483552ac2d07daab33fb142289b00fba50[m
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Wed Nov 13 04:46:29 2024 +0100
+
+    Actualizacion menu usuario
+
+[33mcommit f8bd4f8f6e3514a578ad16ad5ec3c4aa05b5bb55[m
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Tue Nov 12 18:29:00 2024 -0600
+
+    Interfaz grafica de Menu
+
+[33mcommit dbf7e18acd38f1d89d7459c58854f28e5e9f0e7e[m
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Tue Nov 12 03:38:46 2024 +0100
+
+    Implementación de los resgistros
+
+[33mcommit 7c138147631c480f3dfcc2223d73f2033a0cdbb6[m
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Mon Nov 11 19:38:52 2024 -0600
+
+    Se creo la ventana de gestion de membresias
+
+[33mcommit 60066f7fceed2f411d48448f9f3d51af52fbe27e[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Sat Nov 9 17:56:09 2024 -0600
+
+    Form 2 Clases y Reservas
+    0 errores
+
+[33mcommit c790911a4bce259c29ac24af1ba9f90404419904[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Sat Nov 9 17:52:36 2024 -0600
+
+    Form 1 Agregué botones
+    Corregí advertencia de BTClasesReservas
+
+[33mcommit d365fc188fc62ab526673ac39c234a4555494c91[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Sat Nov 9 01:01:39 2024 -0600
+
+    BTClasesReservas
+
+[33mcommit 61bbd2c06f6ffd60776c10e96f4ac16a27b9c25e[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Sat Nov 9 00:40:09 2024 -0600
+
+    Cambios Form 1 - InicioDeSesion - IDSDesigner
+    Todo funciona
+
+[33mcommit a3aa1ae9dcbceebd503840f896f8fe482444f784[m[33m ([m[1;31morigin/Fabi[m[33m)[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Fri Nov 8 22:47:02 2024 -0600
+
+    prueba de Form Inicio Sesion
+
+[33mcommit 9c56efad5c09faa42ec338d065e0357b9d3d291f[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Fri Nov 8 22:12:28 2024 -0600
+
+    Commit 2
+
+[33mcommit ba5684d14282c30b924e23544c0914d187b65480[m
+Merge: 7628e6d 255c74d
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Fri Nov 8 22:09:01 2024 -0600
+
+    Resuelto conflicto en InicioDeSesion.cs
+
+[33mcommit 7628e6dc02698118265fa336b1016b63c184971e[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Fri Nov 8 22:03:16 2024 -0600
+
+    Resolución de conflictos y actualización de archivos
+
+[33mcommit 7f4efa55280e75e62460c61295c37de1d699c30c[m
+Merge: 5b866a4 7bcc39a
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Fri Nov 8 21:58:06 2024 -0600
+
+    Resuelto conflicto en varios archivos
+
+[33mcommit 255c74d6e6f5fa116ee09c492edec0759d581cdd[m
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Fri Nov 8 20:35:50 2024 -0600
+
+    Prueba commit 1
+
+[33mcommit 5b866a452cdae4b13c443a691b116690e198b4e9[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Fri Nov 8 14:40:26 2024 -0600
+
+    Solución de Boón Inicio Sesión
+
+[33mcommit aa32da7f45c36e28f1e66a69630c5028ce902fb1[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Fri Nov 8 14:23:23 2024 -0600
+
+    Prueba 2 de Soluciones de cambios
+
+[33mcommit 35c107b016fa076312b2c05f0bdb75f86e870cb4[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Fri Nov 8 14:21:57 2024 -0600
+
+    Prueba Solución de errores
+
+[33mcommit 7bcc39ac1d4a5ce188bc2344287b6f061523113b[m
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Thu Nov 7 22:35:10 2024 -0600
+
+    Solucion de errores en form1.cs y form1.Designer.cs
+
+[33mcommit 2ba4bd130f5d68a3b0fb2855fdc850751ffeb064[m
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Thu Nov 7 22:09:33 2024 -0600
+
+    Importación de bibliotecas
+
+[33mcommit 92b7b6d4fcfa4e85b5747880d09c77500defeea7[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Thu Nov 7 20:15:43 2024 -0600
+
+    Interfaz Usuarios
+
+[33mcommit d6106582115ba896a93b5d8a1c2719650869d956[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Thu Nov 7 12:56:05 2024 -0600
+
+    Gestión de Usuarios
+
+[33mcommit 2b8fd12d5e503a3c6342fa0d9dd1173981b9af1e[m
+Author: akanneee123 <akane26allen@gmail.com>
+Date:   Wed Nov 6 22:21:59 2024 -0600
+
+    Prueba 3
+
+[33mcommit e9ad8d7e1c422017af1fb71da2b63649f718f381[m
+Merge: de0e1d9 0167f06
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Wed Nov 6 21:32:17 2024 -0600
+
+    Merge branch 'master' of https://github.com/FabiiCM/TecnicasProgramacionIIIQ
+
+[33mcommit de0e1d949c5edebe7b9ef558f88da2dfc7cbc496[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Wed Nov 6 21:30:17 2024 -0600
+
+    Prueba 2
+
+[33mcommit 0167f06a5a009faff95d20024945272ce39293d2[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Wed Nov 6 02:22:21 2024 -0600
+
+    Update README.md
+
+[33mcommit 961d2ed31aef48e6c9303be5c35a7530be361e8d[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Wed Nov 6 02:21:55 2024 -0600
+
+    Update README.md
+
+[33mcommit 970c25ac9d9d53503298f80ea347074a8d44a185[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Wed Nov 6 02:21:31 2024 -0600
+
+    Update README.md
+
+[33mcommit c144b47c5554a493f73217f895306bbf8e325e7b[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Wed Nov 6 02:20:57 2024 -0600
+
+    Update README.md
+
+[33mcommit d9a0264bebf525c40b09377c3a77ca2fe442a8db[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Wed Nov 6 02:11:45 2024 -0600
+
+    Prueba 1 Completa
+
+[33mcommit e38e24433e791ef5bcdd2512e63ea8640c3ea879[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Tue Nov 5 23:31:36 2024 -0600
+
+    Update README.md
+
+[33mcommit 4014e7472941af989d200058c7ab5b565bc24941[m
+Author: FabiiCM <fcastrom@edu.upolitecnica.cr>
+Date:   Tue Nov 5 23:30:20 2024 -0600
+
+    Initial commit
