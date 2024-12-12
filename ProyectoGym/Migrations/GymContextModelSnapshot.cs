@@ -367,5 +367,3 @@ namespace ProyectoGym.Migrations
         }
     }
 }
-
-
