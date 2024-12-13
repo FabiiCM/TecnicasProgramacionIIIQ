@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Model.Finanzas
+namespace ProyectoGym.src.Model.Finanzas
 {
     /// <summary>
     /// Representa un ingreso financiero registrado en el sistema.

@@ -1,11 +1,11 @@
-﻿using Model.Gestion;
+﻿using src.Model.Gestion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
 
-namespace Model.Personas
+namespace src.Model.Personas
 {
     /// <summary>
     /// Representa a un cliente del sistema de gimnasio.
@@ -31,7 +31,7 @@ namespace Model.Personas
 
         public Cliente() { }
 
-        /// <summary>
+       /* /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="Cliente"/>.
         /// </summary>
         /// <param name="idCliente">Identificador único del cliente.</param>
@@ -55,7 +55,7 @@ namespace Model.Personas
             Contraseña = contraseña;
             NombreUsuario = nombreUsuario;
             Membresia = membresia;
-        }
+        }*/
 
         /// <summary>
         /// Notifica al cliente si su membresía está por vencer.

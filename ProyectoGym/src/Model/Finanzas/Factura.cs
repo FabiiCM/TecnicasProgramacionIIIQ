@@ -1,8 +1,8 @@
-﻿using Model.Personas;
+﻿using src.Model.Personas;
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace ProyectoGym
+namespace ProyectoGym.src.Model.Finanzas
 {
     /// <summary>
     /// Representa una factura generada en el sistema.

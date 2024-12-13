@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Model.Gestion;
+using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Model.Personas
+namespace src.Model.Personas
 {
     /// <summary>
     /// Representa a una persona con propiedades básicas como nombre y fecha de nacimiento.
@@ -23,22 +24,22 @@ namespace Model.Personas
         /// <summary>
         /// Obtiene o establece el nombre completo de la persona.
         /// </summary>
-        public required string NombreCompleto { get; set; } 
+        public string NombreCompleto { get; set; } 
 
         /// <summary>
         /// Obtiene o establece la contraseña de la persona.
         /// </summary>
-        public required string Contraseña { get; set; }
+        public string Contraseña { get; set; }
 
         /// <summary>
         /// Obtiene o establece el correo electrónico de la persona.
         /// </summary>
-        public required string CorreoElectronico { get; set; }
+        public string CorreoElectronico { get; set; }
 
         /// <summary>
         /// Obtiene o establece el nombre de usuario de la persona.
         /// </summary>
-        public required string NombreUsuario { get; set; }
+        public  string NombreUsuario { get; set; }
 
         /// <summary>
         /// Obtiene o establece el número de teléfono de la persona.
@@ -48,8 +49,10 @@ namespace Model.Personas
         /// <summary>
         /// Obtiene o establece el rol de la persona.
         /// </summary>
-        public string? Rol { get; set; }
+        public string Rol { get; set; }
     }
+
+    
 }
 
 

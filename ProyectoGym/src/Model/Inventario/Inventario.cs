@@ -1,4 +1,5 @@
 ﻿using Model.Gestion;
+using src.Model.Inventario;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
