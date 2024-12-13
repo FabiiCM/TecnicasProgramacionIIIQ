@@ -33,39 +33,42 @@
             TXBPrecio = new TextBox();
             CMBTipo = new ComboBox();
             DgvMembresias = new DataGridView();
-            BTNAgregar = new Button();
-            BTNEliminar = new Button();
-            BTNActualizar = new Button();
             ID = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             Precio = new DataGridViewTextBoxColumn();
             Membresía = new DataGridViewTextBoxColumn();
             Datos = new DataGridViewTextBoxColumn();
+            BTNAgregar = new Button();
+            BTNEliminar = new Button();
+            BTNActualizar = new Button();
             BTNCerrar = new Button();
             ((System.ComponentModel.ISupportInitialize)DgvMembresias).BeginInit();
             SuspendLayout();
             // 
             // TXBId
             // 
-            TXBId.Location = new Point(30, 29);
+            TXBId.Location = new Point(21, 17);
+            TXBId.Margin = new Padding(2, 2, 2, 2);
             TXBId.Name = "TXBId";
-            TXBId.Size = new Size(150, 31);
+            TXBId.Size = new Size(106, 23);
             TXBId.TabIndex = 0;
             TXBId.Text = "ID";
             // 
             // TXTNombre
             // 
-            TXTNombre.Location = new Point(196, 29);
+            TXTNombre.Location = new Point(137, 17);
+            TXTNombre.Margin = new Padding(2, 2, 2, 2);
             TXTNombre.Name = "TXTNombre";
-            TXTNombre.Size = new Size(150, 31);
+            TXTNombre.Size = new Size(106, 23);
             TXTNombre.TabIndex = 1;
             TXTNombre.Text = "Nombre";
             // 
             // TXBPrecio
             // 
-            TXBPrecio.Location = new Point(367, 29);
+            TXBPrecio.Location = new Point(257, 17);
+            TXBPrecio.Margin = new Padding(2, 2, 2, 2);
             TXBPrecio.Name = "TXBPrecio";
-            TXBPrecio.Size = new Size(150, 31);
+            TXBPrecio.Size = new Size(106, 23);
             TXBPrecio.TabIndex = 2;
             TXBPrecio.Text = "Precio";
             // 
@@ -73,9 +76,10 @@
             // 
             CMBTipo.FormattingEnabled = true;
             CMBTipo.Items.AddRange(new object[] { "Mensual", "Trimestral", "Anual" });
-            CMBTipo.Location = new Point(541, 29);
+            CMBTipo.Location = new Point(379, 17);
+            CMBTipo.Margin = new Padding(2, 2, 2, 2);
             CMBTipo.Name = "CMBTipo";
-            CMBTipo.Size = new Size(182, 33);
+            CMBTipo.Size = new Size(129, 23);
             CMBTipo.TabIndex = 3;
             CMBTipo.Text = "Tipo Membresía";
             // 
@@ -83,56 +87,12 @@
             // 
             DgvMembresias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgvMembresias.Columns.AddRange(new DataGridViewColumn[] { ID, Nombre, Precio, Membresía, Datos });
-            DgvMembresias.Location = new Point(46, 88);
+            DgvMembresias.Location = new Point(32, 53);
+            DgvMembresias.Margin = new Padding(2, 2, 2, 2);
             DgvMembresias.Name = "DgvMembresias";
             DgvMembresias.RowHeadersWidth = 62;
-            DgvMembresias.Size = new Size(664, 112);
+            DgvMembresias.Size = new Size(465, 67);
             DgvMembresias.TabIndex = 4;
-            // 
-            // BTNAgregar
-            // 
-            BTNAgregar.BackColor = SystemColors.Window;
-            BTNAgregar.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
-            BTNAgregar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
-            BTNAgregar.FlatStyle = FlatStyle.Flat;
-            BTNAgregar.ForeColor = Color.FromArgb(255, 128, 0);
-            BTNAgregar.Location = new Point(46, 227);
-            BTNAgregar.Name = "BTNAgregar";
-            BTNAgregar.Size = new Size(112, 34);
-            BTNAgregar.TabIndex = 5;
-            BTNAgregar.Text = "Agregar";
-            BTNAgregar.UseVisualStyleBackColor = false;
-            BTNAgregar.Click += BTNAgregar_Click_1;
-            // 
-            // BTNEliminar
-            // 
-            BTNEliminar.BackColor = SystemColors.Window;
-            BTNEliminar.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
-            BTNEliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
-            BTNEliminar.FlatStyle = FlatStyle.Flat;
-            BTNEliminar.ForeColor = Color.FromArgb(255, 128, 0);
-            BTNEliminar.Location = new Point(233, 227);
-            BTNEliminar.Name = "BTNEliminar";
-            BTNEliminar.Size = new Size(113, 34);
-            BTNEliminar.TabIndex = 6;
-            BTNEliminar.Text = "Eliminar";
-            BTNEliminar.UseVisualStyleBackColor = false;
-            BTNEliminar.Click += BTNEliminar_Click_1;
-            // 
-            // BTNActualizar
-            // 
-            BTNActualizar.BackColor = SystemColors.Window;
-            BTNActualizar.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
-            BTNActualizar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
-            BTNActualizar.FlatStyle = FlatStyle.Flat;
-            BTNActualizar.ForeColor = Color.FromArgb(255, 128, 0);
-            BTNActualizar.Location = new Point(419, 227);
-            BTNActualizar.Name = "BTNActualizar";
-            BTNActualizar.Size = new Size(112, 34);
-            BTNActualizar.TabIndex = 7;
-            BTNActualizar.Text = "Actualizar";
-            BTNActualizar.UseVisualStyleBackColor = false;
-            BTNActualizar.Click += BTNActualizar_Click;
             // 
             // ID
             // 
@@ -169,15 +129,64 @@
             Datos.Name = "Datos";
             Datos.Width = 150;
             // 
+            // BTNAgregar
+            // 
+            BTNAgregar.BackColor = SystemColors.Window;
+            BTNAgregar.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
+            BTNAgregar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
+            BTNAgregar.FlatStyle = FlatStyle.Flat;
+            BTNAgregar.ForeColor = Color.FromArgb(255, 128, 0);
+            BTNAgregar.Location = new Point(32, 136);
+            BTNAgregar.Margin = new Padding(2, 2, 2, 2);
+            BTNAgregar.Name = "BTNAgregar";
+            BTNAgregar.Size = new Size(78, 20);
+            BTNAgregar.TabIndex = 5;
+            BTNAgregar.Text = "Agregar";
+            BTNAgregar.UseVisualStyleBackColor = false;
+            BTNAgregar.Click += BTNAgregar_Click_1;
+            // 
+            // BTNEliminar
+            // 
+            BTNEliminar.BackColor = SystemColors.Window;
+            BTNEliminar.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
+            BTNEliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
+            BTNEliminar.FlatStyle = FlatStyle.Flat;
+            BTNEliminar.ForeColor = Color.FromArgb(255, 128, 0);
+            BTNEliminar.Location = new Point(163, 136);
+            BTNEliminar.Margin = new Padding(2, 2, 2, 2);
+            BTNEliminar.Name = "BTNEliminar";
+            BTNEliminar.Size = new Size(79, 20);
+            BTNEliminar.TabIndex = 6;
+            BTNEliminar.Text = "Eliminar";
+            BTNEliminar.UseVisualStyleBackColor = false;
+            BTNEliminar.Click += BTNEliminar_Click_1;
+            // 
+            // BTNActualizar
+            // 
+            BTNActualizar.BackColor = SystemColors.Window;
+            BTNActualizar.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
+            BTNActualizar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
+            BTNActualizar.FlatStyle = FlatStyle.Flat;
+            BTNActualizar.ForeColor = Color.FromArgb(255, 128, 0);
+            BTNActualizar.Location = new Point(293, 136);
+            BTNActualizar.Margin = new Padding(2, 2, 2, 2);
+            BTNActualizar.Name = "BTNActualizar";
+            BTNActualizar.Size = new Size(78, 20);
+            BTNActualizar.TabIndex = 7;
+            BTNActualizar.Text = "Actualizar";
+            BTNActualizar.UseVisualStyleBackColor = false;
+            BTNActualizar.Click += BTNActualizar_Click;
+            // 
             // BTNCerrar
             // 
             BTNCerrar.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
             BTNCerrar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
             BTNCerrar.FlatStyle = FlatStyle.Flat;
             BTNCerrar.ForeColor = Color.FromArgb(255, 128, 0);
-            BTNCerrar.Location = new Point(593, 227);
+            BTNCerrar.Location = new Point(415, 136);
+            BTNCerrar.Margin = new Padding(2, 2, 2, 2);
             BTNCerrar.Name = "BTNCerrar";
-            BTNCerrar.Size = new Size(117, 34);
+            BTNCerrar.Size = new Size(82, 20);
             BTNCerrar.TabIndex = 8;
             BTNCerrar.Text = "Cerrar";
             BTNCerrar.UseVisualStyleBackColor = true;
@@ -185,10 +194,10 @@
             // 
             // FRMMembresias
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(756, 290);
+            ClientSize = new Size(529, 218);
             Controls.Add(BTNCerrar);
             Controls.Add(BTNActualizar);
             Controls.Add(BTNEliminar);
@@ -198,6 +207,7 @@
             Controls.Add(TXBPrecio);
             Controls.Add(TXTNombre);
             Controls.Add(TXBId);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "FRMMembresias";
             Text = "FRMMembresias";
             ((System.ComponentModel.ISupportInitialize)DgvMembresias).EndInit();
