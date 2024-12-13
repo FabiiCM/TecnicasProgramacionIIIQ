@@ -1,8 +1,6 @@
-﻿using Model.Personas;
-using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Model.Inventario
+namespace src.Model.Inventario
 {
     /// <summary>
     /// Representa una máquina del gimnasio.
@@ -21,13 +19,6 @@ namespace Model.Inventario
         public string Nombre { get; set; }
 
         /// <summary>
-        /// Obtiene o establece el identificador del inventario relacionado a la maquina.
-        /// </summary>
-        public int InventarioID { get; set; }
-
-        public Inventario Inventario{ get; set; }
-
-        /// <summary>
         /// Obtiene o establece la fecha de adquisición de la máquina.
         /// </summary>
         public DateTime FechaAdquisicion { get; set; }
@@ -37,8 +28,15 @@ namespace Model.Inventario
         /// </summary>
         public int VidaUtilMeses { get; set; }
 
+        /// <summary>
+        /// Obtiene o establece el costo de la máquina.
+        /// </summary>
+        public double costo { get; set; }
+
+
         public Maquina() { }
 
+        /*
         /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="Maquina"/>.
         /// </summary>
@@ -52,7 +50,7 @@ namespace Model.Inventario
             Nombre = nombre;
             FechaAdquisicion = fechaAdquisicion;
             VidaUtilMeses = vidaUtilMeses;
-        }
+        }*/
 
         /// <summary>
         /// Calcula si la máquina está cerca de cumplir su vida útil (3 meses o menos).
@@ -68,9 +66,13 @@ namespace Model.Inventario
         /// Devuelve la fecha de vencimiento de la vida útil de la máquina.
         /// </summary>
         /// <returns>La fecha en que la máquina cumple su vida útil.</returns>
-        public DateTime ObtenerFechaVencimiento()
+        public bool NecesitaReemplazo()
         {
-            return FechaAdquisicion.AddMonths(VidaUtilMeses);
+            if ((FechaAdquisicion.AddMonths(VidaUtilMeses) - DateTime.Now).Days <= 90)
+            {
+                return true;
+            }
+            return false;
         }
 
         /// <summary>
