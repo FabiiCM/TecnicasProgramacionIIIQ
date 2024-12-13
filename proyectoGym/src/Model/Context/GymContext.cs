@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace src.Model.Context
+namespace ProyectoGym.src.Model.Context
 {
     public class GymContext : DbContext
     {
