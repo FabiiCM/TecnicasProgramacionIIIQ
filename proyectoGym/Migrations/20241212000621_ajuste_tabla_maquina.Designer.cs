@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProyectoGym.src.Model.Context;
 
@@ -11,9 +12,11 @@ using ProyectoGym.src.Model.Context;
 namespace ProyectoGym.Migrations
 {
     [DbContext(typeof(GymContext))]
-    partial class GymContextModelSnapshot : ModelSnapshot
+    [Migration("20241212000621_ajuste_tabla_maquina")]
+    partial class ajuste_tabla_maquina
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,6 +24,89 @@ namespace ProyectoGym.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("Model.Gestion.Clase", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<int>("CupoMaximo")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EntrenadorID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Horario")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("EntrenadorID");
+
+                    b.ToTable("Clases");
+                });
+
+            modelBuilder.Entity("Model.Gestion.Membresia", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<int>("ClienteId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Costo")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime>("FechaInicio")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaVencimiento")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("ClienteId")
+                        .IsUnique();
+
+                    b.ToTable("Membresias");
+                });
+
+            modelBuilder.Entity("Model.Gestion.Reserva", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<int>("ClaseID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ClienteID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("FechaReserva")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("ClaseID");
+
+                    b.HasIndex("ClienteID");
+
+                    b.ToTable("Reservas");
+                });
 
             modelBuilder.Entity("ProyectoGym.src.Model.Finanzas.Factura", b =>
                 {
@@ -74,105 +160,6 @@ namespace ProyectoGym.Migrations
                     b.ToTable("Ingresos");
                 });
 
-            modelBuilder.Entity("src.Model.Finanzas.Reporte", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Reportes");
-                });
-
-            modelBuilder.Entity("src.Model.Gestion.Clase", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
-
-                    b.Property<int>("CupoMaximo")
-                        .HasColumnType("int");
-
-                    b.Property<int>("EntrenadorID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Horario")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Nombre")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("EntrenadorID");
-
-                    b.ToTable("Clases");
-                });
-
-            modelBuilder.Entity("src.Model.Gestion.Membresia", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
-
-                    b.Property<int>("ClienteID")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("Costo")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<bool>("Estado")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("FechaInicio")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("FechaVencimiento")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("ClienteID")
-                        .IsUnique();
-
-                    b.ToTable("Membresias");
-                });
-
-            modelBuilder.Entity("src.Model.Gestion.Reserva", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
-
-                    b.Property<int>("ClaseID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ClienteID")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("FechaReserva")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("ClaseID");
-
-                    b.HasIndex("ClienteID");
-
-                    b.ToTable("Reservas");
-                });
-
             modelBuilder.Entity("src.Model.Inventario.Maquina", b =>
                 {
                     b.Property<int>("ID")
@@ -190,9 +177,6 @@ namespace ProyectoGym.Migrations
 
                     b.Property<int>("VidaUtilMeses")
                         .HasColumnType("int");
-
-                    b.Property<double>("costo")
-                        .HasColumnType("float");
 
                     b.HasKey("ID");
 
@@ -227,7 +211,6 @@ namespace ProyectoGym.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Rol")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Telefono")
@@ -276,18 +259,7 @@ namespace ProyectoGym.Migrations
                     b.HasDiscriminator().HasValue("Entrenador");
                 });
 
-            modelBuilder.Entity("ProyectoGym.src.Model.Finanzas.Factura", b =>
-                {
-                    b.HasOne("src.Model.Personas.Cliente", "Cliente")
-                        .WithMany()
-                        .HasForeignKey("ClienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Cliente");
-                });
-
-            modelBuilder.Entity("src.Model.Gestion.Clase", b =>
+            modelBuilder.Entity("Model.Gestion.Clase", b =>
                 {
                     b.HasOne("src.Model.Personas.Entrenador", "Entrenador")
                         .WithMany("Clases")
@@ -298,18 +270,20 @@ namespace ProyectoGym.Migrations
                     b.Navigation("Entrenador");
                 });
 
-            modelBuilder.Entity("src.Model.Gestion.Membresia", b =>
+            modelBuilder.Entity("Model.Gestion.Membresia", b =>
                 {
-                    b.HasOne("src.Model.Personas.Cliente", null)
+                    b.HasOne("src.Model.Personas.Cliente", "Cliente")
                         .WithOne("Membresia")
-                        .HasForeignKey("src.Model.Gestion.Membresia", "ClienteID")
+                        .HasForeignKey("Model.Gestion.Membresia", "ClienteId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Cliente");
                 });
 
-            modelBuilder.Entity("src.Model.Gestion.Reserva", b =>
+            modelBuilder.Entity("Model.Gestion.Reserva", b =>
                 {
-                    b.HasOne("src.Model.Gestion.Clase", "Clase")
+                    b.HasOne("Model.Gestion.Clase", "Clase")
                         .WithMany("Reservas")
                         .HasForeignKey("ClaseID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -326,7 +300,18 @@ namespace ProyectoGym.Migrations
                     b.Navigation("Cliente");
                 });
 
-            modelBuilder.Entity("src.Model.Gestion.Clase", b =>
+            modelBuilder.Entity("ProyectoGym.src.Model.Finanzas.Factura", b =>
+                {
+                    b.HasOne("src.Model.Personas.Cliente", "Cliente")
+                        .WithMany()
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cliente");
+                });
+
+            modelBuilder.Entity("Model.Gestion.Clase", b =>
                 {
                     b.Navigation("Reservas");
                 });
