@@ -1,13 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Model.Gestion;
-using Model.Personas;
-using Model.Finanzas;
-using Model.Inventario;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using src.Model.Personas;
+using ProyectoGym.src.Model.Finanzas;
+using src.Model.Inventario;
+using src.Model.Gestion;
+using src.Model.Finanzas;
 
 namespace ProyectoGym.src.Model.Context
 {
@@ -19,10 +16,10 @@ namespace ProyectoGym.src.Model.Context
         public DbSet<Entrenador> Entrenadores { get; set; }
         public DbSet<Clase> Clases { get; set; }
         public DbSet<Reserva> Reservas { get; set; }
-        public DbSet<Inventario> Inventarios { get; set; }
         public DbSet<Maquina> Maquinas { get; set; }
         public DbSet<Factura> Facturas { get; set; }
         public DbSet<Ingreso> Ingresos { get; set; }
+        public DbSet<Reporte> Reportes { get; set; }
 
 
 
