@@ -4,9 +4,9 @@ using System;
 using System.IO;
 using System.Linq;
 using System.ComponentModel.DataAnnotations;
-using Model.Gestion;
+using src.Model.Gestion;
 
-namespace Model.Personas
+namespace src.Model.Personas
 {
     /// <summary>
     /// Representa a un entrenador del sistema de gimnasio.
@@ -37,7 +37,7 @@ namespace Model.Personas
 
         public Entrenador() { }
 
-        /// <summary>
+        /*/// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="Entrenador"/>.
         /// </summary>
         /// <param name="id">Identificador único del entrenador.</param>
@@ -61,7 +61,7 @@ namespace Model.Personas
             AñosDeExperiencia = añosDeExperiencia;
             Contraseña = contraseña;
             NombreUsuario = nombreUsuario;
-        }
+        }*/
 
         /// <summary>
         /// Valida las credenciales de un entrenador buscando en un archivo CSV.

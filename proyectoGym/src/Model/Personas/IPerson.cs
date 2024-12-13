@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Model.Personas
+namespace src.Model.Personas
 {
     /// <summary>
     /// Define el contrato para una persona en el sistema.
