@@ -50,13 +50,6 @@ namespace ProyectoGym.src.Controller
             return await _context.SaveChangesAsync();
         }
 
-        public async Task<string?> ObtenerCliente(int clienteId)
-        {
-            var clienteNombre = await _context.Personas.Where(c => c.ID == clienteId && c.Rol == "Cliente")
-        .Select(c => c.NombreCompleto).FirstOrDefaultAsync();
-
-            return clienteNombre; 
-        }
 
         // GET: Clientes/Create
         /*public IActionResult Create()

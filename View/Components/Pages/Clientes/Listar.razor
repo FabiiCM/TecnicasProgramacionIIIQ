@@ -1,0 +1,50 @@
+﻿@page "/clientes"
+@using src.Model.Personas
+@inject ProyectoGym.src.Controller.ClientesController ClientesController
+@inject src.Model.Personas.Cliente Cliente
+
+
+<h1>Listado clientes</h1>
+
+<p>
+    <a class="btn btn-primary" href="cliente/crear">Nuevo cliente</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Identificador
+            </th>
+            <th>
+                Nombre cliente
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var cliente in clientes) {
+        <tr>
+            <td>
+                @cliente.ID
+            </td>
+            <td>
+                @cliente.NombreCompleto
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@cliente.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@cliente.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@cliente.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@code {
+    private List<Person> clientes = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        clientes = await ClientesController.ListarClientes() ;
+    }
+}

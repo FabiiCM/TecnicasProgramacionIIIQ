@@ -1,0 +1,60 @@
+﻿@page "/cliente/crear"
+@using Microsoft.EntityFrameworkCore
+@using src.Model.Personas
+@inject NavigationManager NavigationManager
+@inject ProyectoGym.src.Controller.ClientesController ClienteController
+
+<PageTitle>Crear</PageTitle>
+
+<h1>Crear</h1>
+
+<h2>Cliente</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <EditForm method="post" Model="Cliente" OnValidSubmit="CrearCliente" FormName="crear" Enhance>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre completo:</label>
+                <InputText id="nombre" @bind-Value="Cliente.NombreCompleto" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label for="fechaNacimiento" class="form-label">Fecha de nacimiento:</label>
+                <InputDate id="fechaNacimiento" @bind-Value="Cliente.FechaNacimiento" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono:</label>
+                <InputText id="telefono" @bind-Value="Cliente.Telefono" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label for="nombreUsuario" class="form-label">Nombre de usuario:</label>
+                <InputText id="nombreUsuario" @bind-Value="Cliente.NombreUsuario" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label for="correo" class="form-label">Correo:</label>
+                <InputText type="email" id="correo" @bind-Value="Cliente.CorreoElectronico" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Contraseña:</label>
+                <InputText type="password" id="password" @bind-Value="Cliente.Contraseña" class="form-control" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </EditForm>
+    </div>
+</div>
+
+<div>
+    <a href="/clientes">Regresar al listado</a>
+</div>
+
+@code {
+    
+    [SupplyParameterFromForm]
+    private Cliente Cliente { get; set; } = new();
+
+    private async Task CrearCliente()
+    {
+        await ClienteController.Crear(Cliente);
+        NavigationManager.NavigateTo("/clientes");
+    }
+}
+

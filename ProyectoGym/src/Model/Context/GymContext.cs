@@ -1,6 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Model.Gestion;
 using src.Model.Personas;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using ProyectoGym.src.Model.Finanzas;
 using src.Model.Inventario;
 using src.Model.Gestion;
@@ -39,6 +44,11 @@ namespace ProyectoGym.src.Model.Context
                 .WithMany(cliente => cliente.Reservas)
                 .HasForeignKey(reserva => reserva.ClienteID)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Cliente>()
+                .HasOne(c => c.Membresia)
+                .WithOne(m => m.Cliente)
+                .HasForeignKey<Membresia>(m => m.ClienteID);
 
         }
     }

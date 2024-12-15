@@ -1,0 +1,52 @@
+﻿@page "/entrenadores"
+@using src.Model.Personas
+@inject ProyectoGym.src.Controller.EntrenadorController EntrenadorController
+@inject src.Model.Personas.Entrenador Entrenador
+
+
+<h1>Listado entrenadores</h1>
+
+<p>
+    <a class="btn btn-primary" href="entrenador/crear">Nuevo entrenador</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Identificador
+            </th>
+            <th>
+                Nombre entrenador
+            </th>
+            <th>
+                Acciones
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var entrenador in entrenadores) {
+        <tr>
+            <td>
+                @entrenador.ID
+            </td>
+            <td>
+                @entrenador.NombreCompleto
+            </td>
+            <td>
+                <a asp-action="Editar" asp-route-id="@entrenador.ID">Edit</a> |
+                <a asp-action="Detalles" asp-route-id="@entrenador.ID">Details</a> |
+                <a asp-action="Eliminar" asp-route-id="@entrenador.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@code {
+    private List<Person> entrenadores = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        entrenadores = await EntrenadorController.ListarEntrenadores() ;
+    }
+}

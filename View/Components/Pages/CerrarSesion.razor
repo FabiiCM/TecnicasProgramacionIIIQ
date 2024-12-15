@@ -1,0 +1,20 @@
+﻿@page "/cerrar"
+@inject ProyectoGym.src.Controller.PersonaController PersonaController
+@inject NavigationManager NavigationManager
+
+<h3>Sesión cerrada correctamente!!!</h3>
+
+@code {
+    protected override void OnInitialized()
+    {
+        try
+        {
+            PersonaController.CerrarSesion();
+            NavigationManager.NavigateTo("/iniciar");
+        }
+        catch (NavigationException ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+    }
+}

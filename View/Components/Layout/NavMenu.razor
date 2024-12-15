@@ -1,6 +1,11 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@inject ProyectoGym.src.Controller.PersonaController PersonaController
+@inject NavigationManager NavigationManager
+@using src.Model.Personas
+
+
+<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">View</a>
+        <a class="navbar-brand" href="">Gym app</a>
     </div>
 </div>
 
@@ -8,23 +13,102 @@
 
 <div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
     <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
+        @if (PersonaController.EstaAutenticada())
+        {
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                    <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Inicio
+                </NavLink>
+            </div>
+            @if (PersonaController.PersonaAutenticada().Rol == "Administrador")
+            {
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="clientes">
+                    <span  aria-hidden="true"></span> Clientes
+                </NavLink>
+            </div>
 
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
+            <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="entrenadores">
+                    <span aria-hidden="true"></span> Entrenadores
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link">
+                    <span aria-hidden="true"></span> Inventario
+                </NavLink>
+                <ul class="submenu">
+                    <li>
+                        <NavLink class="nav-link" href="maquinas">
+                            <span class="bi bi-list-nested-nav-menu"></span> Maquinas
+                        </NavLink>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="weather">
+                    <span aria-hidden="true"></span> Reportes
+                </NavLink>
+            </div>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="membresias">
+                        <span aria-hidden="true"></span> Membresías
+                    </NavLink>
+                </div>
+            }
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="Clases">
+                    <span aria-hidden="true"></span> Clases
+                </NavLink>
+            </div>
+            //<div class="nav-item px-3">
+            //    <NavLink class="nav-link" href="weather">
+                //      <span aria-hidden="true"></span> Reservaciones
+            //</NavLink>
+            //</div>
+            @if(PersonaController.PersonaAutenticada().Rol == "Cliente"){
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="weather">
+                    <span aria-hidden="true"></span> Mis métricas
+                </NavLink>
+            </div>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="weather">
+                        <span aria-hidden="true"></span> Mis rutinas
+                    </NavLink>
+                </div>
+            }
+            @if (PersonaController.PersonaAutenticada().Rol == "Entrenador")
+            {
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="facturas">
+                        <span aria-hidden="true"></span> Facturas
+                    </NavLink>
+                </div>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="rutinas">
+                        <span aria-hidden="true"></span> Rutinas
+                    </NavLink>
+                </div>
+            }
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="cerrar">
+                    <span aria-hidden="true"></span> Cerrar sesión
+                </NavLink>
+            </div>
+        }
+        else
+        {
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="iniciar">
+                    <span  aria-hidden="true"></span> Inicie sesión para continuar
+                </NavLink>
+            </div>
 
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
-            </NavLink>
-        </div>
+        }
     </nav>
 </div>
+
+
+
 

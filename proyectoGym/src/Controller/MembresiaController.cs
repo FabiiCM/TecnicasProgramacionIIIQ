@@ -8,6 +8,7 @@ using src.Model.Personas;
 using ProyectoGym.src.Model.Context;
 using src.Model.Inventario;
 using src.Model.Gestion;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ProyectoGym.src.Controller
 {
@@ -22,7 +23,10 @@ namespace ProyectoGym.src.Controller
 
         public async Task<List<Membresia>> ListarMembresias()
         {
-            return await _context.Membresias.ToListAsync();
+
+            return await _context.Membresias
+            .Include(m => m.Cliente)
+            .ToListAsync();
         }
 
         public async Task<Membresia?> Details(int? id)
@@ -42,12 +46,24 @@ namespace ProyectoGym.src.Controller
             return membresia;
         }
 
-        public async Task<int> Afiliar(Membresia Membresia)
+        public async Task<int> Afiliar(Membresia Membresia, int ClienteId)
         {
+            var cliente = await _context.Personas.FirstOrDefaultAsync(p => p.ID == ClienteId);
+            if (cliente == null)
+            {
+                throw new Exception("Cliente no encontrado."+ ClienteId);
+            }
 
+            Membresia.ClienteID = ClienteId;
             _context.Membresias.Add(Membresia);
 
+
             return await _context.SaveChangesAsync();
+        }
+
+        public async Task<Membresia?> obtenerMembresia(int clienteId)
+        {
+            return await _context.Membresias.FirstOrDefaultAsync(m => m.ClienteID == clienteId);
         }
 
         // GET: Clientes/Create
@@ -56,21 +72,6 @@ namespace ProyectoGym.src.Controller
             return View();
         }
 
-        // POST: Clientes/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,TipoUsuario,FechaNacimiento,NombreCompleto,Contraseña,CorreoElectronico,NombreUsuario,Telefono,Rol")] Cliente cliente)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(cliente);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(cliente);
-        }
 
         // GET: Clientes/Edit/5
         public async Task<IActionResult> Edit(int? id)

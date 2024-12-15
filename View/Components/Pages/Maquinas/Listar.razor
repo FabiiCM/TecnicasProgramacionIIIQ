@@ -1,0 +1,65 @@
+﻿@page "/maquinas"
+@using src.Model.Inventario
+@inject ProyectoGym.src.Controller.MaquinaController MaquinaController
+@inject ProyectoGym.src.Controller.PersonaController PersonaController
+
+
+<h1>Listado Maquinas</h1>
+
+<p>
+    <a class="btn btn-primary" href="maquina/crear">Nueva Maquina</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Identificador
+            </th>
+            <th>
+                Nombre maquina
+            </th>
+            <th>
+                Vida Útil (meses)
+            </th>
+            <th>
+                Fecha de adquisición
+            </th>
+            <th>
+                Acciones
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var maquina in maquinas) {
+        <tr>
+            <td>
+                @maquina.ID
+            </td>
+            <td>
+                @maquina.Nombre
+            </td>
+            <td>
+                @maquina.VidaUtilMeses
+             </td>
+             <td>
+                @maquina.FechaAdquisicion
+             </td>
+            <td>
+                <a asp-action="Editar" asp-route-id="@maquina.ID">Editar</a> |
+                <a asp-action="Detalles" asp-route-id="@maquina.ID">Detalles</a> |
+                <a asp-action="Eliminar" asp-route-id="@maquina.ID">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@code {
+    private List<Maquina> maquinas = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        maquinas = await MaquinaController.ListarMaquinas() ;
+    }
+}

@@ -1,0 +1,54 @@
+﻿@page "/"
+@inject ProyectoGym.src.Controller.PersonaController PersonaController
+@inject ProyectoGym.src.Controller.MembresiaController MembresiaController
+@using src.Model.Gestion
+
+@if (PersonaController.EstaAutenticada())
+{
+    <PageTitle>Proyecto Gym</PageTitle>
+
+    <h1>Bienvenido: @PersonaController.PersonaAutenticada().NombreCompleto</h1>
+
+    <p> Este es un sistema para la gestión de gimnasios. </p>
+
+    @if (PersonaController.PersonaAutenticada().Rol == "Cliente")
+    {
+        <p>Su membresía se encuentra: <strong>@EstadoMembresia</strong></p>
+        <p>@notificacion</p>
+
+    }
+
+}
+
+@code {
+    private string EstadoMembresia;
+    private int clienteId;
+    private Membresia? membresia;
+    private string notificacion;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (PersonaController.EstaAutenticada() && PersonaController.PersonaAutenticada().Rol != "Administrador")
+        {
+            clienteId = PersonaController.PersonaAutenticada().ID;
+            membresia = await MembresiaController.obtenerMembresia(clienteId);
+
+            if (membresia.Estado == true)
+            {
+                EstadoMembresia = "Activa";
+            }
+            else
+            {
+                EstadoMembresia = "Suspendida";
+            }
+
+            DateTime hoy = DateTime.Now.Date;
+            if ((membresia.FechaVencimiento - hoy).Days <= 5)
+            {
+                notificacion = "Su mensualidad se encuentra al cobro";
+            }
+        } 
+    }
+
+
+}

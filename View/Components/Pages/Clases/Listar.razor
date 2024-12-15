@@ -1,0 +1,69 @@
+﻿@page "/clases"
+@using src.Model.Gestion
+@inject ProyectoGym.src.Controller.ClaseController ClaseController
+@inject ProyectoGym.src.Controller.PersonaController PersonaController
+
+
+<h1>Listado Clases</h1>
+@if (PersonaController.PersonaAutenticada().Rol == "Administrador")
+{
+    <p>
+        <a class="btn btn-primary" href="clase/crear">Nueva Clase</a>
+    </p>
+}
+<p>
+    <a class="btn btn-primary" href="clase/crear">Reservar clase</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Identificador
+            </th>
+            <th>
+                Nombre clase
+            </th>
+            <th>
+                Cupo máximo
+            </th>
+            <th>
+                Entrenador
+            </th>
+            <th>
+                Horarios
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var clase in clases) {
+        <tr>
+            <td>
+                @clase.ID
+            </td>
+            <td>
+                @clase.Nombre
+            </td>
+            <td>
+                @clase.Entrenador.ID
+             </td>
+             <td>
+                @clase.Horario
+             </td>
+            <td>
+                <a asp-action="Editar" asp-route-id="@clase.ID">Edit</a> |
+                <a asp-action="Detalles" asp-route-id="@clase.ID">Details</a> |
+                <a asp-action="Eliminar" asp-route-id="@clase.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@code {
+    private List<Clase> clases = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        clases = await ClaseController.ListarClases() ;
+    }
+}
