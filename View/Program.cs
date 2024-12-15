@@ -1,5 +1,5 @@
 using View.Components;
-using ProyectoGym.Model.Context;
+using ProyectoGym.src.Model.Context;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +10,7 @@ builder.Services.AddRazorComponents()
 
 builder.Services.AddDbContext<GymContext>(opciones =>
 {
-    opciones.UseSqlServer("Server=DESKTOP-NUJHIPK;Database=GymDB;Trusted_Connection=True;TrustServerCertificate=True");
+    opciones.UseSqlServer("Server=DESKTOP-6EQ9TGO;Database=GymDB;Trusted_Connection=True;TrustServerCertificate=True");
 });
 
 var app = builder.Build();

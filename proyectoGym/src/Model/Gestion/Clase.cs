@@ -1,9 +1,10 @@
-﻿using Model.Personas;
+﻿using Model.Gestion;
+using src.Model.Personas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Model.Gestion
+namespace src.Model.Gestion
 {
     /// <summary>
     /// Representa una clase disponible en el sistema de gestión.
@@ -41,9 +42,9 @@ namespace Model.Gestion
         /// </summary>
         public int EntrenadorID { get; set; }
 
-        public Entrenador Entrenador { get; set; }  
+        public Entrenador Entrenador { get; set; }
 
-        public Clase() { }  
+        public Clase() { }
 
         /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="Clase"/>.

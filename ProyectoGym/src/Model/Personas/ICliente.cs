@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Model.Personas
+namespace src.Model.Personas
 {
     /// <summary>
     /// Define el contrato para un cliente en el sistema de gestión.

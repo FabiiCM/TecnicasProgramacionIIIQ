@@ -13,12 +13,16 @@ namespace ProyectoGym
         private Button BTInicioSesion = null!;
         private Button BTRegistro = null!;
 
-
-
+        public object PersonController { get; }
+        /// <summary>
+        
+        /// </summary>
         public FRMInicio()
         {
-            InitializeComponent();
-            var people = PersonController.GetPeople();
+            
+            //InitializeComponent();
+            //var people = PersonController.GetPeople();
+            ///
         }
 
         private void InitializeComponent()

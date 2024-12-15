@@ -3,17 +3,20 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using src.Model.Context;
+using ProyectoGym.src.Model.Context;
 
 #nullable disable
 
 namespace ProyectoGym.Migrations
 {
     [DbContext(typeof(GymContext))]
-    partial class GymContextModelSnapshot : ModelSnapshot
+    [Migration("20241213170756_nuevas-clases")]
+    partial class nuevasclases
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -124,7 +127,7 @@ namespace ProyectoGym.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<int>("ClienteID")
+                    b.Property<int>("ClienteId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Costo")
@@ -141,7 +144,7 @@ namespace ProyectoGym.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("ClienteID")
+                    b.HasIndex("ClienteId")
                         .IsUnique();
 
                     b.ToTable("Membresias");
@@ -300,11 +303,13 @@ namespace ProyectoGym.Migrations
 
             modelBuilder.Entity("src.Model.Gestion.Membresia", b =>
                 {
-                    b.HasOne("src.Model.Personas.Cliente", null)
+                    b.HasOne("src.Model.Personas.Cliente", "Cliente")
                         .WithOne("Membresia")
-                        .HasForeignKey("src.Model.Gestion.Membresia", "ClienteID")
+                        .HasForeignKey("src.Model.Gestion.Membresia", "ClienteId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Cliente");
                 });
 
             modelBuilder.Entity("src.Model.Gestion.Reserva", b =>

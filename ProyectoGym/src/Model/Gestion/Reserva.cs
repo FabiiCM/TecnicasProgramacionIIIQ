@@ -1,8 +1,9 @@
-﻿using Model.Personas;
+﻿using src.Model.Gestion;
+using src.Model.Personas;
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Model.Gestion
+namespace src.Model.Gestion
 {
     /// <summary>
     /// Representa una reserva realizada por un cliente para una clase en el sistema.
