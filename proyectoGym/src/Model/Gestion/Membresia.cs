@@ -24,22 +24,20 @@ namespace src.Model.Gestion
         /// <summary>
         /// Obtiene o establece la fecha de inicio de la membresía.
         /// </summary>
-        public DateTime FechaInicio { get; set; }
+        public DateTime? FechaInicio { get; set; }
 
         /// <summary>
         /// Obtiene o establece la fecha de vencimiento de la membresía.
         /// </summary>
-        public DateTime FechaVencimiento { get; set; }
-
-        /// <summary>
-        /// Obtiene o establece el identificador del cliente asociado a la membresía.
+        public DateTime FechaVencimiento { get; set; }  
 
         /// <summary>
         /// Obtiene o establece el estado de la membresía.
-        public bool Estado { get; set; }   
+        public bool? Estado { get; set; }
 
         //public Cliente Cliente { get; set; }
         public int ClienteID { get; set; }
+        public Cliente Cliente { get; set; }
 
         public Membresia() { }
 
