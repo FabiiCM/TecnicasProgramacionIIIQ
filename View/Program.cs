@@ -16,7 +16,7 @@ builder.Services.AddRazorComponents()
 builder.Services.AddDbContext<GymContext>(opciones =>
 {
 
-    opciones.UseSqlServer("Server=DESKTOP-6EQ9TGO;Database=GymDB;Trusted_Connection=True;TrustServerCertificate=True");
+    opciones.UseSqlServer("Server=PAPAYITAS;Database=GymDB;Trusted_Connection=True;TrustServerCertificate=True");
 
 });
 
