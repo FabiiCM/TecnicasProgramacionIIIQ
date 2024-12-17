@@ -130,10 +130,10 @@ namespace ProyectoGym.Migrations
                     b.Property<decimal>("Costo")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<bool>("Estado")
+                    b.Property<bool?>("Estado")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("FechaInicio")
+                    b.Property<DateTime?>("FechaInicio")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("FechaVencimiento")
@@ -300,11 +300,13 @@ namespace ProyectoGym.Migrations
 
             modelBuilder.Entity("src.Model.Gestion.Membresia", b =>
                 {
-                    b.HasOne("src.Model.Personas.Cliente", null)
+                    b.HasOne("src.Model.Personas.Cliente", "Cliente")
                         .WithOne("Membresia")
                         .HasForeignKey("src.Model.Gestion.Membresia", "ClienteID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Cliente");
                 });
 
             modelBuilder.Entity("src.Model.Gestion.Reserva", b =>
