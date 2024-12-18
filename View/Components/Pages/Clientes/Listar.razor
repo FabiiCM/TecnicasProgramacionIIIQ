@@ -31,9 +31,8 @@
                 @cliente.NombreCompleto
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@cliente.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@cliente.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@cliente.ID">Delete</a>
+                <a asp-action="editar" href="" asp-route-id="@cliente.ID">Editar</a> |
+                    <a asp-action="eliminar" href="" asp-route-id="@cliente.ID">Eliminar</a> |
             </td>
         </tr>
 }

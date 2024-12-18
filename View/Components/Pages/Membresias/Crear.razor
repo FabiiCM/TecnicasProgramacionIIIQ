@@ -43,15 +43,11 @@
 </div>
 
 @code {
-    [SupplyParameterFromForm]
-    private Membresia Membresia { get; set; } = new();
-
     private List<Person> clientes = new List<Person>();
 
     private int ClienteId = -1;
     private decimal Costo { get; set; }
     private DateTime FechaVencimiento { get; set; } = DateTime.Today;
-    private string error;
 
     private async Task AfiliarCliente()
     {

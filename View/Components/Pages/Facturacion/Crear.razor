@@ -1,0 +1,65 @@
+﻿@page "/facturacion/crear"
+@using Microsoft.EntityFrameworkCore
+@using src.Model.Finanzas
+@using src.Model.Personas
+@rendermode InteractiveServer
+@inject NavigationManager NavigationManager
+@inject ProyectoGym.src.Controller.FacturaController FacturaController
+@inject ProyectoGym.src.Controller.ClientesController ClienteController
+
+<PageTitle>Facturación</PageTitle>
+
+<h2>Generar factura</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form @onsubmit="Facturar">
+            <div class="mb-3">
+                <label for="cliente" class="form-label">Cliente:</label>
+                <InputSelect id="cliente" class="form-control" @bind-Value="ClienteId">
+                    <option value="-1">Seleccione un cliente</option>
+                    @foreach (var cliente in clientes)
+                    {
+                        <option value="@cliente.ID">@cliente.NombreCompleto</option>
+                    }
+                </InputSelect>
+            </div>
+
+            <div class="mb-3">
+                <label for="monto" class="form-label">Monto:</label>
+                <input type="number" id="monto" class="form-control" @bind="Monto" step="0.01" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Generar</button>
+        </form>
+    </div>
+    <div class="form-floating mb-3">
+    </div>
+</div>
+
+@code {
+    private List<Person> clientes = new List<Person>();
+
+    private int ClienteId = -1;
+    private decimal Monto { get; set; }
+    private DateTime Fecha { get; set; } = DateTime.Today;
+
+    private async Task Facturar()
+    {
+        var factura = new Factura
+            {
+                Monto = Monto,
+                Fecha = DateTime.Now,
+            };
+
+        await FacturaController.facturar(factura, ClienteId);
+        NavigationManager.NavigateTo("/facturas");
+
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        clientes = await ClienteController.ListarClientes();
+    }
+}
+

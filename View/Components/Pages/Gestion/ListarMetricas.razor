@@ -1,0 +1,79 @@
+﻿@page "/metricas"
+@using src.Model.Gestion
+@inject ProyectoGym.src.Controller.MetricaController MetricaController
+@inject ProyectoGym.src.Controller.PersonaController PersonaController
+
+
+<h1>Mis métricas</h1>
+
+<p>
+    <a class="btn btn-primary" href="rutina/crear">Nueva métrica</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Cliente
+            </th>
+            <th>
+                Peso
+            </th>
+            <th>
+                IMC
+            </th>
+            <th>
+                Cintura
+            </th>
+            <th>
+                Cadera
+            </th>
+            <th>
+                Brazo
+            </th>
+            <th>
+                Muslo
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var metrica in metricas) {
+        <tr>
+            <td>
+                @metrica.Cliente.NombreCompleto
+            </td>
+            <td>
+                @metrica.Peso
+            </td>
+            <td>
+                @metrica.IMC
+             </td>
+             <td>
+                @metrica.Cintura
+             </td>
+             <td>
+                @metrica.Cadera
+             </td>
+             <td>
+                @metrica.Brazo
+             </td>
+             <td>
+                @metrica.Muslo
+             </td>
+            <td>
+                <a asp-action="Editar" asp-route-id="@metrica.ID">Editar</a> |
+                <a asp-action="Eliminar" asp-route-id="@metrica.ID">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@code {
+    private List<Metrica> metricas = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        metricas = await MetricaController.ListarMetricas(PersonaController.PersonaAutenticada()) ;
+    }
+}

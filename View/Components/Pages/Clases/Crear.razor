@@ -1,8 +1,11 @@
 ﻿@page "/clase/crear"
 @using Microsoft.EntityFrameworkCore
-@using src.Model.Inventario
+@using src.Model.Gestion
+@using src.Model.Personas
+@rendermode InteractiveServer
 @inject NavigationManager NavigationManager
-@inject ProyectoGym.src.Controller.MaquinaController MaquinaController
+@inject ProyectoGym.src.Controller.ClaseController ClaseController
+@inject ProyectoGym.src.Controller.EntrenadorController EntrenadorController
 
 <PageTitle>Crear</PageTitle>
 
@@ -12,36 +15,76 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <EditForm method="post" Model="Maquina" OnValidSubmit="CrearMaquina" FormName="crear" Enhance>
+        <form @onsubmit="CrearClase">
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre:</label>
-                <InputText id="nombre" @bind-Value="Maquina.Nombre" class="form-control" />
-                <ValidationMessage For="() => Maquina.Nombre" class="text-danger" />
+                <input type="text" id="nombre" @bind="Nombre" class="form-control" />
             </div>
             <div class="mb-3">
-                <label for="vidaUtil" class="form-label">Vida Útil (meses):</label>
-                <InputNumber id="vidaUtil" @bind-Value="Maquina.VidaUtilMeses" class="form-control" />
-                <ValidationMessage For="() => Maquina.VidaUtilMeses" class="text-danger" />
+                <label for="horario" class="form-label">Horario:</label>
+                <input type="text" id="horario" @bind="Horario" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label for="CupoMaximo" class="form-label">Cupo Máximo:</label>
+                <input type="number" id="CupoMaximo" @bind="CupoMaximo" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label for="cliente" class="form-label">Entrenador:</label>
+                <InputSelect id="cliente" class="form-control" @bind-Value="EntrenadorId">
+                    <option value="-1">Seleccione un entrenador</option>
+                    @foreach (var entrenador in Entrenadores)
+                    {
+                        <option value="@entrenador.ID">@entrenador.NombreCompleto</option>
+                    }
+                </InputSelect>
             </div>
 
-            <button type="submit" class="btn btn-primary">Create</button>
-        </EditForm>
+            <button type="submit" class="btn btn-primary">Crear</button>
+        </form>
+        <div class="form-floating mb-3">
+            @if (!string.IsNullOrEmpty(error))
+            {
+                <p style="color: red;">@error</p>
+            }
+        </div>
     </div>
 </div>
 
 <div>
-    <a href="/maquinas">Regresar al listado</a>
+    <a href="/clases">Regresar al listado</a>
 </div>
 
 @code {
-    
-    [SupplyParameterFromForm]
-    private Maquina Maquina { get; set; } = new();
 
-    private async Task CrearMaquina()
+    private List<Person> Entrenadores = new List<Person>();
+    private string Nombre { get; set; }
+    private int CupoMaximo { get; set; }
+    private string Horario { get; set; }
+    private int EntrenadorId = -1;
+    private string error;
+
+    private async Task CrearClase()
     {
-        await MaquinaController.Crear(Maquina);
-        NavigationManager.NavigateTo("/maquinas");
+        try
+        {
+        var clase = new Clase
+            {
+                Nombre = Nombre,
+                CupoMaximo = CupoMaximo,
+                Horario = Horario,
+            };
+
+        await ClaseController.Crear(clase, EntrenadorId);
+        NavigationManager.NavigateTo("/clases");
+        }catch (Exception e)
+        {
+            error = e.Message;
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Entrenadores = await EntrenadorController.ListarEntrenadores();
     }
 }
 

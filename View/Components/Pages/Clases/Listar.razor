@@ -11,14 +11,17 @@
         <a class="btn btn-primary" href="clase/crear">Nueva Clase</a>
     </p>
 }
-<p>
-    <a class="btn btn-primary" href="clase/crear">Reservar clase</a>
-</p>
+@if (PersonaController.PersonaAutenticada().Rol == "Cliente")
+{
+    <p>
+        <a class="btn btn-primary" href="clase/reservar">Reservar clase</a>
+    </p>
+}
 <table class="table">
     <thead>
         <tr>
             <th>
-               Identificador
+                Identificador
             </th>
             <th>
                 Nombre clase
@@ -32,30 +35,43 @@
             <th>
                 Horarios
             </th>
+            @if (PersonaController.PersonaAutenticada().Rol == "Administrador")
+            {
+                <th>
+                    Acciones
+                </th>
+            }
         </tr>
     </thead>
     <tbody>
-@foreach (var clase in clases) {
-        <tr>
-            <td>
-                @clase.ID
-            </td>
-            <td>
-                @clase.Nombre
-            </td>
-            <td>
-                @clase.Entrenador.ID
-             </td>
-             <td>
-                @clase.Horario
-             </td>
-            <td>
-                <a asp-action="Editar" asp-route-id="@clase.ID">Edit</a> |
-                <a asp-action="Detalles" asp-route-id="@clase.ID">Details</a> |
-                <a asp-action="Eliminar" asp-route-id="@clase.ID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var clase in clases)
+        {
+            <tr>
+                <td>
+                    @clase.ID
+                </td>
+                <td>
+                    @clase.Nombre
+                </td>
+                <td>
+                    @clase.CupoMaximo
+                </td>
+                <td>
+                    @clase.Entrenador.NombreCompleto
+                </td>
+                <td>
+                    @clase.Horario
+                </td>
+                @if (PersonaController.PersonaAutenticada().Rol == "Administrador")
+                {
+                <td>
+                    <a asp-action="Editar" href="" asp-route-id="@clase.ID">Editar</a> |
+                        <a asp-action="Detalles" href="" asp-route-id="@clase.ID">Detalles</a> |
+                        <a asp-action="Eliminar" href="" asp-route-id="@clase.ID">Eliminar</a>
+                </td>
+                }
+            </tr>
+        }
     </tbody>
 </table>
 
@@ -64,6 +80,6 @@
 
     protected override async Task OnInitializedAsync()
     {
-        clases = await ClaseController.ListarClases() ;
+        clases = await ClaseController.ListarClases();
     }
 }

@@ -2,57 +2,90 @@
 @using Microsoft.EntityFrameworkCore
 @using src.Model.Personas
 @inject NavigationManager NavigationManager
+@rendermode InteractiveServer
 @inject ProyectoGym.src.Controller.EntrenadorController EntrenadorController
 
 <PageTitle>Crear</PageTitle>
 
-<h1>Crear</h1>
-
-<h2>Cliente</h2>
+<h2>Crear entrenador</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <EditForm method="post" Model="Entrenador" OnValidSubmit="CrearEntrenador" FormName="crear" Enhance>
+        <form @onsubmit="CrearEntrenador">
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre completo:</label>
-                <InputText id="nombre" @bind-Value="Entrenador.NombreCompleto" class="form-control" required />
+                <input type="text" id="nombre" @bind="NombreCompleto" class="form-control" required />
             </div>
             <div class="mb-3">
                 <label for="fechaNacimiento" class="form-label">Fecha de nacimiento:</label>
-                <InputDate id="fechaNacimiento" @bind-Value="Entrenador.FechaNacimiento" class="form-control" required />
+                <input type="date" id="fechaNacimiento" @bind="FechaNacimiento" class="form-control" required />
             </div>
             <div class="mb-3">
                 <label for="telefono" class="form-label">Teléfono:</label>
-                <InputText id="telefono" @bind-Value="Entrenador.Telefono" class="form-control" required />
+                <input type="text" id="telefono" @bind="Telefono" class="form-control" required />
             </div>
             <div class="mb-3">
                 <label for="nombreUsuario" class="form-label">Nombre de usuario:</label>
-                <InputText id="nombreUsuario" @bind-Value="Entrenador.NombreUsuario" class="form-control" required />
+                <input type="text" id="nombreUsuario" @bind="NombreUsuario" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label for="añosExp" class="form-label">Años de experiencia:</label>
+                <input type="number" id="añosExp" @bind="AñosDeExperiencia" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label for="especialidad" class="form-label">Especialidad:</label>
+                <input type="text" id="especialidad" @bind="Especialidad" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label for="horarios" class="form-label">Horarios:</label>
+                <input type="text" id="especialidad" @bind="HorariosDisponibles" class="form-control" required />
             </div>
             <div class="mb-3">
                 <label for="correo" class="form-label">Correo:</label>
-                <InputText type="email" id="correo" @bind-Value="Entrenador.CorreoElectronico" class="form-control" required />
+                <input type="email" id="correo" @bind="correo" class="form-control" required />
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Contraseña:</label>
-                <InputText type="password" id="password" @bind-Value="Entrenador.Contraseña" class="form-control" required />
+                <input type="password" id="password" @bind="contrasena" class="form-control" required />
             </div>
-            <button type="submit" class="btn btn-primary">Create</button>
-        </EditForm>
+            <button type="submit" class="btn btn-primary">Crear</button>
+        </form>
     </div>
 </div>
 
 <div>
-    <a href="/clientes">Regresar al listado</a>
+    <a href="/entrenadores">Regresar al listado</a>
 </div>
 
 @code {
     
     [SupplyParameterFromForm]
     private Entrenador Entrenador { get; set; } = new();
+    private string NombreUsuario{ get; set; }
+    private DateTime FechaNacimiento { get; set; }
+    private string contrasena { get; set; }
+    private string correo { get; set; } 
+    private string HorariosDisponibles { get; set; }
+    private int AñosDeExperiencia { get; set; }
+    private string Especialidad { get; set; }
+    private string Telefono { get; set; }
+    private string NombreCompleto { get; set; }
 
     private async Task CrearEntrenador()
     {
+        var entrenador = new Entrenador
+            {
+                NombreUsuario = NombreUsuario,
+                FechaNacimiento = FechaNacimiento,
+                Contraseña = contrasena,
+                CorreoElectronico = correo,
+                HorariosDisponibles = HorariosDisponibles,
+                AñosDeExperiencia = AñosDeExperiencia,
+                Especialidad = Especialidad,
+                Telefono = Telefono,
+                NombreCompleto = NombreCompleto
+            };
+
         await EntrenadorController.Crear(Entrenador);
         NavigationManager.NavigateTo("/entrenadores");
     }

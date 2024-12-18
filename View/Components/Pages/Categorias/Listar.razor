@@ -1,0 +1,52 @@
+@page "/categorias"
+@using src.Model.Gestion
+@inject ProyectoGym.src.Controller.CategoriaController CategoriaController
+@inject ProyectoGym.src.Controller.PersonaController PersonaController
+
+
+<h1>Listado Categorias</h1>
+
+<p>
+    <a class="btn btn-primary" href="maquina/crear">Nueva Categoría</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               ID
+            </th>
+            <th>
+                Nombre 
+            </th>
+            <th>
+                Acciones
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var categoria in categorias) {
+        <tr>
+            <td>
+                @categoria.ID
+            </td>
+            <td>
+                @categoria.Nombre
+            </td>
+            <td>
+                <a asp-action="Editar" href="" asp-route-id="@categoria.ID">Editar</a> |
+                <a asp-action="Eliminar" href="" asp-route-id="@categoria.ID">Eliminar</a> |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@code {
+    private List<Categoria> categorias = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        categorias = await CategoriaController.ListarCategorias() ;
+    }
+}

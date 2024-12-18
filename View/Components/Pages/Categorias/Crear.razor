@@ -1,0 +1,37 @@
+@page "/categoria/crear"
+@using Microsoft.EntityFrameworkCore
+@using src.Model.Gestion
+@inject NavigationManager NavigationManager
+@inject ProyectoGym.src.Controller.CategoriaController CategoriaController
+
+<PageTitle>Crear</PageTitle>
+
+<h2>Crear Categoría</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <EditForm method="post" Model="Categoria" OnValidSubmit="CrearCategoria" FormName="crear" Enhance>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre:</label>
+                <InputText id="nombre" @bind-Value="Categoria.Nombre" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary">Crear</button>
+        </EditForm>
+    </div>
+</div>
+
+<div>
+    <a href="/categorias">Regresar al listado</a>
+</div>
+
+@code {
+    
+    [SupplyParameterFromForm]
+    private Categoria Categoria { get; set; } = new();
+
+    private async Task CrearCategoria()
+    {
+        await CategoriaController.Crear(Categoria);
+        NavigationManager.NavigateTo("/categorias");
+    }
+}
