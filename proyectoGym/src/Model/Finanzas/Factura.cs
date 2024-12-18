@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace ProyectoGym.src.Model.Finanzas
+namespace src.Model.Finanzas
 {
     /// <summary>
     /// Representa una factura generada en el sistema.

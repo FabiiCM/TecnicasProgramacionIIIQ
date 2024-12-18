@@ -25,6 +25,9 @@ namespace ProyectoGym.src.Model.Context
         public DbSet<Factura> Facturas { get; set; }
         public DbSet<Ingreso> Ingresos { get; set; }
         public DbSet<Reporte> Reportes { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Metrica> Metricas { get; set; }
+        public DbSet<Rutina> Rutinas { get; set; }
 
 
 
@@ -43,6 +46,12 @@ namespace ProyectoGym.src.Model.Context
                 .HasOne(reserva => reserva.Cliente)
                 .WithMany(cliente => cliente.Reservas)
                 .HasForeignKey(reserva => reserva.ClienteID)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Clase>()
+                .HasOne(clase => clase.Entrenador)
+                .WithMany(entrenador => entrenador.Clases)
+                .HasForeignKey(clase => clase.EntrenadorID)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Cliente>()

@@ -18,7 +18,7 @@ builder.Services.AddBlazorDownloadFile();
 
 builder.Services.AddDbContext<GymContext>(opciones =>
 {
-    opciones.UseSqlServer("Server=DESKTOP-NUJHIPK;Database=GymDB;Trusted_Connection=True;TrustServerCertificate=True");
+    opciones.UseSqlServer("Server=DESKTOP-6EQ9TGO;Database=GymDB;Trusted_Connection=True;TrustServerCertificate=True");
 });
 
 builder.Services.AddQuickGridEntityFrameworkAdapter();

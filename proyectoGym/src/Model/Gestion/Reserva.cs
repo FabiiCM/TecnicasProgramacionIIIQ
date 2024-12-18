@@ -17,7 +17,7 @@ namespace src.Model.Gestion
         /// </summary>
         public int ClaseID { get; set; }
 
-        public required Clase Clase { get; set; }
+        public Clase Clase { get; set; }
 
         /// <summary>
         /// Obtiene o establece el identificador del cliente que realizó la reserva.
@@ -33,7 +33,7 @@ namespace src.Model.Gestion
 
         public Reserva() { }    
 
-        /// <summary>
+       /* /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="Reserva"/>.
         /// </summary>
         /// <param name="id">Identificador único de la reserva.</param>
@@ -46,7 +46,7 @@ namespace src.Model.Gestion
             ClienteID = clienteID;
             ClaseID = claseID;
             FechaReserva = fechaReserva;
-        }
+        }*/
 
         /// <summary>
         /// Devuelve una representación en cadena de la reserva.
