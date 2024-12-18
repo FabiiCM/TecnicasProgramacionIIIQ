@@ -22,30 +22,6 @@ namespace ProyectoGym.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("ProyectoGym.src.Model.Finanzas.Factura", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
-
-                    b.Property<int>("ClienteId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("Fecha")
-                        .HasColumnType("datetime2");
-
-                    b.Property<decimal>("Monto")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("ClienteId");
-
-                    b.ToTable("Facturas");
-                });
-
             modelBuilder.Entity("ProyectoGym.src.Model.Finanzas.Ingreso", b =>
                 {
                     b.Property<int>("ID")
@@ -74,6 +50,30 @@ namespace ProyectoGym.Migrations
                     b.ToTable("Ingresos");
                 });
 
+            modelBuilder.Entity("src.Model.Finanzas.Factura", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<int>("ClienteId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("Monto")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("ClienteId");
+
+                    b.ToTable("Facturas");
+                });
+
             modelBuilder.Entity("src.Model.Finanzas.Reporte", b =>
                 {
                     b.Property<int>("ID")
@@ -85,6 +85,23 @@ namespace ProyectoGym.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Reportes");
+                });
+
+            modelBuilder.Entity("src.Model.Gestion.Categoria", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Categorias");
                 });
 
             modelBuilder.Entity("src.Model.Gestion.Clase", b =>
@@ -108,6 +125,9 @@ namespace ProyectoGym.Migrations
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Registradas")
+                        .HasColumnType("int");
 
                     b.HasKey("ID");
 
@@ -147,6 +167,42 @@ namespace ProyectoGym.Migrations
                     b.ToTable("Membresias");
                 });
 
+            modelBuilder.Entity("src.Model.Gestion.Metrica", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<double>("Brazo")
+                        .HasColumnType("float");
+
+                    b.Property<double>("Cadera")
+                        .HasColumnType("float");
+
+                    b.Property<double>("Cintura")
+                        .HasColumnType("float");
+
+                    b.Property<int>("ClienteID")
+                        .HasColumnType("int");
+
+                    b.Property<double>("IMC")
+                        .HasColumnType("float");
+
+                    b.Property<double>("Muslo")
+                        .HasColumnType("float");
+
+                    b.Property<double>("Peso")
+                        .HasColumnType("float");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("ClienteID");
+
+                    b.ToTable("Metricas");
+                });
+
             modelBuilder.Entity("src.Model.Gestion.Reserva", b =>
                 {
                     b.Property<int>("ID")
@@ -171,6 +227,35 @@ namespace ProyectoGym.Migrations
                     b.HasIndex("ClienteID");
 
                     b.ToTable("Reservas");
+                });
+
+            modelBuilder.Entity("src.Model.Gestion.Rutina", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<int?>("ClienteID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("FechaAsignación")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("ClienteID");
+
+                    b.ToTable("Rutinas");
                 });
 
             modelBuilder.Entity("src.Model.Inventario.Maquina", b =>
@@ -276,7 +361,7 @@ namespace ProyectoGym.Migrations
                     b.HasDiscriminator().HasValue("Entrenador");
                 });
 
-            modelBuilder.Entity("ProyectoGym.src.Model.Finanzas.Factura", b =>
+            modelBuilder.Entity("src.Model.Finanzas.Factura", b =>
                 {
                     b.HasOne("src.Model.Personas.Cliente", "Cliente")
                         .WithMany()
@@ -292,7 +377,7 @@ namespace ProyectoGym.Migrations
                     b.HasOne("src.Model.Personas.Entrenador", "Entrenador")
                         .WithMany("Clases")
                         .HasForeignKey("EntrenadorID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Entrenador");
@@ -303,6 +388,17 @@ namespace ProyectoGym.Migrations
                     b.HasOne("src.Model.Personas.Cliente", "Cliente")
                         .WithOne("Membresia")
                         .HasForeignKey("src.Model.Gestion.Membresia", "ClienteID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cliente");
+                });
+
+            modelBuilder.Entity("src.Model.Gestion.Metrica", b =>
+                {
+                    b.HasOne("src.Model.Personas.Cliente", "Cliente")
+                        .WithMany()
+                        .HasForeignKey("ClienteID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -324,6 +420,15 @@ namespace ProyectoGym.Migrations
                         .IsRequired();
 
                     b.Navigation("Clase");
+
+                    b.Navigation("Cliente");
+                });
+
+            modelBuilder.Entity("src.Model.Gestion.Rutina", b =>
+                {
+                    b.HasOne("src.Model.Personas.Cliente", "Cliente")
+                        .WithMany()
+                        .HasForeignKey("ClienteID");
 
                     b.Navigation("Cliente");
                 });
