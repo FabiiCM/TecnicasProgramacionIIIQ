@@ -66,13 +66,7 @@ namespace ProyectoGym.src.Controller
             return await _context.Membresias.FirstOrDefaultAsync(m => m.ClienteID == clienteId);
         }
 
-        // GET: Clientes/Create
-        /*public IActionResult Create()
-        {
-            return View();
-        }
-
-
+        /*
         // GET: Clientes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {

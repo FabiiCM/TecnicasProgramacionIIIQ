@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using src.Model.Personas;
 using ProyectoGym.src.Model.Context;
 using src.Model.Gestion;
@@ -21,7 +16,7 @@ namespace ProyectoGym.src.Controller
 
         public async Task<List<Reserva>> ListarReservaciones()
         {
-            return await _context.Reservas.ToListAsync(); // Where(p => p.Rol == "Cliente")
+            return await _context.Reservas.ToListAsync();
         }
 
         public async Task<Reserva?> Details(int? id)
@@ -41,36 +36,31 @@ namespace ProyectoGym.src.Controller
             return reserva;
         }
 
-        public async Task<int> Crear(Reserva Reserva)
+        public async Task<int> Crear(Reserva Reserva, int ClaseId)
         {
+            var clase = await _context.Clases.FirstOrDefaultAsync(p => p.ID == ClaseId);
+            if (clase == null)
+            {
+                throw new Exception("No se encontró la clase." + ClaseId);
+            }
 
-            _context.Reservas.Add(Reserva);
+            if (clase.Registradas <= clase.CupoMaximo)
+            {
+                clase.Registradas++;
+                _context.Clases.Update(clase);
+
+                Reserva.ClaseID = ClaseId;
+                _context.Reservas.Add(Reserva);
+            }
+            else
+            {
+                throw new Exception("Ya no hay cupo para la clase." + clase.Nombre);
+            }
 
             return await _context.SaveChangesAsync();
         }
 
-        // GET: Clientes/Create
-        /*public IActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Clientes/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,TipoUsuario,FechaNacimiento,NombreCompleto,Contraseña,CorreoElectronico,NombreUsuario,Telefono,Rol")] Cliente cliente)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(cliente);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(cliente);
-        }
-
+        /*
         // GET: Clientes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {

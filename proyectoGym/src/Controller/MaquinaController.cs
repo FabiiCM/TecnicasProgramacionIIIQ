@@ -1,8 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Model.Inventario;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+using Microsoft.EntityFrameworkCore;
 using ProyectoGym.src.Model.Context;
 using src.Model.Inventario;
 using src.Model.Personas;
+
 
 namespace ProyectoGym.src.Controller
 {
@@ -20,30 +25,35 @@ namespace ProyectoGym.src.Controller
             return await _context.Maquinas.ToListAsync();
         }
 
+        public async Task<Maquina> ObtenerMaquina(int MaquinaId){
+            return await _context.Maquinas.FirstOrDefaultAsync(m => m.ID == MaquinaId);
+        }
+
         public async Task<int> Crear(Maquina Maquina)
         {
-
-            Maquina.FechaAdquisicion = DateTime.Now;
             _context.Maquinas.Add(Maquina);
+
+            return await _context.SaveChangesAsync();
+        }
+
+        public async Task<int> Editar(Maquina Maquina)
+        {
+            _context.Maquinas.Update(Maquina);
             
             return await _context.SaveChangesAsync();
         }
 
-        public async Task<Maquina?> Details(int? id)
+        public async Task<int> Eliminar(int MaquinaId)
         {
-            if (id == null)
+            var maquina = await _context.Maquinas.FindAsync(MaquinaId);
+            if (maquina != null)
             {
-
+                _context.Maquinas.Remove(maquina);
             }
 
-            var maquina = await _context.Maquinas
-                .FirstOrDefaultAsync(m => m.ID == id);
-            if (maquina == null)
-            {
-
-            }
-
-            return maquina;
+            
+            return await _context.SaveChangesAsync();;
         }
+
     }
 }
