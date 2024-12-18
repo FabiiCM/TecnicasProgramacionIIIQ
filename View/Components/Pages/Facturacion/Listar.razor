@@ -1,0 +1,65 @@
+﻿@page "/facturas"
+@using src.Model.Finanzas
+@inject ProyectoGym.src.Controller.FacturaController FacturaController
+@inject ProyectoGym.src.Controller.ClientesController ClientesController
+
+
+<h1>Listado Membresías</h1>
+
+<p>
+    <a class="btn btn-primary" href="membresia/afiliar">Afiliar</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               ID
+            </th>
+            <th>
+                Cliente
+            </th>
+            <th>
+                Fecha
+            </th>
+            <th>
+                Monto
+            </th>
+            <th>
+                Acciones
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var factura in facturas) {
+        <tr>
+            <td>
+                @factura.ID
+            </td>
+            <td>
+                @factura.Cliente.NombreCompleto
+            </td>
+            <td>
+                @factura.Fecha
+             </td>
+             <td>
+                @factura.Monto
+             </td>
+            <td>
+                <a asp-action="Editar" href="" asp-route-id="@factura.ID">Editar</a> |
+                    <a asp-action="Detalles" href="" asp-route-id="@factura.ID">Detalles</a> |
+                    <a asp-action="Eliminar" href="" asp-route-id="@factura.ID">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@code {
+    private List<Factura> facturas = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        facturas = await FacturaController.ListarFacturas();
+    }
+}

@@ -3,7 +3,6 @@
 @inject ProyectoGym.src.Controller.EntrenadorController EntrenadorController
 @inject src.Model.Personas.Entrenador Entrenador
 
-
 <h1>Listado entrenadores</h1>
 
 <p>
@@ -13,10 +12,19 @@
     <thead>
         <tr>
             <th>
-               Identificador
+                Identificador
             </th>
             <th>
                 Nombre entrenador
+            </th>
+            <th>
+                Especialidad
+            </th>
+            <th>
+                Horarios
+            </th>
+            <th>
+                Experiencia (años)
             </th>
             <th>
                 Acciones
@@ -24,21 +32,32 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var entrenador in entrenadores) {
-        <tr>
-            <td>
-                @entrenador.ID
-            </td>
-            <td>
-                @entrenador.NombreCompleto
-            </td>
-            <td>
-                <a asp-action="Editar" asp-route-id="@entrenador.ID">Edit</a> |
-                <a asp-action="Detalles" asp-route-id="@entrenador.ID">Details</a> |
-                <a asp-action="Eliminar" asp-route-id="@entrenador.ID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var persona in entrenadores)
+        {
+            <tr>
+                <td>
+                    @persona.ID
+                </td>
+                <td>
+                    @persona.NombreCompleto
+                </td>
+                @if (persona is Entrenador entrenador){
+                <td>
+                    @entrenador.Especialidad
+                </td>
+                <td>
+                    @entrenador.HorariosDisponibles
+                </td>
+                <td>
+                    @entrenador.AñosDeExperiencia
+                </td>
+                }
+                <td>
+                    <a asp-action="Editar" href="" asp-route-id="@persona.ID">Editar</a> |
+                    <a asp-action="Eliminar" href="" asp-route-id="@persona.ID">Eliminar</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
 
@@ -47,6 +66,6 @@
 
     protected override async Task OnInitializedAsync()
     {
-        entrenadores = await EntrenadorController.ListarEntrenadores() ;
+        entrenadores = await EntrenadorController.ListarEntrenadores();
     }
 }

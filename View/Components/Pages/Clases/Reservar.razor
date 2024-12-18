@@ -1,0 +1,72 @@
+﻿@page "/clase/reservar"
+@using Microsoft.EntityFrameworkCore
+@using src.Model.Gestion
+@inject NavigationManager NavigationManager
+@inject ProyectoGym.src.Controller.ClaseController ClaseController
+@inject ProyectoGym.src.Controller.ReservaController ReservaController
+
+<PageTitle>Crear</PageTitle>
+
+<h1>Crear</h1>
+
+<h2>Clase</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form @onsubmit="ReservarClase">
+            <div class="mb-3">
+                <label for="clase" class="form-label">Clase:</label>
+                <InputSelect id="clase" class="form-control" @bind-Value="ClaseId">
+                    <option value="-1">Seleccione una clase</option>
+                    @foreach (var clase in clases)
+                    {
+                        <option value="@clase.ID">@clase.Nombre</option>
+                    }
+                </InputSelect>
+            </div>
+            <div class="mb-3">
+                <label for="fechaReserva" class="form-label">Fecha reservación:</label>
+                <input type="date" id="fechaReservación" class="form-control" @bind="FechaReserva" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Reservar</button>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a href="/clases">Regresar al listado</a>
+</div>
+
+@code {
+
+    [SupplyParameterFromForm]
+    private Reserva Reserva{ get; set; } = new();
+    private List<Clase> clases = new List<Clase>();
+    private int ClaseId = -1;
+    private DateTime FechaReserva{ get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        clases = await ClaseController.ListarClases();
+    }
+
+    private async Task ReservarClase()
+    {
+        try
+        {
+            var reserva = new Reserva
+                {
+                    FechaReserva = FechaReserva,
+                };
+            await ReservaController.Crear(reserva, ClaseId);
+            NavigationManager.NavigateTo("/membresias");
+        }
+        catch
+        {
+            
+        }
+
+    }
+}
+

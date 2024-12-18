@@ -3,7 +3,7 @@ using src.Model.Personas;
 using System.ComponentModel.DataAnnotations;
 
 
-namespace ProyectoGym.src.Model.Gestion
+namespace src.Model.Gestion
 {
     /// <summary>
     /// Representa una rutina específica para cada cliente.
@@ -17,6 +17,11 @@ namespace ProyectoGym.src.Model.Gestion
         /// Obtiene o establece el cliente a la rutina.
         /// </summary>
         public Cliente? Cliente { get; set; }
+
+        /// <summary>
+        /// Obtiene o establece el cliente a la rutina.
+        /// </summary>
+        public string Nombre { get; set; }
 
         /// <summary>
         /// Obtiene o establece la descripción de la rutina.

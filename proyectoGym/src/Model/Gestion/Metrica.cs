@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoGym.src.Model.Gestion
+namespace src.Model.Gestion
 {
     /// <summary>
     /// Representa las métricas de cada cliente.
@@ -16,19 +16,19 @@ namespace ProyectoGym.src.Model.Gestion
         [Key]
         public int ID { get; set; }
 
-        /// <summary>
-        /// Obtiene o establece el cliente a la métrica.
-        /// </summary>
+        public int ClienteID { get; set; }
         public Cliente? Cliente { get; set; }
 
-        /// <summary>
-        /// Obtiene o establece el tipo de métrica.
-        /// </summary>
-        public string Tipo { get; set; }
+        public double Peso { get; set; }
 
-        /// <summary>
-        /// Obtiene o establece el valor según el tipo de métrica.
-        /// </summary>
-        public double Valor { get; set; }
+        public double IMC { get; set; }
+
+        public double Cintura { get; set; }
+
+        public double Cadera { get; set; }
+
+        public double Brazo { get; set; }
+
+        public double Muslo { get; set; }
     }
 }

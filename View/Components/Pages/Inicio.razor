@@ -28,7 +28,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        if (PersonaController.EstaAutenticada() && PersonaController.PersonaAutenticada().Rol != "Administrador")
+        if (PersonaController.EstaAutenticada() && PersonaController.PersonaAutenticada().Rol != "Administrador" && PersonaController.PersonaAutenticada().Rol != "Entrenador")
         {
             clienteId = PersonaController.PersonaAutenticada().ID;
             membresia = await MembresiaController.obtenerMembresia(clienteId);
@@ -47,7 +47,7 @@
             {
                 notificacion = "Su mensualidad se encuentra al cobro";
             }
-        } 
+        }
     }
 
 

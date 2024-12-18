@@ -1,0 +1,128 @@
+﻿@page "/reporteMatricula"
+@using BlazorDownloadFile
+@using src.Model.Gestion
+@inject ProyectoGym.src.Controller.MembresiaController MembresiaController
+@inject ProyectoGym.src.Controller.ReporteMatriculaController ReporteMatriculaController
+@inject ProyectoGym.src.Controller.ClientesController ClientesController
+@inject NavigationManager NavigationManager
+@inject IBlazorDownloadFileService BlazorDownloadService
+
+
+@rendermode InteractiveServer
+
+
+<h1>Listado Membresías</h1>
+
+<div class="row mb-3">
+    <div class="col-md-4">
+        <label>Fecha Inicio:</label>
+        <input type="date" @bind="fechaInicio" class="form-control" />
+    </div>
+    <div class="col-md-4">
+        <label>Fecha Fin:</label>
+        <input type="date" @bind="fechaFin" class="form-control" />
+    </div>
+    <div class="col-md-4 d-flex align-items-end">
+        <button class="btn btn-primary" @onclick="Filtrar">Filtrar</button>
+        <button class="btn btn-secondary ms-2" @onclick="LimpiarFiltros">Limpiar</button>
+    </div>
+</div>
+<button class="btn btn-primary" @onclick="Exportar">Exportar</button>
+@if (!filtro.Any())
+{
+    <p>No se encontraron membresías en el rango de fechas.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Cliente
+                </th>
+                <th>
+                    Costo
+                </th>
+                <th>
+                    Fecha de inicio
+                </th>
+                <th>
+                    Fecha de vencimiento
+                </th>
+                <th>
+                    Activa
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var membresia in filtro)
+            {
+                <tr>
+                    <td>
+                        @membresia.Cliente.NombreCompleto
+                    </td>
+                    <td>
+                        @membresia.Costo
+                    </td>
+                    <td>
+                        @membresia.FechaInicio
+                    </td>
+                    <td>
+                        @membresia.FechaVencimiento
+                    </td>
+                    <td>
+                        @membresia.Estado
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<p>Total de membresías: <strong>@TotalMembresias</strong></p>
+
+@code {
+    private List<Membresia> membresias = new();
+    private List<Membresia> filtro = new();
+    private DateTime fechaInicio;
+    private DateTime fechaFin;
+    private int TotalMembresias;
+
+    protected override async Task OnInitializedAsync()
+    {
+        membresias = await MembresiaController.ListarMembresias();
+        filtro = new List<Membresia>(membresias);
+        TotalMembresias = filtro.Count;
+    }
+
+    private void Filtrar()
+    {
+        filtro = membresias
+            .Where(m => (m.FechaInicio >= fechaInicio) &&
+                        (m.FechaInicio <= fechaFin)).ToList();
+
+        StateHasChanged();
+        TotalMembresias = filtro.Count;
+    }
+
+    private void LimpiarFiltros()
+    {
+        NavigationManager.NavigateTo("/reporteMatricula");
+        StateHasChanged();
+    }
+
+    private async Task Exportar()
+    {
+        var pdfData = ReporteMatriculaController.GenerarReportePDF(filtro);
+
+        if (pdfData != null && pdfData.Length > 0)
+        {
+            var nombreArchivo = "ReporteMatricula.pdf";
+
+            await BlazorDownloadService.DownloadFile(nombreArchivo, pdfData, "application/pdf");
+        }
+        else
+        {
+            Console.WriteLine("No se pudo generar el PDF. Verifica los datos.");
+        }
+    }
+}

@@ -1,0 +1,94 @@
+﻿@page "/metrica/crear"
+@using Microsoft.EntityFrameworkCore
+@using src.Model.Gestion
+@using src.Model.Personas
+@inject NavigationManager NavigationManager
+@inject ProyectoGym.src.Controller.MetricaController MetricaController
+@inject ProyectoGym.src.Controller.ClientesController ClientesController
+
+<PageTitle>Crear</PageTitle>
+
+<h2>Crear Métrica</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form @onsubmit="NuevaMetrica">
+            <div class="mb-3">
+                <label for="cliente" class="form-label">Cliente:</label>
+                <InputSelect id="cliente" class="form-control" @bind-Value="ClienteId">
+                    <option value="-1">Seleccione un cliente</option>
+                    @foreach (var cliente in clientes)
+                    {
+                        <option value="@cliente.ID">@cliente.NombreCompleto</option>
+                    }
+                </InputSelect>
+            </div>
+            <div class="mb-3">
+                <label for="peso" class="form-label">Peso:</label>
+                <input type="number" id="peso" class="form-control" @bind="Peso" step="0.01" />
+            </div>
+            <div class="mb-3">
+                <label for="imc" class="form-label">IMC:</label>
+                <input type="number" id="imc" class="form-control" @bind="IMC" />
+            </div>
+            <div class="mb-3">
+                <label for="cintura" class="form-label">Cintura:</label>
+                <input type="number" id="cintura" class="form-control" @bind="Cintura" />
+            </div>
+            <div class="mb-3">
+                <label for="cadera" class="form-label">Cadera:</label>
+                <input type="number" id="cadera" class="form-control" @bind="Cadera" />
+            </div>
+            <div class="mb-3">
+                <label for="brazo" class="form-label">Brazo:</label>
+                <input type="number" id="brazo" class="form-control" @bind="Brazo" />
+            </div>
+            <div class="mb-3">
+                <label for="muslo" class="form-label">Muslo:</label>
+                <input type="number" id="muslo" class="form-control" @bind="Muslo" />
+            </div>
+            <button type="submit" class="btn btn-primary">Crear</button>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a href="/metricas">Regresar al listado</a>
+</div>
+
+@code {
+    
+    [SupplyParameterFromForm]
+    private Metrica Metrica { get; set; } = new();
+    private List<Person> clientes = new List<Person>();
+    private int ClienteId = -1;
+    private double Peso { get; set; } 
+    private double IMC { get; set; } 
+    private double Cintura { get; set; }
+    private double Cadera { get; set; } 
+    private double Brazo { get; set; } 
+    private double Muslo { get; set; } 
+
+    private async Task NuevaMetrica()
+    {
+
+        var metrica = new Metrica
+            {
+                Peso= Peso,
+                IMC = IMC,
+                Cintura = Cintura,
+                Cadera = Cadera,
+                Brazo = Brazo,
+                Muslo = Muslo
+            };
+
+        await MetricaController.Crear(metrica, ClienteId);
+        NavigationManager.NavigateTo("/metricas");
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        clientes = await ClientesController.ListarClientes();
+    }
+}
+

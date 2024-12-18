@@ -1,0 +1,71 @@
+﻿@page "/rutinas"
+@using src.Model.Gestion
+@inject ProyectoGym.src.Controller.RutinaController RutinaController
+@inject ProyectoGym.src.Controller.PersonaController PersonaController
+
+
+
+@if (PersonaController.PersonaAutenticada().Rol == "Entrenador"){
+<h1>Rutinas asignadas</h1>
+<p>
+    <a class="btn btn-primary" href="rutina/crear">Nueva rutina</a>
+</p>
+<p>
+    <a class="btn btn-primary" href="rutina/crear">Asignar rutina</a>
+</p>
+}else if (PersonaController.PersonaAutenticada().Rol == "Cliente"){
+    <h1>Mis rutinas</h1>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Nombre
+            </th>
+            <th>
+                Descripción
+            </th>
+            <th>
+                Fecha asignación
+            </th>
+            <th>
+                Cliente
+            </th>
+            <th>
+                Acciones
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var rutina in rutinas) {
+        <tr>
+            <td>
+                @rutina.Nombre
+            </td>
+            <td>
+                @rutina.Descripcion
+            </td>
+            <td>
+                @rutina.FechaAsignación
+             </td>
+             <td>
+                @rutina.Cliente.NombreCompleto
+             </td>
+            <td>
+                <a asp-action="Editar" asp-route-id="@rutina.ID">Editar</a> |
+                <a asp-action="Eliminar" asp-route-id="@rutina.ID">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@code {
+    private List<Rutina> rutinas = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        rutinas = await RutinaController.ListarRutinas(PersonaController.PersonaAutenticada()) ;
+    }
+}

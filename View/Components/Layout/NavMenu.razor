@@ -22,34 +22,29 @@
             </div>
             @if (PersonaController.PersonaAutenticada().Rol == "Administrador")
             {
-            <div class="nav-item px-3">
-                <NavLink class="nav-link" href="clientes">
-                    <span  aria-hidden="true"></span> Clientes
-                </NavLink>
-            </div>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="clientes">
+                        <span aria-hidden="true"></span> Clientes
+                    </NavLink>
+                </div>
 
-            <div class="nav-item px-3">
+                <div class="nav-item px-3">
                     <NavLink class="nav-link" href="entrenadores">
-                    <span aria-hidden="true"></span> Entrenadores
-                </NavLink>
-            </div>
-            <div class="nav-item px-3">
-                <NavLink class="nav-link">
-                    <span aria-hidden="true"></span> Inventario
-                </NavLink>
-                <ul class="submenu">
-                    <li>
-                        <NavLink class="nav-link" href="maquinas">
-                            <span class="bi bi-list-nested-nav-menu"></span> Maquinas
-                        </NavLink>
-                    </li>
-                </ul>
-            </div>
-            <div class="nav-item px-3">
-                <NavLink class="nav-link" href="weather">
-                    <span aria-hidden="true"></span> Reportes
-                </NavLink>
-            </div>
+                        <span aria-hidden="true"></span> Entrenadores
+                    </NavLink>
+                </div>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link">
+                        <span aria-hidden="true"></span> Inventario
+                    </NavLink>
+                    <ul class="submenu">
+                        <li>
+                            <NavLink class="nav-link" href="maquinas">
+                                <span class="bi bi-list-nested-nav-menu"></span> Maquinas
+                            </NavLink>
+                        </li>
+                    </ul>
+                </div>
                 <div class="nav-item px-3">
                     <NavLink class="nav-link" href="membresias">
                         <span aria-hidden="true"></span> Membresías
@@ -57,23 +52,19 @@
                 </div>
             }
             <div class="nav-item px-3">
-                <NavLink class="nav-link" href="Clases">
+                <NavLink class="nav-link" href="clases">
                     <span aria-hidden="true"></span> Clases
                 </NavLink>
             </div>
-            //<div class="nav-item px-3">
-            //    <NavLink class="nav-link" href="weather">
-                //      <span aria-hidden="true"></span> Reservaciones
-            //</NavLink>
-            //</div>
-            @if(PersonaController.PersonaAutenticada().Rol == "Cliente"){
-            <div class="nav-item px-3">
-                <NavLink class="nav-link" href="weather">
-                    <span aria-hidden="true"></span> Mis métricas
-                </NavLink>
-            </div>
+            @if (PersonaController.PersonaAutenticada().Rol == "Cliente")
+            {
                 <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="weather">
+                    <NavLink class="nav-link" href="metricas">
+                        <span aria-hidden="true"></span> Mis métricas
+                    </NavLink>
+                </div>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="rutinas">
                         <span aria-hidden="true"></span> Mis rutinas
                     </NavLink>
                 </div>
@@ -90,6 +81,28 @@
                         <span aria-hidden="true"></span> Rutinas
                     </NavLink>
                 </div>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link">
+                        <span aria-hidden="true"></span> Reportes
+                    </NavLink>
+                    <ul class="submenu">
+                        <li>
+                            <NavLink class="nav-link" href="reporteMatricula">
+                                <span class="bi bi-list-nested-nav-menu"></span> Matrícula
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink class="nav-link" href="reporteIngresos">
+                                <span class="bi bi-list-nested-nav-menu"></span> Ingresos
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink class="nav-link" href="reporteClases">
+                                <span class="bi bi-list-nested-nav-menu"></span> Clases
+                            </NavLink>
+                        </li>
+                    </ul>
+                </div>
             }
             <div class="nav-item px-3">
                 <NavLink class="nav-link" href="cerrar">
@@ -101,7 +114,7 @@
         {
             <div class="nav-item px-3">
                 <NavLink class="nav-link" href="iniciar">
-                    <span  aria-hidden="true"></span> Inicie sesión para continuar
+                    <span aria-hidden="true"></span> Inicie sesión para continuar
                 </NavLink>
             </div>
 

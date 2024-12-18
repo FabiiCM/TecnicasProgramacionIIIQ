@@ -1,0 +1,187 @@
+﻿@page "/reporteIngresos"
+@using BlazorDownloadFile
+@using src.Model.Inventario
+@using src.Model.Finanzas
+@inject ProyectoGym.src.Controller.FacturaController FacturaController
+@inject ProyectoGym.src.Controller.MaquinaController MaquinaController
+@inject ProyectoGym.src.Controller.ReporteIngresosController ReporteIngresosController
+@inject ProyectoGym.src.Controller.ClientesController ClientesController
+@inject NavigationManager NavigationManager
+@inject IBlazorDownloadFileService BlazorDownloadService
+
+
+@rendermode InteractiveServer
+
+
+<div class="row mb-3">
+    <div class="col-md-4">
+        <label>Fecha Inicio:</label>
+        <input type="date" @bind="fechaInicio" class="form-control" />
+    </div>
+    <div class="col-md-4">
+        <label>Fecha Fin:</label>
+        <input type="date" @bind="fechaFin" class="form-control" />
+    </div>
+    <div class="col-md-4 d-flex align-items-end">
+        <button class="btn btn-primary" @onclick="Filtrar">Filtrar</button>
+        <button class="btn btn-secondary ms-2" @onclick="LimpiarFiltros">Limpiar</button>
+    </div>
+</div>
+<button class="btn btn-primary" @onclick="Exportar">Exportar</button>
+
+<h1>Listado membresías facturadas</h1>
+@if (!filtroFacturas.Any())
+{
+    <p>No se encontraron facturas en el rango de fechas.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Cliente
+                </th>
+                <th>
+                    Fecha
+                </th>
+                <th>
+                    Monto
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var factura in filtroFacturas)
+            {
+                <tr>
+                    <td>
+                        @factura.Cliente.NombreCompleto
+                    </td>
+                    <td>
+                        @factura.Fecha
+                    </td>
+                    <td>
+                        @factura.Monto
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<h1>Listado Maquinas Compradas</h1>
+@if (!filtroMaquinas.Any())
+{
+    <p>No se encontraron maquinas en el rango de fechas.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Fecha adquisición
+                </th>
+                <th>
+                    Monto
+                </th>
+                <th>
+                    Vida Útil
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Maquina in filtroMaquinas)
+            {
+                <tr>
+                    <td>
+                        @Maquina.Nombre
+                    </td>
+                    <td>
+                        @Maquina.FechaAdquisicion
+                    </td>
+                    <td>
+                        @Maquina.costo
+                    </td>
+                    <td>
+                        @Maquina.VidaUtilMeses
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@if (ganancia)
+{
+    <p>Se generó una ganacia aproximada de: ₡<strong style="color:red;">@montoTotal</strong></p>
+}
+else
+{
+    <p>Se generarón pérdidas por un monto aproximado de: ₡<strong style="color:red;">@montoTotal</strong></p>
+}
+
+@code {
+    private List<Factura> facturas = new();
+    private List<Factura> filtroFacturas = new();
+    private List<Maquina> maquinas = new();
+    private List<Maquina> filtroMaquinas = new();
+    private DateTime fechaInicio;
+    private DateTime fechaFin;
+    private bool ganancia;
+    private int montoTotal = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        facturas = await FacturaController.ListarFacturas();
+        maquinas = await MaquinaController.ListarMaquinas();
+        filtroFacturas = new List<Factura>(facturas);
+        filtroMaquinas = new List<Maquina>(maquinas);
+    }
+
+    private void Filtrar()
+    {
+        filtroFacturas = facturas
+            .Where(f => (f.Fecha >= fechaInicio) &&
+                        (f.Fecha <= fechaFin)).ToList();
+        filtroMaquinas = maquinas
+            .Where(m => (m.FechaAdquisicion >= fechaInicio) &&
+                        (m.FechaAdquisicion <= fechaFin)).ToList();
+        StateHasChanged();
+
+        foreach (var factura in filtroFacturas)
+        {
+            montoTotal += (int)factura.Monto;
+        }
+        foreach (var maquina in filtroMaquinas)
+        {
+            montoTotal += (int)maquina.costo;
+        }
+
+        if (montoTotal > 0)
+        {
+            ganancia = true;
+        }
+        else
+        {
+            ganancia = false;
+        }
+    }
+
+    private void LimpiarFiltros()
+    {
+        NavigationManager.NavigateTo("/reporteIngresos");
+        StateHasChanged();
+    }
+
+    private async Task Exportar()
+    {
+
+        var pdfData = ReporteIngresosController.GenerarReportePDF(filtroFacturas, filtroMaquinas);
+
+        var nombreArchivo = "ReporteMatricula.pdf";
+
+        await BlazorDownloadService.DownloadFile(nombreArchivo, pdfData, "application/pdf");
+    }
+}

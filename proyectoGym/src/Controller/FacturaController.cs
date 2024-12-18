@@ -1,52 +1,61 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using src.Model.Personas;
 using ProyectoGym.src.Model.Context;
 using src.Model.Finanzas;
+using src.Model.Gestion;
 
 namespace ProyectoGym.src.Controller
 {
-    public class ReporteController 
+    public class FacturaController 
     {
         private readonly GymContext _context;
 
-        public ReporteController(GymContext context)
+        public FacturaController(GymContext context)
         {
             _context = context;
         }
 
-        public async Task<List<Person>> ListarClientes()
+        public async Task<List<Factura>> ListarFacturas()
         {
-            return await _context.Personas.Where(p => p.Rol == "Cliente").ToListAsync();
+            return await _context.Facturas
+            .Include(m => m.Cliente)
+            .ToListAsync();
         }
 
-        public async Task<Cliente?> Details(int? id)
+        public async Task<Factura?> Details(int? id)
         {
             if (id == null)
             {
 
             }
 
-            var cliente = await _context.Clientes
+            var factura = await _context.Facturas
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (cliente == null)
+            if (factura == null)
             {
 
             }
 
-            return cliente;
+            return factura;
         }
 
-        public async Task<int> Crear(Reporte Reporte)
+        public async Task<int> facturar(Factura Factura, int ClienteId)
         {
+            var cliente = await _context.Personas.FirstOrDefaultAsync(p => p.ID == ClienteId);
+            if (cliente == null)
+            {
+                throw new Exception("Cliente no encontrado."+ ClienteId);
+            }
 
-            _context.Reportes.Add(Reporte);
+            Factura.ClienteId = ClienteId;
+            _context.Facturas.Add(Factura);
 
             return await _context.SaveChangesAsync();
+        }
+
+        public async Task<Membresia?> obtenerMembresia(int clienteId)
+        {
+            return await _context.Membresias.FirstOrDefaultAsync(m => m.ClienteID == clienteId);
         }
 
         // GET: Clientes/Create
@@ -55,21 +64,6 @@ namespace ProyectoGym.src.Controller
             return View();
         }
 
-        // POST: Clientes/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,TipoUsuario,FechaNacimiento,NombreCompleto,Contraseña,CorreoElectronico,NombreUsuario,Telefono,Rol")] Cliente cliente)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(cliente);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(cliente);
-        }
 
         // GET: Clientes/Edit/5
         public async Task<IActionResult> Edit(int? id)

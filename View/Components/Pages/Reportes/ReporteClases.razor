@@ -1,0 +1,73 @@
+﻿@page "/reporteClases"
+@using src.Model.Gestion
+@inject ProyectoGym.src.Controller.MembresiaController MembresiaController
+@inject ProyectoGym.src.Controller.PersonaController PersonaController
+@inject ProyectoGym.src.Controller.ClientesController ClientesController
+
+
+<h1>Listado Membresías</h1>
+
+<p>
+    <a class="btn btn-primary" href="membresia/afiliar">Afiliar</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Cliente
+            </th>
+            <th>
+                Costo
+            </th>
+            <th>
+                Fecha de inicio
+            </th>
+            <th>
+                Fecha de vencimiento
+            </th>
+            <th>
+                Activa
+            </th>
+            <th>
+                Acciones
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var membresia in membresias) {
+        <tr>
+            <td>
+                @membresia.Cliente.NombreCompleto
+            </td>
+            <td>
+                @membresia.Costo
+            </td>
+            <td>
+                @membresia.FechaInicio
+             </td>
+             <td>
+                @membresia.FechaVencimiento
+             </td>
+             <td>
+                @membresia.Estado
+              </td>
+
+            <td>
+                <a asp-action="Editar" href="" asp-route-id="@membresia.ID">Editar</a> |
+                    <a asp-action="Detalles" href="" asp-route-id="@membresia.ID">Detalles</a> |
+                    <a asp-action="Eliminar" href="" asp-route-id="@membresia.ID">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@code {
+    private List<Membresia> membresias = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        membresias = await MembresiaController.ListarMembresias();
+    }
+}

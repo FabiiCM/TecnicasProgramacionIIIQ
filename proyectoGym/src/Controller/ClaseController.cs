@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProyectoGym.src.Model.Context;
 using src.Model.Gestion;
+using src.Model.Personas;
 
 
 namespace ProyectoGym.src.Controller
@@ -16,11 +17,18 @@ namespace ProyectoGym.src.Controller
 
         public async Task<List<Clase>> ListarClases()
         {
-            return await _context.Clases.ToListAsync();
+            return await _context.Clases.Include(m => m.Entrenador).ToListAsync();
         }
 
-        public async Task<int> Crear(Clase Clase)
+        public async Task<int> Crear(Clase Clase, int EntrenadorId)
         {
+            var entrenador = await _context.Entrenadores.FirstOrDefaultAsync(e => e.ID == EntrenadorId);
+            if (entrenador == null)
+            {
+                throw new Exception("Entrenador no encontrado." + EntrenadorId);
+            }
+
+            Clase.EntrenadorID = EntrenadorId;
 
             _context.Clases.Add(Clase);
 

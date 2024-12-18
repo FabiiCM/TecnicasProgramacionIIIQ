@@ -41,12 +41,13 @@ namespace src.Model.Gestion
         /// Identificador del entrenador asignado a la clase.
         /// </summary>
         public int EntrenadorID { get; set; }
-
         public Entrenador Entrenador { get; set; }
+
+        public int? Registradas { get; set; }    
 
         public Clase() { }
 
-        /// <summary>
+        /*/// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="Clase"/>.
         /// </summary>
         /// <param name="id">Identificador único de la clase.</param>
@@ -62,7 +63,7 @@ namespace src.Model.Gestion
             CupoMaximo = cupoMaximo;
             EntrenadorID = entrenadorID;
             Reservas = new List<Reserva>();
-        }
+        }*/
 
         /// <summary>
         /// Inscribe a un cliente en la clase si hay cupo disponible.
