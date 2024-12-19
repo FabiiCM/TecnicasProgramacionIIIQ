@@ -32,5 +32,6 @@ namespace src.Model.Gestion
         /// Obtiene o establece la fecha de asignación de la rutina.
         /// </summary>
         public DateTime FechaAsignación { get; set; }
+        public int ClienteID { get; set; }
     }
 }

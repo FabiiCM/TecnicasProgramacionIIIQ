@@ -237,7 +237,7 @@ namespace ProyectoGym.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<int?>("ClienteID")
+                    b.Property<int>("ClienteID")
                         .HasColumnType("int");
 
                     b.Property<string>("Descripcion")
@@ -428,7 +428,9 @@ namespace ProyectoGym.Migrations
                 {
                     b.HasOne("src.Model.Personas.Cliente", "Cliente")
                         .WithMany()
-                        .HasForeignKey("ClienteID");
+                        .HasForeignKey("ClienteID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Cliente");
                 });

@@ -11,45 +11,51 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form @onsubmit="CrearEntrenador">
+        <EditForm method="post" Model="Entrenador" OnValidSubmit="CrearEntrenador" FormName="crear" Enhance>
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre completo:</label>
-                <input type="text" id="nombre" @bind="NombreCompleto" class="form-control" required />
+                <InputText id="nombre" @bind-Value="Entrenador.NombreCompleto" class="form-control" required />
             </div>
             <div class="mb-3">
                 <label for="fechaNacimiento" class="form-label">Fecha de nacimiento:</label>
-                <input type="date" id="fechaNacimiento" @bind="FechaNacimiento" class="form-control" required />
+                <InputDate id="fechaNacimiento" @bind-Value="Entrenador.FechaNacimiento" class="form-control" required />
             </div>
             <div class="mb-3">
                 <label for="telefono" class="form-label">Teléfono:</label>
-                <input type="text" id="telefono" @bind="Telefono" class="form-control" required />
+                <InputText id="telefono" @bind-Value="Entrenador.Telefono" class="form-control" required />
             </div>
             <div class="mb-3">
                 <label for="nombreUsuario" class="form-label">Nombre de usuario:</label>
-                <input type="text" id="nombreUsuario" @bind="NombreUsuario" class="form-control" required />
-            </div>
-            <div class="mb-3">
-                <label for="añosExp" class="form-label">Años de experiencia:</label>
-                <input type="number" id="añosExp" @bind="AñosDeExperiencia" class="form-control" required />
+                <InputText id="nombreUsuario" @bind-Value="Entrenador.NombreUsuario" class="form-control" required />
             </div>
             <div class="mb-3">
                 <label for="especialidad" class="form-label">Especialidad:</label>
-                <input type="text" id="especialidad" @bind="Especialidad" class="form-control" required />
+                <InputText id="nombreUsuario" @bind-Value="Entrenador.Especialidad" class="form-control" required />
             </div>
             <div class="mb-3">
-                <label for="horarios" class="form-label">Horarios:</label>
-                <input type="text" id="especialidad" @bind="HorariosDisponibles" class="form-control" required />
+                <label for="horarios" class="form-label">Hoararios Disponibles:</label>
+                <InputText id="horarios" @bind-Value="Entrenador.HorariosDisponibles" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label for="experiencia" class="form-label">Años de experiencia:</label>
+                <InputNumber id="experiencia" @bind-Value="Entrenador.AñosDeExperiencia" class="form-control" required />
             </div>
             <div class="mb-3">
                 <label for="correo" class="form-label">Correo:</label>
-                <input type="email" id="correo" @bind="correo" class="form-control" required />
+                <InputText type="email" id="correo" @bind-Value="Entrenador.CorreoElectronico" class="form-control" required />
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Contraseña:</label>
-                <input type="password" id="password" @bind="contrasena" class="form-control" required />
+                <InputText type="password" id="password" @bind-Value="Entrenador.Contraseña" class="form-control" required />
             </div>
-            <button type="submit" class="btn btn-primary">Crear</button>
-        </form>
+            <div class="mb-3">
+                <label for="rol" class="form-label">Rol:</label>
+                <InputSelect id="rol" class="form-control" @bind-Value="Entrenador.Rol">
+                    <option value="Entrenador">Entrenador</option>
+                </InputSelect>
+            </div>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </EditForm>
     </div>
 </div>
 
@@ -61,31 +67,9 @@
     
     [SupplyParameterFromForm]
     private Entrenador Entrenador { get; set; } = new();
-    private string NombreUsuario{ get; set; }
-    private DateTime FechaNacimiento { get; set; }
-    private string contrasena { get; set; }
-    private string correo { get; set; } 
-    private string HorariosDisponibles { get; set; }
-    private int AñosDeExperiencia { get; set; }
-    private string Especialidad { get; set; }
-    private string Telefono { get; set; }
-    private string NombreCompleto { get; set; }
 
     private async Task CrearEntrenador()
     {
-        var entrenador = new Entrenador
-            {
-                NombreUsuario = NombreUsuario,
-                FechaNacimiento = FechaNacimiento,
-                Contraseña = contrasena,
-                CorreoElectronico = correo,
-                HorariosDisponibles = HorariosDisponibles,
-                AñosDeExperiencia = AñosDeExperiencia,
-                Especialidad = Especialidad,
-                Telefono = Telefono,
-                NombreCompleto = NombreCompleto
-            };
-
         await EntrenadorController.Crear(Entrenador);
         NavigationManager.NavigateTo("/entrenadores");
     }

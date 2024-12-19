@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProyectoGym.src.Model.Context;
 
@@ -11,9 +12,11 @@ using ProyectoGym.src.Model.Context;
 namespace ProyectoGym.Migrations
 {
     [DbContext(typeof(GymContext))]
-    partial class GymContextModelSnapshot : ModelSnapshot
+    [Migration("20241219053640_clases_Datos_nuevos")]
+    partial class clases_Datos_nuevos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -237,7 +240,7 @@ namespace ProyectoGym.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<int>("ClienteID")
+                    b.Property<int?>("ClienteID")
                         .HasColumnType("int");
 
                     b.Property<string>("Descripcion")
@@ -428,9 +431,7 @@ namespace ProyectoGym.Migrations
                 {
                     b.HasOne("src.Model.Personas.Cliente", "Cliente")
                         .WithMany()
-                        .HasForeignKey("ClienteID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ClienteID");
 
                     b.Navigation("Cliente");
                 });
