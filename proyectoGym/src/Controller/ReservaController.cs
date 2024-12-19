@@ -36,7 +36,7 @@ namespace ProyectoGym.src.Controller
             return reserva;
         }
 
-        public async Task<int> Crear(Reserva Reserva, int ClaseId)
+        public async Task<int> Crear(Reserva Reserva, int ClaseId, int ClienteId)
         {
             var clase = await _context.Clases.FirstOrDefaultAsync(p => p.ID == ClaseId);
             if (clase == null)
@@ -44,18 +44,17 @@ namespace ProyectoGym.src.Controller
                 throw new Exception("No se encontró la clase." + ClaseId);
             }
 
-            if (clase.Registradas <= clase.CupoMaximo)
-            {
-                clase.Registradas++;
-                _context.Clases.Update(clase);
-
-                Reserva.ClaseID = ClaseId;
-                _context.Reservas.Add(Reserva);
-            }
-            else
+            if (clase.Registradas >= clase.CupoMaximo)
             {
                 throw new Exception("Ya no hay cupo para la clase." + clase.Nombre);
             }
+
+            clase.Registradas++;
+            _context.Clases.Update(clase);
+
+            Reserva.ClaseID = ClaseId;
+            Reserva.ClienteID = ClienteId;
+            _context.Reservas.Add(Reserva);
 
             return await _context.SaveChangesAsync();
         }

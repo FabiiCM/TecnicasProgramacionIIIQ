@@ -8,8 +8,6 @@
 @inject ProyectoGym.src.Controller.ClientesController ClientesController
 @inject NavigationManager NavigationManager
 @inject IBlazorDownloadFileService BlazorDownloadService
-
-
 @rendermode InteractiveServer
 
 
@@ -115,11 +113,11 @@ else
 }
 @if (ganancia)
 {
-    <p>Se generó una ganacia aproximada de: ₡<strong style="color:red;">@montoTotal</strong></p>
+    <p>Se generó una ganacia aproximada de: ₡<strong style="color:green;">@montoDiferencia</strong></p>
 }
 else
 {
-    <p>Se generarón pérdidas por un monto aproximado de: ₡<strong style="color:red;">@montoTotal</strong></p>
+    <p>Se generarón pérdidas por un monto aproximado de: ₡<strong style="color:red;">@montoDiferencia</strong></p>
 }
 
 @code {
@@ -130,7 +128,9 @@ else
     private DateTime fechaInicio;
     private DateTime fechaFin;
     private bool ganancia;
-    private int montoTotal = 0;
+    private int montoDiferencia = 0;
+    private int montoFacturado= 0;
+    private int montoMaquinas= 0;
 
     protected override async Task OnInitializedAsync()
     {
@@ -152,14 +152,16 @@ else
 
         foreach (var factura in filtroFacturas)
         {
-            montoTotal += (int)factura.Monto;
+            montoFacturado += (int)factura.Monto;
         }
         foreach (var maquina in filtroMaquinas)
         {
-            montoTotal += (int)maquina.costo;
+            montoMaquinas += (int)maquina.costo;
         }
 
-        if (montoTotal > 0)
+        montoDiferencia = montoFacturado - montoMaquinas;
+
+        if (montoDiferencia > 0)
         {
             ganancia = true;
         }
@@ -180,7 +182,7 @@ else
 
         var pdfData = ReporteIngresosController.GenerarReportePDF(filtroFacturas, filtroMaquinas);
 
-        var nombreArchivo = "ReporteMatricula.pdf";
+        var nombreArchivo = "ReporteIngresos.pdf";
 
         await BlazorDownloadService.DownloadFile(nombreArchivo, pdfData, "application/pdf");
     }

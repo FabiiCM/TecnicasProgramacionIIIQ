@@ -4,12 +4,12 @@
 @inject NavigationManager NavigationManager
 @inject ProyectoGym.src.Controller.ClaseController ClaseController
 @inject ProyectoGym.src.Controller.ReservaController ReservaController
+@inject ProyectoGym.src.Controller.PersonaController PersonaController
+@rendermode InteractiveServer
 
 <PageTitle>Crear</PageTitle>
 
-<h1>Crear</h1>
-
-<h2>Clase</h2>
+<h2>Reservar Clase</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -28,7 +28,12 @@
                 <label for="fechaReserva" class="form-label">Fecha reservación:</label>
                 <input type="date" id="fechaReservación" class="form-control" @bind="FechaReserva" />
             </div>
-
+            <div class="form-floating mb-3">
+                @if (!string.IsNullOrEmpty(error))
+                {
+                    <p style="color: red;">@error</p>
+                }
+            </div>
             <button type="submit" class="btn btn-primary">Reservar</button>
         </form>
     </div>
@@ -44,7 +49,9 @@
     private Reserva Reserva{ get; set; } = new();
     private List<Clase> clases = new List<Clase>();
     private int ClaseId = -1;
+    private int ClienteId;
     private DateTime FechaReserva{ get; set; }
+    private string error;
 
     protected override async Task OnInitializedAsync()
     {
@@ -55,16 +62,17 @@
     {
         try
         {
+            ClienteId = PersonaController.PersonaAutenticada().ID;
             var reserva = new Reserva
                 {
                     FechaReserva = FechaReserva,
                 };
-            await ReservaController.Crear(reserva, ClaseId);
-            NavigationManager.NavigateTo("/membresias");
+            await ReservaController.Crear(reserva, ClaseId, ClienteId);
+            NavigationManager.NavigateTo("/clases");
         }
-        catch
+        catch (Exception e)
         {
-            
+            error = e.Message;    
         }
 
     }

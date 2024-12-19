@@ -30,9 +30,6 @@
                 Fecha asignación
             </th>
             <th>
-                Cliente
-            </th>
-            <th>
                 Acciones
             </th>
         </tr>
@@ -49,12 +46,9 @@
             <td>
                 @rutina.FechaAsignación
              </td>
-             <td>
-                @rutina.Cliente.NombreCompleto
-             </td>
             <td>
-                <a asp-action="Editar" asp-route-id="@rutina.ID">Editar</a> |
-                <a asp-action="Eliminar" asp-route-id="@rutina.ID">Eliminar</a>
+                <a asp-action="Editar" href="" asp-route-id="@rutina.ID">Editar</a> |
+                    <a asp-action="Eliminar" href="" asp-route-id="@rutina.ID">Eliminar</a>
             </td>
         </tr>
 }

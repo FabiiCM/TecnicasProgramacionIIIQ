@@ -2,9 +2,11 @@
 @using Microsoft.EntityFrameworkCore
 @using src.Model.Gestion
 @using src.Model.Personas
+@rendermode InteractiveServer
 @inject NavigationManager NavigationManager
 @inject ProyectoGym.src.Controller.MetricaController MetricaController
 @inject ProyectoGym.src.Controller.ClientesController ClientesController
+@inject ProyectoGym.src.Controller.PersonaController PersonaController
 
 <PageTitle>Crear</PageTitle>
 
@@ -13,16 +15,6 @@
 <div class="row">
     <div class="col-md-4">
         <form @onsubmit="NuevaMetrica">
-            <div class="mb-3">
-                <label for="cliente" class="form-label">Cliente:</label>
-                <InputSelect id="cliente" class="form-control" @bind-Value="ClienteId">
-                    <option value="-1">Seleccione un cliente</option>
-                    @foreach (var cliente in clientes)
-                    {
-                        <option value="@cliente.ID">@cliente.NombreCompleto</option>
-                    }
-                </InputSelect>
-            </div>
             <div class="mb-3">
                 <label for="peso" class="form-label">Peso:</label>
                 <input type="number" id="peso" class="form-control" @bind="Peso" step="0.01" />
@@ -57,11 +49,11 @@
 </div>
 
 @code {
-    
+
     [SupplyParameterFromForm]
     private Metrica Metrica { get; set; } = new();
     private List<Person> clientes = new List<Person>();
-    private int ClienteId = -1;
+    private int ClienteId;
     private double Peso { get; set; } 
     private double IMC { get; set; } 
     private double Cintura { get; set; }
@@ -89,6 +81,7 @@
     protected override async Task OnInitializedAsync()
     {
         clientes = await ClientesController.ListarClientes();
+        ClienteId = PersonaController.PersonaAutenticada().ID;
     }
 }
 
