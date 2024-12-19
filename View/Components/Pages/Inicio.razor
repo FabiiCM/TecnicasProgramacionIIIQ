@@ -1,7 +1,9 @@
 ﻿@page "/"
 @inject ProyectoGym.src.Controller.PersonaController PersonaController
 @inject ProyectoGym.src.Controller.MembresiaController MembresiaController
+@inject ProyectoGym.src.Controller.MaquinaController MaquinaController
 @using src.Model.Gestion
+@using src.Model.Inventario
 
 @if (PersonaController.EstaAutenticada())
 {
@@ -17,6 +19,11 @@
         <p>@notificacion</p>
 
     }
+    @if (PersonaController.PersonaAutenticada().Rol == "Entrenador")
+    {
+        <h2>Estado equipos: </h2>
+        <p>@notificacion</p>
+    }
 
 }
 
@@ -24,7 +31,8 @@
     private string EstadoMembresia;
     private int clienteId;
     private Membresia? membresia;
-    private string notificacion;
+    private string notificacion = "";
+    private List<Maquina> maquinas;
 
     protected override async Task OnInitializedAsync()
     {
@@ -47,6 +55,22 @@
             {
                 notificacion = "Su mensualidad se encuentra al cobro";
             }
+        }
+
+        if(PersonaController.EstaAutenticada() && PersonaController.PersonaAutenticada().Rol == "Entrenador")
+        {
+            maquinas = await MaquinaController.ListarMaquinas();
+
+            foreach(var maquina in maquinas)
+            {
+                DateTime fechaCambio = maquina.FechaAdquisicion.AddMonths(maquina.VidaUtilMeses);
+
+                if(DateTime.Now > fechaCambio)
+                {
+                    notificacion = "El equipo con id: " + maquina.ID + " necesita cambio";
+                }
+            }
+
         }
     }
 

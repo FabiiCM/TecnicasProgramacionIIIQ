@@ -27,7 +27,11 @@
                         <span aria-hidden="true"></span> Clientes
                     </NavLink>
                 </div>
-
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="facturas">
+                        <span aria-hidden="true"></span> Facturas
+                    </NavLink>
+                </div>
                 <div class="nav-item px-3">
                     <NavLink class="nav-link" href="entrenadores">
                         <span aria-hidden="true"></span> Entrenadores
@@ -71,11 +75,6 @@
             }
             @if (PersonaController.PersonaAutenticada().Rol == "Entrenador")
             {
-                <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="facturas">
-                        <span aria-hidden="true"></span> Facturas
-                    </NavLink>
-                </div>
                 <div class="nav-item px-3">
                     <NavLink class="nav-link" href="rutinas">
                         <span aria-hidden="true"></span> Rutinas
