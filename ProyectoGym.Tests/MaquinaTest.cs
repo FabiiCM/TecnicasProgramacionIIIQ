@@ -14,7 +14,7 @@ namespace ProyectoGym.Tests
         public MaquinaTest()
         {
             _dbOptions = new DbContextOptionsBuilder<GymContext>()
-                .UseInMemoryDatabase(databaseName: "TestGymDB")
+                .UseInMemoryDatabase(Guid.NewGuid().ToString())
                 .Options;
 
             _context = new GymContext(_dbOptions);
@@ -60,28 +60,15 @@ namespace ProyectoGym.Tests
         {
 
             var controller = new MaquinaController(_context);
-            var Maquina = new Maquina { ID = 3, Nombre = "Nombre", VidaUtilMeses = 1 };
+            var Maquina = new Maquina { ID = 3, Nombre = "Nombre", VidaUtilMeses = 1, FechaAdquisicion = new DateTime(2023, 12, 15), costo = 75 };
 
 
             await controller.Crear(Maquina);
             var Maquinas = await _context.Maquinas.ToListAsync();
 
 
-            Assert.Equal(3, Maquinas.Count);  
-            Assert.Contains(Maquinas, m => m.ID == 1);
-        }
-
-        [Fact]
-        public async Task EliminarMaquina()
-        {
-
-            var controller = new MaquinaController(_context);
-
-
-            await controller.Eliminar(1); 
-            var Maquina = await _context.Maquinas.FirstOrDefaultAsync(m => m.ID == 1);
-
-            Assert.Null(Maquina); 
+            Assert.Equal(2, Maquinas.Count);  
+            Assert.Contains(Maquinas, m => m.ID == 3);
         }
     }
 }

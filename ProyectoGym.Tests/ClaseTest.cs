@@ -14,7 +14,7 @@ namespace ProyectoGym.Tests
         public ClaseTest()
         {
             _dbOptions = new DbContextOptionsBuilder<GymContext>()
-                .UseInMemoryDatabase(databaseName: "TestGymDB")
+                .UseInMemoryDatabase(Guid.NewGuid().ToString())
                 .Options;
 
             _context = new GymContext(_dbOptions);
@@ -24,8 +24,20 @@ namespace ProyectoGym.Tests
 
         private void SeedDatabase()
         {
-            var Entrenador = new Entrenador { ID = 1, NombreCompleto = "Juan Pérez" };
-            var Clase1 = new Clase { ID = 1, Nombre = "Clase 1", EntrenadorID = 1, };
+            var Entrenador = new Entrenador { 
+                ID = 1, 
+                NombreCompleto = "Entrenador prueba",
+                FechaNacimiento = new DateTime(1990, 12, 15), 
+                CorreoElectronico = "correo@prueba.com", 
+                Contraseña = "prueba123", 
+                Telefono = "223365", 
+                NombreUsuario = "entrenador1",
+                Rol = "Entrenador",
+                Especialidad = "Funcionales",
+                HorariosDisponibles = "L-V 5am a 6pm",
+                AñosDeExperiencia = 2
+            };
+            var Clase1 = new Clase { ID = 1, Nombre = "Clase 1", EntrenadorID = 1, Horario = "L-V", CupoMaximo = 2, Registradas = 0};
 
             _context.Personas.Add(Entrenador);
             _context.Clases.AddRange(Clase1);
@@ -37,12 +49,12 @@ namespace ProyectoGym.Tests
         {
 
             var controller = new ClaseController(_context);
-            var entrenador = new Person { ID = 1 };
+            var entrenador = _context.Personas.Where(p => p.Rol == "Entrenador" && p.ID == 1).SingleOrDefault();
 
             var Clases = await controller.ListarClases();
 
             Assert.NotNull(Clases);
-            Assert.Equal(2, Clases.Count); 
+            Assert.Equal(1, Clases.Count); 
             Assert.All(Clases, c => Assert.Equal(entrenador.ID, c.EntrenadorID));
         }
 
@@ -51,28 +63,15 @@ namespace ProyectoGym.Tests
         {
 
             var controller = new ClaseController(_context);
-            var Clase = new Clase { ID = 3, Nombre = "Clase 4", EntrenadorID = 1 };
+            var Clase = new Clase { ID = 3, Nombre = "Clase 4", EntrenadorID = 1, CupoMaximo = 1, Horario = "L-J", Registradas = 0 };
 
 
             await controller.Crear(Clase, 1);
             var Clases = await _context.Clases.ToListAsync();
 
 
-            Assert.Equal(3, Clases.Count);  
+            Assert.Equal(2, Clases.Count);  
             Assert.Contains(Clases, c => c.EntrenadorID == 1);
         }
-
-       /* [Fact]
-        public async Task EliminarClase()
-        {
-
-            var controller = new ClaseController(_context);
-
-
-            await controller.Eliminar(1); 
-            var Clase = await _context.Clases.FirstOrDefaultAsync(e => e.ID == 1);
-
-            Assert.Null(Clase); 
-        }*/
     }
 }

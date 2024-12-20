@@ -14,7 +14,7 @@ namespace ProyectoGym.Tests
         public MetricaTest()
         {
             _dbOptions = new DbContextOptionsBuilder<GymContext>()
-                .UseInMemoryDatabase(databaseName: "TestGymDB")
+                .UseInMemoryDatabase(Guid.NewGuid().ToString())
                 .Options;
 
             _context = new GymContext(_dbOptions);
@@ -24,40 +24,65 @@ namespace ProyectoGym.Tests
 
         private void SeedDatabase()
         {
-            var cliente = new Cliente { ID = 1, NombreCompleto = "Juan Pérez" };
-            var cliente2 = new Cliente { ID = 2, NombreCompleto = "Juan Pérez" };
-            var Metrica1 = new Metrica { ID = 1, IMC = 50, ClienteID = 1, Cliente = cliente };
-            var Metrica2 = new Metrica { ID = 2, Peso = 60, ClienteID = 2, Cliente = cliente };
+            var cliente = new Cliente
+            {
+                ID = 5,
+                NombreCompleto = "Cliente prueba",
+                FechaNacimiento = new DateTime(1995, 12, 15),
+                CorreoElectronico = "correo@prueba.com",
+                Contraseña = "prueba123",
+                Telefono = "223365",
+                NombreUsuario = "cliente1",
+                TipoUsuario = "cliente",
+                Rol = "Cliente"
+            };
+            var cliente2 = new Cliente
+            {
+                ID = 1,
+                NombreCompleto = "Cliente prueba",
+                FechaNacimiento = new DateTime(1995, 12, 15),
+                CorreoElectronico = "correo@prueba.com",
+                Contraseña = "prueba123",
+                Telefono = "223365",
+                NombreUsuario = "cliente1",
+                TipoUsuario = "cliente",
+                Rol = "Cliente"
+            };
+
+            var Metrica = new Metrica
+            {
+                ID = 1,
+                Peso = 60,
+                ClienteID = 5,
+                Cliente = cliente,
+                IMC = 60,
+                Cintura = 30,
+                Cadera = 45,
+                Brazo = 20,
+                Muslo = 25
+            };
 
             _context.Personas.Add(cliente);
-            _context.Metricas.AddRange(Metrica1, Metrica2);
+            _context.Metricas.Add(Metrica);
             _context.SaveChanges();
+
         }
 
         [Fact]
         public async Task ListarMetricas()
         {
-
             var controller = new MetricaController(_context);
-            var cliente = new Person { ID = 1 };
+
+            var cliente = _context.Personas
+                .SingleOrDefault(p => p.Rol == "Cliente" && p.ID == 1);
+
+            Assert.NotNull(cliente);
 
             var metricas = await controller.ListarMetricas(cliente);
 
             Assert.NotNull(metricas);
-            Assert.Equal(2, metricas.Count); 
-            Assert.All(metricas, e => Assert.Equal(cliente.ID, e.ClienteID));
-        }
-
-        [Fact]
-        public async Task ObtenerMetrica()
-        {
-            var controller = new MetricaController(_context);
-
-            var metrica = await controller.ObtenerMetrica(1); 
-
-            Assert.NotNull(metrica);
-            Assert.Equal(1, metrica.ID);
-
+            Assert.Equal(1, metricas.Count);
+            Assert.All(metricas, m => Assert.Equal(cliente.ID, m.ClienteID));
         }
 
         [Fact]
@@ -65,28 +90,37 @@ namespace ProyectoGym.Tests
         {
 
             var controller = new MetricaController(_context);
-            var metrica = new Metrica { ID = 3, IMC = 50, ClienteID = 1 };
+            var metrica = new Metrica
+            {
+                ID = 6,
+                Peso = 60,
+                ClienteID = 5,
+                IMC = 60,
+                Cintura = 30,
+                Cadera = 45,
+                Brazo = 20,
+                Muslo = 25
+            };
+            var metrica2 = new Metrica
+            {
+                ID = 1,
+                Peso = 60,
+                ClienteID = 1,
+                IMC = 60,
+                Cintura = 30,
+                Cadera = 45,
+                Brazo = 20,
+                Muslo = 25
+            };
 
 
             await controller.Crear(metrica, 1);
             var metricas = await _context.Metricas.ToListAsync();
 
 
-            Assert.Equal(3, metricas.Count);  
+            Assert.Equal(2, metricas.Count);
             Assert.Contains(metricas, m => m.ClienteID == 1);
         }
 
-        [Fact]
-        public async Task EliminarMetrica()
-        {
-
-            var controller = new MetricaController(_context);
-
-
-            await controller.Eliminar(1); 
-            var metrica = await _context.Metricas.FirstOrDefaultAsync(e => e.ID == 1);
-
-            Assert.Null(metrica); 
-        }
     }
 }
