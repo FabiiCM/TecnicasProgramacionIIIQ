@@ -47,12 +47,16 @@ namespace ProyectoGym.Tests
         [Fact]
         public async Task ListarClases()
         {
-
+            //método devuelve el único resultado coincidente o, nullsi no se encuentran registros,
+            //devuelve el resultado. Garantiza que solo haya un
+            //resultado que cumpla las condiciones; si se encuentra más de un resultado, generará una excepción.
             var controller = new ClaseController(_context);
             var entrenador = _context.Personas.Where(p => p.Rol == "Entrenador" && p.ID == 1).SingleOrDefault();
 
             var Clases = await controller.ListarClases();
 
+            //Verifica que la colección `Clases` no sea `null`. - Si `Clases` es `null`, la prueba fallará,
+            //lo que indica un problema con la recuperación o inicialización de esta colección.
             Assert.NotNull(Clases);
             Assert.Equal(1, Clases.Count); 
             Assert.All(Clases, c => Assert.Equal(entrenador.ID, c.EntrenadorID));
